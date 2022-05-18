@@ -3,19 +3,22 @@
 
   <span>{{errorMessage}}</span>
 
-  <section class="post" *ngIf="singlePosts">
+  <section class="post" *ngFor="let post of blogPosts">
     <header class="post-header">
-      <h2 class="post-title" [innerHTML]="singlePosts.title.rendered">
+      <h2 class="post-title" [innerHTML]="post.title.rendered">
       </h2>
       <p class="meta-data">
         Autorin: <a href="#" target="_blank" class="post-author">unknown</a>
-        veröffentlicht am: <a href="#">{{singlePosts.date | date: 'dd.MM.yyyy'}}</a>
+        veröffentlicht am: <a href="#">{{post.date | date: 'dd.MM.yyyy'}}</a>
       </p>
     </header>
 
     <div class="post-description">
-      <p [innerHTML]="singlePosts.content.rendered">
+      <p [innerHTML]="post.excerpt.rendered | slice: 0:400">
       </p>
+      <a class="button" [routerLink]="['/post', post.id]">
+        mehr lesen
+      </a>
     </div>
   </section>
 

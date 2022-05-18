@@ -8,27 +8,18 @@ import {ActivatedRoute} from "@angular/router";
   styleUrls: ['./post-list.component.scss']
 })
 export class PostListComponent implements OnInit {
+  blogPosts: any
+  errorMessage: any
 
-  singlePosts: any;
-  errorMessage: any;
-  id!: string
+  constructor(private blogService: BlogService) { }
 
-  constructor(
-    private blogService: BlogService,
-    private route: ActivatedRoute
-  ) {
+  ngOnInit(){
+    this.getPosts()
   }
-
-
-  ngOnInit() {
-    this.id = this.route.snapshot.paramMap.get('id') as string;
-    this.getSinglePosts()
-  }
-
-  getSinglePosts() {
-    this.blogService.getSinglePosts(this.id).subscribe(
+  getPosts() {
+    this.blogService.getPosts().subscribe(
       data => {
-        this.singlePosts = data;
+        this.blogPosts = data;
       },
       (error) => {
         this.errorMessage = error.message
