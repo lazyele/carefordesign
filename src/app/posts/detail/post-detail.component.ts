@@ -7,7 +7,7 @@ import {BlogService} from "../../services/blog.service";
   templateUrl: './post-detail.component.html',
   styleUrls: ['./post-detail.component.scss']
 })
-export class PostDetail implements OnInit {
+export class PostDetailComponent implements OnInit {
   singlePosts: any;
   errorMessage: any;
   id!: string
