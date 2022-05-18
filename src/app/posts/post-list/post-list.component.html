@@ -1,0 +1,22 @@
+<div class="posts">
+  <h1 class="content-subhead">Blog Posts</h1>
+
+  <span>{{errorMessage}}</span>
+
+  <section class="post" *ngIf="singlePosts">
+    <header class="post-header">
+      <h2 class="post-title" [innerHTML]="singlePosts.title.rendered">
+      </h2>
+      <p class="meta-data">
+        Autorin: <a href="#" target="_blank" class="post-author">unknown</a>
+        veröffentlicht am: <a href="#">{{singlePosts.date | date: 'dd.MM.yyyy'}}</a>
+      </p>
+    </header>
+
+    <div class="post-description">
+      <p [innerHTML]="singlePosts.content.rendered">
+      </p>
+    </div>
+  </section>
+
+</div>
