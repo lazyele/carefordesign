@@ -8,7 +8,8 @@ import {BlogService} from "../../services/blog.service";
   styleUrls: ['./post-detail.component.scss']
 })
 export class PostDetailComponent implements OnInit {
-  singlePosts: any;
+  post!: IPost;
+  id: any;
 
   constructor(
     private blogService: BlogService,

@@ -8,21 +8,17 @@ import {catchError, Observable, Observer} from "rxjs";
 export class BlogService {
   private blogUrl = 'https://www.carefordesign.ch'
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+  }
 
   getPosts() {
-    const url = `${this.blogUrl}/wp-json/wp/v2/posts`
-    return this.http.get(url).pipe(catchError(this.errorHandler))
+    const url = `${BlogService.blogUrl}/wp-json/wp/v2/posts`;
+    return this.http.get<IPost[]>(url);
   }
 
-  getSinglePosts(id:any) {
-    const url = `${this.blogUrl}/wp-json/wp/v2/posts/${id}`
-    return this.http.get(url).pipe(catchError(this.errorHandler))
-  }
-
-  errorHandler(error: HttpErrorResponse){
-    return new Observable((observer: Observer<any>) => {
-      observer.error(error)
-    });
+  getPost(id: number) {
+    const url = `${BlogService.blogUrl}/wp-json/wp/v2/posts/${id}`;
+    return this.http.get<IPost>(url);
   }
 }
+

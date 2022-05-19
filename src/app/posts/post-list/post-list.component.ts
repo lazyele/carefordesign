@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {BlogService} from "../../services/blog.service";
 import {ActivatedRoute} from "@angular/router";
+import {IPost} from "../../dto/IPost";
 
 @Component({
   selector: 'app-post-list',
@@ -8,7 +9,7 @@ import {ActivatedRoute} from "@angular/router";
   styleUrls: ['./post-list.component.scss']
 })
 export class PostListComponent implements OnInit {
-  blogPosts: any
+  blogPosts: IPost[] = [];
 
   constructor(private blogService: BlogService) { }
 

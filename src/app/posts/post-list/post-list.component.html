@@ -1,9 +1,7 @@
 <div class="posts">
   <h1 class="content-subhead">Blog Posts</h1>
 
-  <span>{{errorMessage}}</span>
-
-  <section class="post" *ngFor="let post of blogPosts">
+   <section class="post" *ngFor="let post of blogPosts">
     <header class="post-header">
       <h2 class="post-title" [innerHTML]="post.title.rendered">
       </h2>
@@ -16,7 +14,7 @@
     <div class="post-description">
       <p [innerHTML]="post.excerpt.rendered | slice: 0:400">
       </p>
-      <a class="button" [routerLink]="['/post', post.id]">
+      <a class="button" [routerLink]="['/posts', post.id]">
         mehr lesen
       </a>
     </div>
