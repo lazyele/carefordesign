@@ -9,7 +9,6 @@ import {BlogService} from "../../services/blog.service";
 })
 export class PostDetailComponent implements OnInit {
   singlePosts: any;
-  errorMessage: any;
   id!: string
 
   constructor(
