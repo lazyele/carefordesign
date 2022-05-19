@@ -22,7 +22,6 @@ export class PostListComponent implements OnInit {
         this.blogPosts = data;
       },
       (error) => {
-        this.errorMessage = error.message
         console.log(error);
       });
   }
