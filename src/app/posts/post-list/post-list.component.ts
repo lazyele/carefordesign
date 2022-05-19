@@ -9,7 +9,6 @@ import {ActivatedRoute} from "@angular/router";
 })
 export class PostListComponent implements OnInit {
   blogPosts: any
-  errorMessage: any
 
   constructor(private blogService: BlogService) { }
 
