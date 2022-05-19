@@ -17,12 +17,11 @@ export class PostListComponent implements OnInit {
     this.getPosts()
   }
   getPosts() {
-    this.blogService.getPosts().subscribe(
-      data => {
-        this.blogPosts = data;
-      },
-      (error) => {
-        console.log(error);
+    this.blogService.getPosts()
+      .subscribe(
+      {
+        next: data => this.blogPosts = data,
+        error: error => console.log(error)
       });
   }
 }

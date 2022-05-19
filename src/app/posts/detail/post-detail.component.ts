@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {BlogService} from "../../services/blog.service";
+import {IPost} from "../../dto/IPost";
 
 @Component({
   selector: 'app-detail',
@@ -19,12 +20,12 @@ export class PostDetailComponent implements OnInit {
 
   ngOnInit() {
     this.id = this.route.snapshot.paramMap.get('id') as string;
-    this.getSinglePosts()
+    this.getPost()
   }
-  getSinglePosts() {
-    this.blogService.getSinglePosts(this.id).subscribe(
+  getPost() {
+    this.blogService.getPost(this.id).subscribe(
       data => {
-        this.singlePosts = data;
+        this.post = data;
       },
       (error) => {
         console.log(error);

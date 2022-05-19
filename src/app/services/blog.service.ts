@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
-import {HttpClient, HttpErrorResponse} from "@angular/common/http";
-import {catchError, Observable, Observer} from "rxjs";
+import {HttpClient} from "@angular/common/http";
+import {IPost} from "../dto/IPost";
 
 @Injectable({
   providedIn: 'root'
 })
 export class BlogService {
-  private blogUrl = 'https://www.carefordesign.ch'
+  private static readonly blogUrl = 'https://www.carefordesign.ch'
 
   constructor(private http: HttpClient) {
   }
