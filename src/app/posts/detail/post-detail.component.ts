@@ -13,21 +13,20 @@ export class PostDetailComponent implements OnInit {
   id: any;
 
   constructor(
-    private blogService: BlogService,
-    private route: ActivatedRoute
+    private readonly blogService: BlogService,
+    private readonly route: ActivatedRoute
   ) { }
 
 
   ngOnInit() {
-    this.id = this.route.snapshot.paramMap.get('id') as string;
+    //this.id = this.route.snapshot.paramMap.get('id') as string;
     this.getPost()
   }
   getPost() {
-    this.blogService.getPost(this.id).subscribe(
-      data => {
-        this.post = data;
-      },
-      (error) => {
-        console.log(error);
-      });
+    this.blogService.getPost()
+      .subscribe(
+        {
+          next: data => this.post = data,
+          error: error => console.log(error)
+        });
   }}
