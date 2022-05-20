@@ -11,7 +11,9 @@ import {IPost} from "../../dto/IPost";
 export class PostListComponent implements OnInit {
   blogPosts: IPost[] = [];
 
-  constructor(private blogService: BlogService) { }
+  constructor(
+    private blogService: BlogService
+  ) { }
 
   ngOnInit(){
     this.getPosts()
