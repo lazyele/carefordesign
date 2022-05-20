@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {BlogService} from "../../services/blog.service";
 import {IPost} from "../../dto/IPost";
@@ -10,7 +10,7 @@ import {IPost} from "../../dto/IPost";
 })
 export class PostDetailComponent implements OnInit {
   post!: IPost;
-  id: any;
+  id!: string;
 
   constructor(
     private readonly blogService: BlogService,
@@ -20,10 +20,10 @@ export class PostDetailComponent implements OnInit {
 
   ngOnInit() {
     //this.id = this.route.snapshot.paramMap.get('id') as string;
-    this.getPost()
+    this.getPosts()
   }
-  getPost() {
-    this.blogService.getPost()
+  getPosts() {
+    this.blogService.getPosts()
       .subscribe(
         {
           next: data => this.post = data,
