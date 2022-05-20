@@ -10,7 +10,7 @@ import {IPost} from "../../dto/IPost";
 })
 export class PostDetailComponent implements OnInit {
   post!: IPost;
-  id!: string;
+  id!: number;
 
   constructor(
     private readonly blogService: BlogService,
@@ -19,11 +19,11 @@ export class PostDetailComponent implements OnInit {
 
 
   ngOnInit() {
-    //this.id = this.route.snapshot.paramMap.get('id') as string;
+    this.id = <number>(this.route.snapshot.paramMap.get('id') as unknown);
     this.getPosts()
   }
   getPosts() {
-    this.blogService.getPosts()
+    this.blogService.getPost(this.id)
       .subscribe(
         {
           next: data => this.post = data,
