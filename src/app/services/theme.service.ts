@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import {Observable, of} from "rxjs";
+import {BehaviorSubject, Observable, of} from "rxjs";
 import {StylesheetService} from "./stylesheet.service";
 
 @Injectable({
@@ -8,6 +8,7 @@ import {StylesheetService} from "./stylesheet.service";
 })
 export class ThemeService {
 
+  currentTheme$: BehaviorSubject<string> = new BehaviorSubject<string>("indigo-pink")
   constructor(
     private readonly httpClient: HttpClient,
     private readonly styleSheet: StylesheetService
@@ -23,6 +24,7 @@ export class ThemeService {
       "theme",
       `/assets/themes/${themeToSet}.css`
     );
+    this.currentTheme$.next(themeToSet);
   }
 }
 

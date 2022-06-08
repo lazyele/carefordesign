@@ -1,3 +1,4 @@
 <button (click)="changeTheme(theme)" *ngFor="let theme of themes"
         color="primary"
+        [disabled]="currentTheme===theme"
         mat-raised-button>{{theme.label}}</button>
