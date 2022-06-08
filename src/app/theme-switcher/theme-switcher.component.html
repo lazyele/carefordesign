@@ -1,1 +1,3 @@
-<button color="primary" mat-raised-button>Primary</button>
+<button (click)="changeTheme(theme)" *ngFor="let theme of themes"
+        color="primary"
+        mat-raised-button>{{theme.label}}</button>
