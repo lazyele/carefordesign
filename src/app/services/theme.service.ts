@@ -36,17 +36,17 @@ export interface IThemeOption {
   value: string;
 }
 
-export const themes: IThemeOption[] =
-  [
-    {
-      "backgroundColor": "#fff",
-      "buttonColor": "#ffc107",
-      "headingColor": "#673ab7",
-      "label": "Deep Purple & Amber",
-      "value": "deeppurple-amber"
-    },
-    {
-      "backgroundColor": "#fff",
+ const themes: IThemeOption[] =
+   [
+     {
+       "backgroundColor": "#fff",
+       "buttonColor": "#ffc107",
+       "headingColor": "#673ab7",
+       "label": "Deep Purple & Amber",
+       "value": "deeppurple-amber"
+     },
+     {
+       "backgroundColor": "#fff",
       "buttonColor": "#ff4081",
       "headingColor": "#3f51b5",
       "label": "Indigo & Pink",
