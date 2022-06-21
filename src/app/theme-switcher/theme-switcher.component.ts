@@ -9,7 +9,7 @@ import {Subscription} from "rxjs";
 })
 export class ThemeSwitcherComponent implements OnInit, OnDestroy {
   themes: IThemeOption[] = [];
-  currentTheme: IThemeOption | null = null;
+  currentTheme!: IThemeOption;
   private currentThemeSub!: Subscription;
 
   constructor(private readonly themeService: ThemeService) {
@@ -19,7 +19,7 @@ export class ThemeSwitcherComponent implements OnInit, OnDestroy {
     this.themeService.getThemes()
       .subscribe({next: themes => this.themes = themes});
     this.currentThemeSub = this.themeService.currentTheme$
-      .subscribe({next: currentTheme => this.currentTheme = this.themes.find(t => t.type == currentTheme) ?? null});
+      .subscribe({next: currentTheme => this.currentTheme = currentTheme});
   }
 
   changeTheme(theme: IThemeOption) {

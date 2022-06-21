@@ -23,11 +23,18 @@ export class ThemeService {
   }
 
   setTheme(theme: ThemeType) {
+    // hier schauen
     this.styleSheet.setStyle(
       "theme",
       `/assets/themes/${theme}.css`
     );
-    this.currentTheme$.next(theme);
+    this.currentTheme$.next(this.getTheme(theme));
+  }
+
+  private getTheme(theme: ThemeType): IThemeOption {
+    const currentTheme = environment.themes.filter(t => t.type == theme)[0];
+    console.log(currentTheme);
+    return currentTheme;
   }
 }
 

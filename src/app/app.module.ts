@@ -9,6 +9,7 @@ import {HttpClient, HttpClientModule} from "@angular/common/http";
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {ThemeSwitcherComponent} from './theme-switcher/theme-switcher.component';
 import {MatButtonModule} from "@angular/material/button";
+import {CommonModule} from "@angular/common";
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import {MatButtonModule} from "@angular/material/button";
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    MatButtonModule
+    MatButtonModule,
+    CommonModule
   ],
   providers: [HttpClient],
   bootstrap: [AppComponent]
