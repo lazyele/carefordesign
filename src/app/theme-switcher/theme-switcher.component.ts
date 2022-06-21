@@ -19,11 +19,11 @@ export class ThemeSwitcherComponent implements OnInit, OnDestroy {
     this.themeService.getThemes()
       .subscribe({next: themes => this.themes = themes});
     this.currentThemeSub = this.themeService.currentTheme$
-      .subscribe({next: currentTheme => this.currentTheme = this.themes.find(t => t.value == currentTheme) ?? null});
+      .subscribe({next: currentTheme => this.currentTheme = this.themes.find(t => t.type == currentTheme) ?? null});
   }
 
   changeTheme(theme: IThemeOption) {
-    this.themeService.setTheme(theme.value)
+    this.themeService.setTheme(theme.type)
 
   }
 
