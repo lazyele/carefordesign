@@ -36,9 +36,6 @@ export class ThemeService {
 }
 
 export interface IThemeOption {
-  backgroundColor: string;
-  buttonColor: string;
-  headingColor: string;
   label: string;
   type: ThemeType;
 }
