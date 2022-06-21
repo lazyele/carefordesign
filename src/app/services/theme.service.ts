@@ -25,9 +25,9 @@ export class ThemeService {
   setTheme(theme: ThemeType) {
     this.styleSheet.setStyle(
       "theme",
-      `/assets/themes/${themeToSet}.css`
+      `/assets/themes/${theme}.css`
     );
-    this.currentTheme$.next(themeToSet);
+    this.currentTheme$.next(theme);
   }
 }
 
