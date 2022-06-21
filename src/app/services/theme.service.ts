@@ -10,7 +10,7 @@ import {ThemeType} from "../../environments/themes";
 })
 export class ThemeService {
 
-  currentTheme$: BehaviorSubject<ThemeType> = new BehaviorSubject<ThemeType>(ThemeType.Default)
+  currentTheme$: BehaviorSubject<IThemeOption> = new BehaviorSubject<IThemeOption>(this.getTheme(ThemeType.Default))
 
   constructor(
     private readonly httpClient: HttpClient,
@@ -23,7 +23,6 @@ export class ThemeService {
   }
 
   setTheme(theme: ThemeType) {
-    // hier schauen
     this.styleSheet.setStyle(
       "theme",
       `/assets/themes/${theme}.css`
@@ -32,9 +31,7 @@ export class ThemeService {
   }
 
   private getTheme(theme: ThemeType): IThemeOption {
-    const currentTheme = environment.themes.filter(t => t.type == theme)[0];
-    console.log(currentTheme);
-    return currentTheme;
+    return environment.themes.filter(t => t.type == theme)[0];
   }
 }
 
