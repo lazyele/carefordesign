@@ -8,15 +8,6 @@
     <span class="mat-button-focus-overlay"></span>
   </a>
   <span class="horizontal-spacer"></span>
-
-  <button [matMenuTriggerFor]="beforeMenu" aria-label="Select a theme"
-          class="mat-focus-indicator mat-menu-trigger mat-tooltip-trigger mat-icon-button mat-button-base"
-          mat-icon-button>
-    <mat-icon aria-hidden="false" class="material-symbols-rounded mat-icon notranslate material-icons mat-icon-no-color"
-              data-mat-icon-type="font" role="img">
-      accessibility_new
-    </mat-icon>
-  </button>
   <mat-menu #beforeMenu="matMenu" xPosition="before">
     <app-theme-switcher>
     </app-theme-switcher>
@@ -47,6 +38,15 @@
     <span class="mat-ripple mat-button-ripple"></span>
     <span class="mat-button-focus-overlay"></span>
   </a>
+
+  <button [matMenuTriggerFor]="beforeMenu" aria-label="Select a theme"
+          class="accessiblity-button mat-focus-indicator mat-menu-trigger mat-tooltip-trigger mat-icon-button mat-button-base"
+          mat-icon-button>
+    <mat-icon aria-hidden="false" class="material-symbols-rounded mat-icon notranslate material-icons mat-icon-no-color"
+              data-mat-icon-type="font" role="img">
+      accessibility_new
+    </mat-icon>
+  </button>
 
 </mat-toolbar>
 
