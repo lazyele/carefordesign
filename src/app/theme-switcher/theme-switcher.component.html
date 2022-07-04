@@ -1,4 +1,6 @@
-<button (click)="changeTheme(theme)" *ngFor="let theme of themes"
-        color="primary"
-        [disabled]="currentTheme===theme"
-        mat-raised-button>{{theme.label}}</button>
+<mat-radio-group class="radio-group-themeSwitcher">
+  <mat-radio-button (click)="changeTheme(theme)" *ngFor="let theme of themes" [checked]="currentTheme===theme"
+                    [value]="theme===currentTheme"
+                    class="radio-button-themeSwitcher"
+                    color="primary">{{theme.label}}</mat-radio-button>
+</mat-radio-group>
