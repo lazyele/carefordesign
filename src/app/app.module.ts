@@ -15,9 +15,9 @@ import {MatToolbarModule} from "@angular/material/toolbar";
 import {MatIconModule} from "@angular/material/icon";
 import {MatRadioModule} from "@angular/material/radio";
 import {MatMenuModule} from "@angular/material/menu";
-import {HomeComponent} from './home/home.component';
-import {AboutUsComponent} from './about-us/about-us.component';
-import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
+import {HomeComponent} from './pages/home/home.component';
+import {AboutUsComponent} from './pages/about-us/about-us.component';
+import {PageNotFoundComponent} from './pages/page-not-found/page-not-found.component';
 import {RouterModule} from "@angular/router";
 
 @NgModule({
