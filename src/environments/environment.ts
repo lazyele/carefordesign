@@ -24,7 +24,7 @@ export const environment = {
         label: "Purple & Green",
         type: ThemeType.PurpleGreen
       }
-    ]
+    ],
 };
 
 
