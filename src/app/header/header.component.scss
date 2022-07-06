@@ -1,13 +1,15 @@
+@use './src/utilities';
+
 .mat-toolbar-row, .mat-toolbar-single-row {
-  height: 80px;
+  height: utilities.rem(5);
 }
 
 .horizontal-spacer {
   flex: 1 1 auto;
 }
 
-.accessiblity-button {
+.accessibility-button {
   background: #ffd740;
   color: black;
-  margin-left: 30px;
+  margin-left: utilities.rem(2);
 }
