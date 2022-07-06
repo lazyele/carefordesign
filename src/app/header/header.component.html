@@ -21,32 +21,16 @@
     <app-theme-switcher>
     </app-theme-switcher>
   </mat-menu>
-  <a aria-disabled="false" aria-label="Homepage" class="mat-focus-indicator docs-button mat-button mat-button-base"
-     mat-button="" routerLink="/home">
+
+
+  <a *ngFor="let item of item" [attr.aria-label]="item.ariaLabel" aria-disabled="false"
+     class="mat-focus-indicator docs-button mat-button mat-button-base"
+     mat-button="" routerLink="/{{item.routerLink}}">
     <span class="mat-button-wrapper">
-      <span>Startseite</span>
+      <span>{{item.label}}</span>
     </span>
     <span class="mat-ripple mat-button-ripple"></span>
     <span class="mat-button-focus-overlay"></span>
   </a>
-
-  <a aria-disabled="false" aria-label="Posts" class="mat-focus-indicator docs-button mat-button mat-button-base"
-     mat-button="" routerLink="/posts">
-    <span class="mat-button-wrapper">
-      <span>Beiträge</span>
-    </span>
-    <span class="mat-ripple mat-button-ripple"></span>
-    <span class="mat-button-focus-overlay"></span>
-  </a>
-
-  <a aria-disabled="false" aria-label="About Us" class="mat-focus-indicator docs-button mat-button mat-button-base"
-     mat-button="" routerLink="/about-us">
-    <span class="mat-button-wrapper">
-      <span>Über uns</span>
-    </span>
-    <span class="mat-ripple mat-button-ripple"></span>
-    <span class="mat-button-focus-overlay"></span>
-  </a>
-
 </mat-toolbar>
 
