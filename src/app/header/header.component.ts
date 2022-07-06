@@ -8,7 +8,7 @@ import {NavbarItems} from "../../environments/navbar-items";
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  item = NavbarItems
+  navbarItems = NavbarItems
 
   constructor() {
 

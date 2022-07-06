@@ -23,11 +23,11 @@
   </mat-menu>
 
 
-  <a *ngFor="let item of item" [attr.aria-label]="item.ariaLabel" aria-disabled="false"
+  <a *ngFor="let navbarItem of navbarItems" [attr.aria-label]="navbarItem.ariaLabel" aria-disabled="false"
      class="mat-focus-indicator docs-button mat-button mat-button-base"
-     mat-button="" routerLink="/{{item.routerLink}}">
+     mat-button="" routerLink="/{{navbarItem.routerLink}}">
     <span class="mat-button-wrapper">
-      <span>{{item.label}}</span>
+      <span>{{navbarItem.label}}</span>
     </span>
     <span class="mat-ripple mat-button-ripple"></span>
     <span class="mat-button-focus-overlay"></span>
