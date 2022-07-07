@@ -1,0 +1,34 @@
+<mat-toolbar aria-label="Footer" class="footer" color="primary" role="toolbar">
+  <mat-toolbar-row>
+
+    <!-- Todo: Link Mail -->
+    <a aria-disabled="false" aria-label="Mail"
+       class="mat-focus-indicator docs-button mat-button mat-button-base" mat-button="" routerLink="">
+    <span class="mat-button-wrapper">
+      <span>info@carefordesign.ch</span></span>
+      <span class="mat-ripple mat-button-ripple"></span>
+      <span class="mat-button-focus-overlay"></span>
+    </a>
+
+    <span class="horizontal-spacer"></span>
+    <mat-menu #beforeMenu="matMenu" xPosition="before">
+      <app-theme-switcher>
+      </app-theme-switcher>
+    </mat-menu>
+
+    <a *ngFor="let footerItem of footerItems" [attr.aria-label]="footerItem.ariaLabel" aria-disabled="false"
+       class="mat-focus-indicator docs-button mat-button mat-button-base"
+       mat-button="" routerLink="/{{footerItem.routerLink}}">
+    <span class="mat-button-wrapper">
+      <span>{{footerItem.label}}</span>
+    </span>
+      <span class="mat-ripple mat-button-ripple"></span>
+      <span class="mat-button-focus-overlay"></span>
+    </a>
+  </mat-toolbar-row>
+
+  <!-- Todo: Change Font Size after applying costumize Font -->
+  <mat-toolbar-row>
+    <caption>© 2022 Care for Design</caption>
+  </mat-toolbar-row>
+</mat-toolbar>
