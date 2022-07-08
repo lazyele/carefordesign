@@ -1,3 +1,5 @@
+@use "./src/utilities";
+
 .horizontal-spacer {
   flex: 1 1 auto;
 }
@@ -7,3 +9,15 @@
   bottom: 0;
 }
 
+.mat-toolbar-row.copyright {
+  height: utilities.rem(2);
+}
+
+span {
+  margin: 0 auto;
+  text-align: center;
+}
+
+:hover mat-toolbar-row caption {
+  cursor: default;
+}
