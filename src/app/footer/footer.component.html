@@ -1,20 +1,18 @@
-<mat-toolbar aria-label="Footer" class="footer" color="primary" role="toolbar">
-  <mat-toolbar-row>
+<div class="footer">
+  <mat-toolbar aria-label="Footer" color="secondary" role="toolbar">
 
-    <!-- Todo: Link Mail -->
-    <a aria-disabled="false" aria-label="Mail"
+    <a *ngFor="let mailItem of mailItems" [attr.aria-label]="mailItem.ariaLabel" aria-disabled="false"
        class="mat-focus-indicator docs-button mat-button mat-button-base" mat-button="" routerLink="">
-    <span class="mat-button-wrapper">
-      <span>info@carefordesign.ch</span></span>
+
+      <span class="mat-button-wrapper">
+         <mat-icon>mail</mat-icon>
+      <a href="mailto:{{mailItem.mail}}">{{mailItem.mail}}</a>
+      </span>
       <span class="mat-ripple mat-button-ripple"></span>
       <span class="mat-button-focus-overlay"></span>
     </a>
 
     <span class="horizontal-spacer"></span>
-    <mat-menu #beforeMenu="matMenu" xPosition="before">
-      <app-theme-switcher>
-      </app-theme-switcher>
-    </mat-menu>
 
     <a *ngFor="let footerItem of footerItems" [attr.aria-label]="footerItem.ariaLabel" aria-disabled="false"
        class="mat-focus-indicator docs-button mat-button mat-button-base"
@@ -25,10 +23,11 @@
       <span class="mat-ripple mat-button-ripple"></span>
       <span class="mat-button-focus-overlay"></span>
     </a>
-  </mat-toolbar-row>
+  </mat-toolbar>
+  <mat-toolbar aria-label="Footer" class="copyright" color="primary" role="toolbar">
+    <a class="mat-button copyright">
+      <span>© 2022 Care for Design</span>
+    </a>
 
-  <!-- Todo: Change Font Size after applying costumize Font -->
-  <mat-toolbar-row aria-disabled="true" class="mat-toolbar-row copyright mat-button">
-    <span>© 2022 Care for Design</span>
-  </mat-toolbar-row>
-</mat-toolbar>
+  </mat-toolbar>
+</div>

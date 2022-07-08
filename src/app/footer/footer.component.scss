@@ -7,17 +7,19 @@
 .footer {
   position: fixed;
   bottom: 0;
+  width: 100%;
 }
 
-.mat-toolbar-row.copyright {
+.copyright {
   height: utilities.rem(2);
-}
-
-span {
   margin: 0 auto;
   text-align: center;
 }
 
-:hover mat-toolbar-row caption {
+:hover .copyright {
   cursor: default;
+}
+
+mat-icon {
+  margin-right: utilities.rem(1)
 }

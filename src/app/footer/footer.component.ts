@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {FooterItems} from "../../environments/footer-items";
+import {FooterItems, MailItems} from "../../environments/footer-items";
 
 @Component({
   selector: 'app-footer',
@@ -7,7 +7,8 @@ import {FooterItems} from "../../environments/footer-items";
   styleUrls: ['./footer.component.scss']
 })
 export class FooterComponent implements OnInit {
-  footerItems = FooterItems
+  footerItems = FooterItems;
+  mailItems = MailItems;
 
   constructor() {
   }

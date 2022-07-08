@@ -17,3 +17,11 @@ export const FooterItems =
     }
   ]
 ;
+
+export const MailItems =
+  [
+    {
+      mail: "info@carefordesign.ch",
+      ariaLabel: "Mail"
+    }
+  ]
