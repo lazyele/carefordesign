@@ -8,7 +8,7 @@ export const FooterItems =
     {
       label: "Impressum",
       routerLink: "impressum",
-      ariaLabel: "Impressumg"
+      ariaLabel: "Impressum"
     },
     {
       label: "Datenschutz",
