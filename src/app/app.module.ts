@@ -20,6 +20,9 @@ import {AboutUsComponent} from './pages/about-us/about-us.component';
 import {PageNotFoundComponent} from './pages/page-not-found/page-not-found.component';
 import {RouterModule} from "@angular/router";
 import {FooterComponent} from './footer/footer.component';
+import { BlogFilterPipe } from './filter/blog-filter.pipe';
+import { SearchBarComponent } from './search-bar/search-bar.component';
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -32,21 +35,24 @@ import {FooterComponent} from './footer/footer.component';
     AboutUsComponent,
     PageNotFoundComponent,
     FooterComponent,
+    BlogFilterPipe,
+    SearchBarComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    BrowserAnimationsModule,
-    MatButtonModule,
-    CommonModule,
-    MatToolbarModule,
-    MatIconModule,
-    MatRadioModule,
-    MatMenuModule,
-    RouterModule
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        HttpClientModule,
+        BrowserAnimationsModule,
+        MatButtonModule,
+        CommonModule,
+        MatToolbarModule,
+        MatIconModule,
+        MatRadioModule,
+        MatMenuModule,
+        RouterModule,
+        FormsModule
 
-  ],
+    ],
   providers: [HttpClient],
   bootstrap: [AppComponent]
 })
