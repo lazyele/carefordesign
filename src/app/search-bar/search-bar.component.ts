@@ -1,9 +1,9 @@
-import {AfterViewInit, Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {IPost} from "../dto/IPost";
 import {BlogFilterPipe} from "../filter/blog-filter.pipe";
 import {Router} from "@angular/router";
 import {FormBuilder, FormControl} from "@angular/forms";
-import {map, Observable, startWith, tap} from "rxjs";
+import {map, Observable, startWith} from "rxjs";
 
 @Component({
   selector: 'app-search-bar',

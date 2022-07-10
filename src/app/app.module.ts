@@ -20,8 +20,8 @@ import {AboutUsComponent} from './pages/about-us/about-us.component';
 import {PageNotFoundComponent} from './pages/page-not-found/page-not-found.component';
 import {RouterModule} from "@angular/router";
 import {FooterComponent} from './footer/footer.component';
-import { BlogFilterPipe } from './filter/blog-filter.pipe';
-import { SearchBarComponent } from './search-bar/search-bar.component';
+import {BlogFilterPipe} from './filter/blog-filter.pipe';
+import {SearchBarComponent} from './search-bar/search-bar.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatAutocompleteModule} from "@angular/material/autocomplete";
@@ -67,4 +67,5 @@ import {MatCardModule} from "@angular/material/card";
   providers: [HttpClient, BlogFilterPipe],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

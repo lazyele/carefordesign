@@ -1,7 +1,7 @@
 <div class="posts">
   <h1 class="content-subhead">Blog Posts</h1>
 
-   <section class="post" *ngFor="let post of blogPosts | blogFilter: searchInput">
+  <section class="post" *ngFor="let post of blogPosts | blogFilter: searchInput">
     <header class="post-header">
       <h2 class="post-title" [innerHTML]="post.title.rendered">
       </h2>

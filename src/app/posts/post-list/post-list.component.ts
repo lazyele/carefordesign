@@ -13,24 +13,27 @@ export class PostListComponent implements OnInit, OnDestroy {
   blogPosts: IPost[] = [];
   searchInput = "";
   searchInputSubscription!: Subscription;
+
   constructor(
     private blogService: BlogService, private readonly activatedRoute: ActivatedRoute
-  ) { }
+  ) {
+  }
 
-  ngOnInit(){
+  ngOnInit() {
 
-    this.searchInputSubscription = this.activatedRoute.queryParamMap.subscribe(params=>{
-      this.searchInput=params.get("search")??"";
+    this.searchInputSubscription = this.activatedRoute.queryParamMap.subscribe(params => {
+      this.searchInput = params.get("search") ?? "";
     })
     this.getPosts()
   }
+
   getPosts() {
     this.blogService.getPosts()
       .subscribe(
-      {
-        next: data => this.blogPosts = data,
-        error: error => console.log(error)
-      });
+        {
+          next: data => this.blogPosts = data,
+          error: error => console.log(error)
+        });
   }
 
   ngOnDestroy(): void {

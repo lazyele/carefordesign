@@ -15,13 +15,15 @@ export class PostDetailComponent implements OnInit {
   constructor(
     private readonly blogService: BlogService,
     private readonly route: ActivatedRoute
-  ) { }
+  ) {
+  }
 
 
   ngOnInit() {
     this.id = <number>(this.route.snapshot.paramMap.get('id') as unknown);
     this.getPosts()
   }
+
   getPosts() {
     this.blogService.getPost(this.id)
       .subscribe(
@@ -29,4 +31,5 @@ export class PostDetailComponent implements OnInit {
           next: data => this.post = data,
           error: error => console.log(error)
         });
-  }}
+  }
+}

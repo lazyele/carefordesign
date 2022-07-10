@@ -12,11 +12,13 @@ export class HomeComponent implements OnInit {
 
   constructor(
     private blogService: BlogService
-  ) { }
+  ) {
+  }
 
-  ngOnInit(){
+  ngOnInit() {
     this.getPosts()
   }
+
   getPosts() {
     this.blogService.getPosts()
       .subscribe(

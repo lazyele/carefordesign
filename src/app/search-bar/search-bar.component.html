@@ -4,14 +4,14 @@
       <mat-form-field>
         <mat-label>Suche</mat-label>
         <input type="text" matInput [formControl]="inputControl" [matAutocomplete]="auto">
-          <mat-hint *ngIf="inputControl.dirty  && items.length ===0">
-            <ng-container *ngIf=" inputControl.value?.length > 1; else minLengthRequired" >
-              Es wurden leider keine Beiträge zu diesem Thema gefunden!
-            </ng-container>
-            <ng-template #minLengthRequired>
-              Weitere Buchstaben benötigt!
-            </ng-template>
-          </mat-hint>
+        <mat-hint *ngIf="inputControl.dirty  && items.length ===0">
+          <ng-container *ngIf=" inputControl.value?.length > 1; else minLengthRequired">
+            Es wurden leider keine Beiträge zu diesem Thema gefunden!
+          </ng-container>
+          <ng-template #minLengthRequired>
+            Weitere Buchstaben benötigt!
+          </ng-template>
+        </mat-hint>
         <mat-autocomplete #auto="matAutocomplete">
           <mat-option *ngFor="let post of items" [value]="post.id" (onSelectionChange)="onItemClick(post.id)">
             <div [innerHTML]="post.title.rendered"></div>
