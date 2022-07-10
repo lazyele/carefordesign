@@ -10,12 +10,16 @@ import {IPost} from "../../dto/IPost";
 })
 export class PostListComponent implements OnInit {
   blogPosts: IPost[] = [];
-
+  searchInput = "";
   constructor(
-    private blogService: BlogService
+    private blogService: BlogService, private readonly activatedRoute: ActivatedRoute
   ) { }
 
   ngOnInit(){
+    //this.searchInput = this.activatedRoute.snapshot.queryParamMap.get("search")??"";
+    this.activatedRoute.queryParamMap.subscribe(params=>{
+      this.searchInput=params.get("search")??"";
+    })
     this.getPosts()
   }
   getPosts() {

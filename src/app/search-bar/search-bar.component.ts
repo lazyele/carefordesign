@@ -32,6 +32,11 @@ export class SearchBarComponent implements OnInit {
     if (this.filteredPosts.length === 1) {
       this.router.navigate(["posts", this.filteredPosts[0].id])
     } else {
+      this.router.navigate(["posts"],{
+        queryParams:{
+          search: this.searchInput.trim()
+        }
+      })
 
     }
   }
