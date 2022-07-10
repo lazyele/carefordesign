@@ -1,5 +1,12 @@
 <p>search-bar works!</p>
 {{filteredPosts.length}}
 <br>
-<input [(ngModel)]="searchInput" (keyup)="onKeyUp()">
 
+<div class="grid">
+  <div class="cell cell-shrink">
+    <input [(ngModel)]="searchInput" (keyup)="onKeyUp()">
+  </div>
+  <div class="cell" >
+    <button mat-raised-button color="primary" [disabled]="!searchInput?.trim()" (click)="onSubmit()">Suche</button>
+  </div>
+</div>
