@@ -24,9 +24,17 @@ export class SearchBarComponent implements OnInit {
     this.inputControl = this.fb.control('');
     this.filteredPosts$ = this.inputControl.valueChanges.pipe(
       startWith(''),
-      map((value: string) => this.blogFilterPipe.transform(this.posts, value))
-    )
+      map(this.filterInput()));
 
+  }
+
+  private filterInput() {
+    return (value: number | string) => {
+      if (typeof value === "number") {
+        return this.posts;
+      }
+      return this.blogFilterPipe.transform(this.posts, <string>value);
+    };
   }
 
   onItemClick(id: number) {
@@ -34,8 +42,8 @@ export class SearchBarComponent implements OnInit {
   }
 
   onNavigateToList() {
-    const value =this.inputControl.value?.trim();
-    this.router.navigate(["posts"], {queryParams: {search: value }});
+    const value = this.inputControl.value?.trim();
+    this.router.navigate(["posts"], {queryParams: {search: value}});
   }
 
 }
