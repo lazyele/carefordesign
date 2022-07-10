@@ -1,15 +1,15 @@
-<div class="grid" *ngIf="(items | async) as list;">
+<div class="grid" *ngIf="(filteredPosts$ | async) as items;">
   <div class="cell cell-shrink">
     <form class="example-form" >
       <mat-form-field >
         <mat-label>Suche</mat-label>
         <input type="text" matInput [formControl]="inputControl" [matAutocomplete]="auto">
-        <mat-hint *ngIf="inputControl.dirty && list.length ===0">
+        <mat-hint *ngIf="inputControl.dirty && items.length ===0">
           Es wurden leider keine Beiträge zu diesem Thema gefunden!
         </mat-hint>
         <mat-autocomplete #auto="matAutocomplete" >
-          <mat-option *ngFor="let option of list" [value]="option.id" >
-            <div [innerHTML]="option.title.rendered" ></div>
+          <mat-option *ngFor="let post of items" [value]="post.id" (onSelectionChange)="onItemClick(post.id)">
+            <div [innerHTML]="post.title.rendered" ></div>
           </mat-option>
         </mat-autocomplete>
       </mat-form-field>
@@ -17,9 +17,9 @@
   </div>
   <div class="cell">
     <button mat-raised-button color="primary"
-            [disabled]=" list.length===0"
-            (click)="onSubmit()">
-      <ng-container *ngIf="list.length === 1; else multiple">Resultat</ng-container>
+            [disabled]=" items.length===0"
+            (click)="onNavigateToList()">
+      <ng-container *ngIf="items.length === 1; else multiple">Resultat</ng-container>
       <ng-template #multiple>Resultate</ng-template>
       &nbsp;anzeigen
     </button>

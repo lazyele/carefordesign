@@ -3,7 +3,7 @@ import {IPost} from "../dto/IPost";
 import {BlogFilterPipe} from "../filter/blog-filter.pipe";
 import {Router} from "@angular/router";
 import {FormBuilder, FormControl} from "@angular/forms";
-import {map, Observable, startWith} from "rxjs";
+import {map, Observable, startWith, tap} from "rxjs";
 
 @Component({
   selector: 'app-search-bar',
@@ -12,11 +12,8 @@ import {map, Observable, startWith} from "rxjs";
 })
 export class SearchBarComponent implements OnInit {
   @Input() posts: IPost[] = [];
-  filteredPosts: IPost[] = [];
-  searchInput = ""
-  hasNoItems = false;
   inputControl!: FormControl;
-  items! : Observable<IPost[]>;
+  filteredPosts$!: Observable<IPost[]>;
 
   constructor(private readonly blogFilterPipe: BlogFilterPipe,
               private readonly router: Router,
@@ -24,32 +21,21 @@ export class SearchBarComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.filteredPosts = this.posts;
     this.inputControl = this.fb.control('');
-    this.items =  this.inputControl.valueChanges.pipe(
+    this.filteredPosts$ = this.inputControl.valueChanges.pipe(
       startWith(''),
-      map((value: string) => this.blogFilterPipe.transform(this.posts, value?.trim()))
+      map((value: string) => this.blogFilterPipe.transform(this.posts, value))
     )
 
   }
 
-  onKeyUp() {
-    this.filteredPosts = this.blogFilterPipe.transform(this.posts, this.searchInput);
-    this.hasNoItems = this.filteredPosts.length === 0;
-
+  onItemClick(id: number) {
+    this.router.navigate(["posts", id])
   }
 
-  onSubmit() {
-    if (this.filteredPosts.length === 1) {
-      this.router.navigate(["posts", this.filteredPosts[0].id])
-    } else {
-      this.router.navigate(["posts"], {
-        queryParams: {
-          search: this.searchInput.trim()
-        }
-      })
-
-    }
+  onNavigateToList() {
+    const value =this.inputControl.value?.trim();
+    this.router.navigate(["posts"], {queryParams: {search: value }});
   }
 
 }
