@@ -1,11 +1,12 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
 })
 export class StylesheetService {
 
-  constructor() { }
+  constructor() {
+  }
 
   /**
    * Set the stylesheet with the specified key.

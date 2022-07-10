@@ -20,6 +20,14 @@ import {AboutUsComponent} from './pages/about-us/about-us.component';
 import {PageNotFoundComponent} from './pages/page-not-found/page-not-found.component';
 import {RouterModule} from "@angular/router";
 import {FooterComponent} from './footer/footer.component';
+import {BlogFilterPipe} from './filter/blog-filter.pipe';
+import {SearchBarComponent} from './search-bar/search-bar.component';
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {MatAutocompleteModule} from "@angular/material/autocomplete";
+import {MatListModule} from "@angular/material/list";
+import {MatInputModule} from "@angular/material/input";
+import {MatCardModule} from "@angular/material/card";
 
 @NgModule({
   declarations: [
@@ -32,6 +40,8 @@ import {FooterComponent} from './footer/footer.component';
     AboutUsComponent,
     PageNotFoundComponent,
     FooterComponent,
+    BlogFilterPipe,
+    SearchBarComponent,
   ],
   imports: [
     BrowserModule,
@@ -44,10 +54,18 @@ import {FooterComponent} from './footer/footer.component';
     MatIconModule,
     MatRadioModule,
     MatMenuModule,
-    RouterModule
+    RouterModule,
+    FormsModule,
+    MatFormFieldModule,
+    ReactiveFormsModule,
+    MatAutocompleteModule,
+    MatListModule,
+    MatInputModule,
+    MatCardModule
 
   ],
-  providers: [HttpClient],
+  providers: [HttpClient, BlogFilterPipe],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

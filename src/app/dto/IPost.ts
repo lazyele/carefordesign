@@ -1,40 +1,40 @@
 export interface IPost {
-  id:             number;
-  date:           Date;
-  date_gmt:       Date;
-  guid:           RenderdText;
-  modified:       Date;
-  modified_gmt:   Date;
-  slug:           string;
-  status:         string;
-  type:           string;
-  link:           string;
-  title:          RenderdText;
-  content:        Content;
-  excerpt:        Content;
-  author:         number;
+  id: number;
+  date: Date;
+  date_gmt: Date;
+  guid: RenderdText;
+  modified: Date;
+  modified_gmt: Date;
+  slug: string;
+  status: string;
+  type: string;
+  link: string;
+  title: RenderdText;
+  content: Content;
+  excerpt: Content;
+  author: number;
   featured_media: number;
   comment_status: string;
-  ping_status:    string;
-  sticky:         boolean;
-  template:       string;
-  format:         string;
-  meta:           any[];
-  categories:     number[];
-  tags:           any[];
-  _links:         Links;
+  ping_status: string;
+  sticky: boolean;
+  template: string;
+  format: string;
+  meta: any[];
+  categories: number[];
+  tags: any[];
+  _links: Links;
 }
 
 export interface Links {
-  self:              About[];
-  collection:        About[];
-  about:             About[];
-  author:            Author[];
-  replies:           Author[];
+  self: About[];
+  collection: About[];
+  about: About[];
+  author: Author[];
+  replies: Author[];
   "version-history": VersionHistory[];
-  "wp:attachment":   About[];
-  "wp:term":         WpTerm[];
-  curies:            Cury[];
+  "wp:attachment": About[];
+  "wp:term": WpTerm[];
+  curies: Cury[];
 }
 
 export interface About {
@@ -43,28 +43,28 @@ export interface About {
 
 export interface Author {
   embeddable: boolean;
-  href:       string;
+  href: string;
 }
 
 export interface Cury {
-  name:      string;
-  href:      string;
+  name: string;
+  href: string;
   templated: boolean;
 }
 
 export interface VersionHistory {
   count: number;
-  href:  string;
+  href: string;
 }
 
 export interface WpTerm {
-  taxonomy:   string;
+  taxonomy: string;
   embeddable: boolean;
-  href:       string;
+  href: string;
 }
 
 export interface Content {
-  rendered:  string;
+  rendered: string;
   protected: boolean;
 }
 
