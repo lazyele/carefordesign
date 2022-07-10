@@ -22,7 +22,12 @@ import {RouterModule} from "@angular/router";
 import {FooterComponent} from './footer/footer.component';
 import { BlogFilterPipe } from './filter/blog-filter.pipe';
 import { SearchBarComponent } from './search-bar/search-bar.component';
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {MatAutocompleteModule} from "@angular/material/autocomplete";
+import {MatListModule} from "@angular/material/list";
+import {MatInputModule} from "@angular/material/input";
+import {MatCardModule} from "@angular/material/card";
 
 @NgModule({
   declarations: [
@@ -38,21 +43,27 @@ import {FormsModule} from "@angular/forms";
     BlogFilterPipe,
     SearchBarComponent,
   ],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        HttpClientModule,
-        BrowserAnimationsModule,
-        MatButtonModule,
-        CommonModule,
-        MatToolbarModule,
-        MatIconModule,
-        MatRadioModule,
-        MatMenuModule,
-        RouterModule,
-        FormsModule
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatButtonModule,
+    CommonModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatRadioModule,
+    MatMenuModule,
+    RouterModule,
+    FormsModule,
+    MatFormFieldModule,
+    ReactiveFormsModule,
+    MatAutocompleteModule,
+    MatListModule,
+    MatInputModule,
+    MatCardModule
 
-    ],
+  ],
   providers: [HttpClient, BlogFilterPipe],
   bootstrap: [AppComponent]
 })

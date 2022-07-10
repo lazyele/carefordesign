@@ -1,17 +1,29 @@
-<div class="grid">
+<div class="grid" *ngIf="(items | async) as list;">
   <div class="cell cell-shrink">
-    <input [(ngModel)]="searchInput" (keyup)="onKeyUp()">
+    <form class="example-form" >
+      <mat-form-field >
+        <mat-label>Suche</mat-label>
+        <input type="text" matInput [formControl]="inputControl" [matAutocomplete]="auto">
+        <mat-hint *ngIf="inputControl.dirty && list.length ===0">
+          Es wurden leider keine Beiträge zu diesem Thema gefunden!
+        </mat-hint>
+        <mat-autocomplete #auto="matAutocomplete" >
+          <mat-option *ngFor="let option of list" [value]="option.id" >
+            <div [innerHTML]="option.title.rendered" ></div>
+          </mat-option>
+        </mat-autocomplete>
+      </mat-form-field>
+    </form>
   </div>
-  <div class="cell" >
-    <button mat-raised-button color="primary" [disabled]="filteredPosts.length===0" (click)="onSubmit()"> Resultat anzeigen
-      <span *ngIf="filteredPosts.length>0">
-         ({{filteredPosts.length}})
-      </span>
-
+  <div class="cell">
+    <button mat-raised-button color="primary"
+            [disabled]=" list.length===0"
+            (click)="onSubmit()">
+      <ng-container *ngIf="list.length === 1; else multiple">Resultat</ng-container>
+      <ng-template #multiple>Resultate</ng-template>
+      &nbsp;anzeigen
     </button>
   </div>
 </div>
 
-<div *ngIf="hasNoItems">
-  Es wurden leider keine Beiträge zu diesem Thema gefunden!
-</div>
+
