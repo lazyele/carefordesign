@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {FooterItems, MailItems} from "../../environments/footer-items";
+import {FooterItems} from "../../environments/footer-items";
+import {environment} from "../../environments/environment";
 
 @Component({
   selector: 'app-footer',
@@ -8,7 +9,7 @@ import {FooterItems, MailItems} from "../../environments/footer-items";
 })
 export class FooterComponent implements OnInit {
   footerItems = FooterItems;
-  mailItems = MailItems;
+  mail = environment.mail;
 
   constructor() {
   }

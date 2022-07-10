@@ -1,12 +1,12 @@
 <div class="footer">
-  <mat-toolbar aria-label="Main Footer" color="secondary" role="toolbar">
+  <mat-toolbar aria-label="Footer" color="secondary" role="toolbar">
 
-    <a *ngFor="let mailItem of mailItems" [attr.aria-label]="mailItem.ariaLabel" aria-disabled="false"
-       class="mat-focus-indicator docs-button mat-button mat-button-base" mat-button="" routerLink="">
+    <a aria-disabled="false" aria-label="Mail"
+       class="mat-focus-indicator docs-button mat-button mat-button-base" mat-button>
 
       <span class="mat-button-wrapper">
          <mat-icon>mail</mat-icon>
-      <a href="mailto:{{mailItem.mail}}">{{mailItem.mail}}</a>
+      <a href="mailto:{{mail}}">{{mail}}</a>
       </span>
       <span class="mat-ripple mat-button-ripple"></span>
       <span class="mat-button-focus-overlay"></span>
@@ -24,7 +24,7 @@
       <span class="mat-button-focus-overlay"></span>
     </a>
   </mat-toolbar>
-  <mat-toolbar aria-label="Footer Copyright" class="copyright" color="primary" role="toolbar">
+  <mat-toolbar aria-label="Copyright" class="copyright" color="primary" role="toolbar">
     <a class="mat-button copyright">
       <span>© 2022 Care for Design</span>
     </a>
