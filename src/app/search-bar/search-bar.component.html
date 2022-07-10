@@ -1,12 +1,17 @@
-<p>search-bar works!</p>
-{{filteredPosts.length}}
-<br>
-
 <div class="grid">
   <div class="cell cell-shrink">
     <input [(ngModel)]="searchInput" (keyup)="onKeyUp()">
   </div>
   <div class="cell" >
-    <button mat-raised-button color="primary" [disabled]="!searchInput?.trim()" (click)="onSubmit()">Suche</button>
+    <button mat-raised-button color="primary" [disabled]="filteredPosts.length===0" (click)="onSubmit()"> Resultat anzeigen
+      <span *ngIf="filteredPosts.length>0">
+         ({{filteredPosts.length}})
+      </span>
+
+    </button>
   </div>
+</div>
+
+<div *ngIf="hasNoItems">
+  Es wurden leider keine Beiträge zu diesem Thema gefunden!
 </div>
