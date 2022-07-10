@@ -1,6 +1,7 @@
 import {ThemeType} from "./themes";
 
 export const environment = {
+  mail: "info@carefordesign.ch",
   production: true,
   themes:
     [

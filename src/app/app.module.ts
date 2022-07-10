@@ -19,6 +19,7 @@ import {HomeComponent} from './pages/home/home.component';
 import {AboutUsComponent} from './pages/about-us/about-us.component';
 import {PageNotFoundComponent} from './pages/page-not-found/page-not-found.component';
 import {RouterModule} from "@angular/router";
+import {FooterComponent} from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import {RouterModule} from "@angular/router";
     HomeComponent,
     AboutUsComponent,
     PageNotFoundComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
