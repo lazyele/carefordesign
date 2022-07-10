@@ -53,7 +53,7 @@ import {FormsModule} from "@angular/forms";
         FormsModule
 
     ],
-  providers: [HttpClient],
+  providers: [HttpClient, BlogFilterPipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
