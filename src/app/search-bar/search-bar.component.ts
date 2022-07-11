@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {IPost} from "../dto/IPost";
-import {BlogFilterPipe} from "../filter/blog-filter.pipe";
+import {ContentFilterPipe} from "../filters/content-filter.pipe";
 import {Router} from "@angular/router";
 import {FormBuilder, FormControl} from "@angular/forms";
 import {map, Observable, startWith} from "rxjs";
@@ -15,7 +15,7 @@ export class SearchBarComponent implements OnInit {
   inputControl!: FormControl;
   filteredPosts$!: Observable<IPost[]>;
 
-  constructor(private readonly blogFilterPipe: BlogFilterPipe,
+  constructor(private readonly blogFilterPipe: ContentFilterPipe,
               private readonly router: Router,
               private readonly fb: FormBuilder) {
   }

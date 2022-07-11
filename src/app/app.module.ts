@@ -20,7 +20,7 @@ import {AboutUsComponent} from './pages/about-us/about-us.component';
 import {PageNotFoundComponent} from './pages/page-not-found/page-not-found.component';
 import {RouterModule} from "@angular/router";
 import {FooterComponent} from './footer/footer.component';
-import {BlogFilterPipe} from './filter/blog-filter.pipe';
+import {ContentFilterPipe} from './filters/content-filter.pipe';
 import {SearchBarComponent} from './search-bar/search-bar.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {MatFormFieldModule} from "@angular/material/form-field";
@@ -42,7 +42,7 @@ import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
     AboutUsComponent,
     PageNotFoundComponent,
     FooterComponent,
-    BlogFilterPipe,
+    ContentFilterPipe,
     SearchBarComponent,
   ],
   imports: [
@@ -68,7 +68,7 @@ import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
     MatProgressSpinnerModule
 
   ],
-  providers: [HttpClient, BlogFilterPipe],
+  providers: [HttpClient, ContentFilterPipe],
   bootstrap: [AppComponent]
 })
 export class AppModule {
