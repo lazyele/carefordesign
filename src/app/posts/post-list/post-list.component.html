@@ -10,7 +10,9 @@
     </div>
 
     <div class="grid grid-gap sm12-down md6-only md4-up">
-      <div class="cell" *ngFor="let post of blogPosts | contentFilter: searchInput">
+      <div class="cell" *ngFor="let post of blogPosts |
+       tagFilter: []|
+       contentFilter: searchInput ">
         <mat-card class="post-card">
           <section class="post">
             <mat-card-header class="post-header">
