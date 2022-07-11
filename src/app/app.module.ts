@@ -28,6 +28,7 @@ import {MatAutocompleteModule} from "@angular/material/autocomplete";
 import {MatListModule} from "@angular/material/list";
 import {MatInputModule} from "@angular/material/input";
 import {MatCardModule} from "@angular/material/card";
+import {MatChipsModule} from "@angular/material/chips";
 
 @NgModule({
   declarations: [
@@ -61,7 +62,8 @@ import {MatCardModule} from "@angular/material/card";
     MatAutocompleteModule,
     MatListModule,
     MatInputModule,
-    MatCardModule
+    MatCardModule,
+    MatChipsModule
 
   ],
   providers: [HttpClient, BlogFilterPipe],

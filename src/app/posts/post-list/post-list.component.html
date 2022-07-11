@@ -1,23 +1,47 @@
-<div class="posts">
-  <h1 class="content-subhead">Blog Posts</h1>
+<div class="wrapper">
+  <div class="grid posts">
 
-  <section class="post" *ngFor="let post of blogPosts | blogFilter: searchInput">
-    <header class="post-header">
-      <h2 class="post-title" [innerHTML]="post.title.rendered">
-      </h2>
-      <p class="meta-data">
-        Autorin: <a href="#" target="_blank" class="post-author">unknown</a>
-        veröffentlicht am: <a href="#">{{post.date | date: 'dd.MM.yyyy'}}</a>
-      </p>
-    </header>
-
-    <div class="post-description">
-      <p [innerHTML]="post.excerpt.rendered | slice: 0:400">
-      </p>
-      <a class="button" [routerLink]="['/posts', post.id]">
-        mehr lesen
-      </a>
+    <div class="cell xs12-up">
+      <h1 class="content-subhead">Beiträge</h1>
     </div>
-  </section>
 
+    <div class="cell xs12-up">
+      <app-search-bar></app-search-bar>
+    </div>
+
+    <div class="grid grid-gap  sm12-down md6-only md4-up">
+      <div class="cell" *ngFor="let post of blogPosts | blogFilter: searchInput">
+        <mat-card class="post-card">
+          <section class="post">
+            <mat-card-header class="post-header">
+              <mat-card-title class="post-title" [innerHTML]="post.title.rendered">
+              </mat-card-title>
+              <mat-card-subtitle>
+                <div mat-card-avatar class="example-header-image"></div>
+                <p class="meta-data">
+                  AutorIn: <a href="#" target="_blank" class="post-author">unknown</a> <br>
+                  veröffentlicht am: <a href="#">{{post.date | date: 'dd.MM.yyyy'}}</a>
+                </p>
+              </mat-card-subtitle>
+            </mat-card-header>
+
+            <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg"
+                 alt="Photo of a Shiba Inu">
+
+            <mat-card-content class="post-description"
+                              [innerHTML]="post.excerpt.rendered | slice: 0:400">
+            </mat-card-content>
+
+            <mat-card-actions>
+              <button class="mat-flat-button mat-primary" [routerLink]="['/posts', post.id]">
+                Beitrag lesen
+              </button>
+            </mat-card-actions>
+          </section>
+        </mat-card>
+      </div>
+    </div>
+  </div>
 </div>
+
+
