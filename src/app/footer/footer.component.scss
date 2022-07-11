@@ -10,6 +10,15 @@
   width: 100%;
 }
 
+.main-footer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  height: auto;
+  min-height: utilities.rem(5);
+  justify-content: flex-end;
+}
+
 .copyright {
   height: utilities.rem(2);
   margin: 0 auto;
