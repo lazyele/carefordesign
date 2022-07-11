@@ -9,20 +9,39 @@
   background: #ffd740;
 }
 
-.desktop-menu {
-  display: none;
+.accessibility-icon {
+  vertical-align: middle;
+  padding: 0 5px 4px 0;
 }
 
-.burger-menu {
+.mat-icon-button {
+  margin-left: utilities.rem(1);
+}
+
+.accessibility-button span {
   display: inline-block;
 }
 
-@media (min-width: 600px) {
+.desktop-menu {
+  display: inline-block;
+}
+
+.burger-menu {
+  display: none;
+}
+
+@media (max-width: 599px) {
   .burger-menu {
-    display: none;
+    display: inline-block;
   }
   .desktop-menu {
-    display: inline-block;
+    display: none;
+  }
+  .accessibility-button span {
+    display: none;
+  }
+  .accessibility-icon {
+    padding: 0;
   }
 }
 
