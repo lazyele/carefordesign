@@ -15,6 +15,7 @@ export class PostListComponent implements OnInit, OnDestroy {
   images = new Map<number, IMedia>()
   searchInput = "";
   searchInputSubscription!: Subscription;
+  isImageLoading = false;
 
   constructor(
     private blogService: BlogService, private readonly activatedRoute: ActivatedRoute
@@ -35,7 +36,9 @@ export class PostListComponent implements OnInit, OnDestroy {
         {
           next: data => {
             this.blogPosts = data
+            this.isImageLoading = true;
             this.loadImages(this.blogPosts);
+            this.isImageLoading = false;
           },
           error: error => console.log(error)
         });
@@ -46,7 +49,6 @@ export class PostListComponent implements OnInit, OnDestroy {
     posts.filter(p => !this.images.has(p.featured_media))
       .forEach(p => this.blogService.getImage(p.featured_media)
         .subscribe(p => {
-          console.log(p)
           if (this.images.has(p.id)) {
             return;
           }
