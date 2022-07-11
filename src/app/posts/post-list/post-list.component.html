@@ -9,7 +9,7 @@
       <app-search-bar></app-search-bar>
     </div>
 
-    <div class="grid grid-gap  sm12-down md6-only md4-up">
+    <div class="grid grid-gap sm12-down md6-only md4-up">
       <div class="cell" *ngFor="let post of blogPosts | blogFilter: searchInput">
         <mat-card class="post-card">
           <section class="post">
@@ -17,11 +17,11 @@
               <mat-card-title class="post-title" [innerHTML]="post.title.rendered">
               </mat-card-title>
               <mat-card-subtitle>
-                <div mat-card-avatar class="example-header-image"></div>
                 <p class="meta-data">
                   AutorIn: <a href="#" target="_blank" class="post-author">unknown</a> <br>
                   veröffentlicht am: <a href="#">{{post.date | date: 'dd.MM.yyyy'}}</a>
                 </p>
+
               </mat-card-subtitle>
             </mat-card-header>
 

@@ -1,0 +1,5 @@
+@use './src/utilities';
+
+.post-card {
+  padding: utilities.rem(3) utilities.rem(2) utilities.rem(2) utilities.rem(2);
+}
