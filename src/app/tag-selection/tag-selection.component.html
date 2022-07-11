@@ -1,3 +1,4 @@
 <button *ngFor="let tag of tags"
-
+        (click)="toggleTag(tag)"
+        [class.selected]="isSelected(tag)"
         mat-flat-button> {{tag.name}}</button>
