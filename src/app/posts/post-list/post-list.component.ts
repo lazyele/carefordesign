@@ -2,8 +2,9 @@ import {Component, OnDestroy, OnInit} from '@angular/core';
 import {BlogService} from "../../services/blog.service";
 import {ActivatedRoute} from "@angular/router";
 import {IPost} from "../../dto/IPost";
-import {Subscription, tap} from "rxjs";
+import {forkJoin, Subscription, tap} from "rxjs";
 import {IMedia} from "../../dto/IMedia";
+import {ITag} from "../../dto/ITag";
 
 @Component({
   selector: 'app-post-list',
@@ -12,6 +13,7 @@ import {IMedia} from "../../dto/IMedia";
 })
 export class PostListComponent implements OnInit, OnDestroy {
   blogPosts: IPost[] = [];
+  tags: ITag[] = [];
   images = new Map<number, IMedia>()
   searchInput = "";
   searchInputSubscription!: Subscription;
@@ -27,15 +29,17 @@ export class PostListComponent implements OnInit, OnDestroy {
     this.searchInputSubscription = this.activatedRoute.queryParamMap.subscribe(params => {
       this.searchInput = params.get("search") ?? "";
     })
-    this.getPosts()
+    this.loadData()
   }
 
-  getPosts() {
-    this.blogService.getPosts()
+  loadData() {
+
+    forkJoin(this.blogService.getPosts(), this.blogService.getTags())
       .subscribe(
         {
-          next: data => {
-            this.blogPosts = data
+          next: (data: [IPost[], ITag[]]) => {
+            this.blogPosts = data[0];
+            this.tags = data[1];
             this.isImageLoading = true;
             this.loadImages(this.blogPosts);
             this.isImageLoading = false;
