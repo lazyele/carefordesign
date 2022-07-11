@@ -14,9 +14,9 @@ import {ITag} from "../../dto/ITag";
 export class PostListComponent implements OnInit, OnDestroy {
   blogPosts: IPost[] = [];
   tags: ITag[] = [];
-  private selectedTags: ITag[] = [];
+  selectedTags: ITag[] = [];
 
-  get selectedTagsIds() {
+  getSelectedTagsIds(): number[] {
     return this.selectedTags.map(t => t.id);
   }
 

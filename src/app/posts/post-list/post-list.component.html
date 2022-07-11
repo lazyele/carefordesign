@@ -1,4 +1,4 @@
-{{selectedTagsIds|json  }}
+{{getSelectedTagsIds()|json  }}
 <div class="wrapper">
   <div class="grid posts">
 
@@ -15,7 +15,7 @@
 
     <div class="grid grid-gap sm12-down md6-only md4-up">
       <div class="cell" *ngFor="let post of blogPosts |
-       tagFilter: selectedTagsIds |
+       tagFilter: selectedTags |
        contentFilter: searchInput ">
         <mat-card class="post-card">
           <section class="post">
