@@ -31,7 +31,9 @@
 
 
             <ng-template #spinner>
-              <mat-spinner></mat-spinner>
+              <ng-container *ngIf="isImageLoading">
+                <mat-spinner></mat-spinner>
+              </ng-container>
             </ng-template>
 
             <mat-card-content class="post-description"
