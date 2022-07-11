@@ -14,6 +14,12 @@ import {ITag} from "../../dto/ITag";
 export class PostListComponent implements OnInit, OnDestroy {
   blogPosts: IPost[] = [];
   tags: ITag[] = [];
+  private selectedTags: ITag[] = [];
+
+  get selectedTagsIds() {
+    return this.selectedTags.map(t => t.id);
+  }
+
   images = new Map<number, IMedia>()
   searchInput = "";
   searchInputSubscription!: Subscription;
@@ -67,5 +73,9 @@ export class PostListComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     this.searchInputSubscription.unsubscribe();
+  }
+
+  onSelectedTagsIdsChanged(tags: ITag[]) {
+    this.selectedTags = tags;
   }
 }

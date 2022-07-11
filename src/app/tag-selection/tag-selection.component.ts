@@ -8,26 +8,23 @@ import {ITag} from "../dto/ITag";
 })
 export class TagSelectionComponent {
   @Input() tags: ITag[] = [];
-  @Output() onSelectedTagIdsChanged = new EventEmitter<number[]>();
-  private selectedTags = new Set<number>();
+  @Output() onSelectedTagIdsChanged = new EventEmitter<ITag[]>();
+  private selectedTags = new Map<number, ITag>();
 
   constructor() {
   }
 
-  isSelected(tag: ITag) {
+  isSelected(tag: ITag): boolean {
     return this.selectedTags.has(tag.id);
   }
 
   toggleTag(tag: ITag) {
     if (this.isSelected(tag)) {
-      this.selectedTags = new Set<number>([...this.selectedTags]
-        .filter(t => t !== tag.id)
-      );
+      this.selectedTags.delete(tag.id);
     } else {
-      this.selectedTags.add(tag.id);
+      this.selectedTags.set(tag.id, tag);
     }
-    this.onSelectedTagIdsChanged.emit([...this.selectedTags])
-
+    this.onSelectedTagIdsChanged.emit([...this.selectedTags.values()]);
   }
 
 

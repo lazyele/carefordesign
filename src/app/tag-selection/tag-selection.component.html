@@ -1,4 +1,6 @@
 <button *ngFor="let tag of tags"
         (click)="toggleTag(tag)"
         [class.selected]="isSelected(tag)"
-        mat-flat-button> {{tag.name}}</button>
+        mat-flat-button> {{tag.name}}
+  <div style="color: red" *ngIf="isSelected(tag)">selected</div>
+</button>
