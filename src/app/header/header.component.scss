@@ -7,6 +7,22 @@
 .accessibility-button {
   //Todo: Change Colors to Theme Colors
   background: #ffd740;
-  color: black;
-  margin-left: utilities.rem(2);
 }
+
+.desktop-menu {
+  display: none;
+}
+
+.burger-menu {
+  display: inline-block;
+}
+
+@media (min-width: 600px) {
+  .burger-menu {
+    display: none;
+  }
+  .desktop-menu {
+    display: inline-block;
+  }
+}
+
