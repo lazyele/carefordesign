@@ -31,6 +31,7 @@ import {MatCardModule} from "@angular/material/card";
 import {MatChipsModule} from "@angular/material/chips";
 import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
 import {TagFilterPipe} from './filters/tag-filter.pipe';
+import {TagSelectionComponent} from './tag-selection/tag-selection.component';
 
 @NgModule({
   declarations: [
@@ -46,6 +47,7 @@ import {TagFilterPipe} from './filters/tag-filter.pipe';
     ContentFilterPipe,
     SearchBarComponent,
     TagFilterPipe,
+    TagSelectionComponent,
   ],
   imports: [
     BrowserModule,
