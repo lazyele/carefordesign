@@ -1,5 +1,10 @@
 @use './src/utilities';
 
+.wrapper {
+  margin-top: utilities.rem(10);
+  margin-bottom: utilities.rem(10)
+}
+
 .post-card {
   padding: utilities.rem(3) utilities.rem(2) utilities.rem(2) utilities.rem(2);
 }
