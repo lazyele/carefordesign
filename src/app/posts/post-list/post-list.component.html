@@ -25,8 +25,14 @@
               </mat-card-subtitle>
             </mat-card-header>
 
-            <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg"
-                 alt="Photo of a Shiba Inu">
+            <img *ngIf="images.has(post.featured_media); else spinner "
+                 mat-card-image [src]="images?.get(post.featured_media)?.media_details?.sizes?.medium?.source_url ?? ''"
+                 [alt]="images?.get(post.featured_media)?.alt_text ?? ''">
+
+
+            <ng-template #spinner>
+              <mat-spinner></mat-spinner>
+            </ng-template>
 
             <mat-card-content class="post-description"
                               [innerHTML]="post.excerpt.rendered | slice: 0:400">
