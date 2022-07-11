@@ -1,37 +1,40 @@
 <mat-toolbar aria-label="Header" color="primary" role="toolbar">
-
-  <a aria-disabled="false" aria-label="Care for Design"
-     class="mat-focus-indicator docs-button mat-button mat-button-base" mat-button="" routerLink="/home">
+  <div class="grid no-bottom-gap">
+    <div class="cell">
+      <a aria-disabled="false" aria-label="Care for Design"
+         class="mat-focus-indicator docs-button mat-button mat-button-base" mat-button="" routerLink="/home">
     <span class="mat-button-wrapper">
       <span>Care for Design</span></span>
-    <span class="mat-ripple mat-button-ripple"></span>
-    <span class="mat-button-focus-overlay"></span>
-  </a>
-  <span class="horizontal-spacer"></span>
-  <mat-menu #beforeMenu="matMenu" xPosition="before">
-    <app-theme-switcher>
-    </app-theme-switcher>
-  </mat-menu>
-
-
-  <a *ngFor="let navbarItem of navbarItems" [attr.aria-label]="navbarItem.ariaLabel" aria-disabled="false"
-     class="mat-focus-indicator docs-button mat-button mat-button-base"
-     mat-button="" routerLink="/{{navbarItem.routerLink}}">
+        <span class="mat-ripple mat-button-ripple"></span>
+        <span class="mat-button-focus-overlay"></span>
+      </a>
+    </div>
+    <div class="cell cell-shrink">
+      <a *ngFor="let navbarItem of navbarItems" [attr.aria-label]="navbarItem.ariaLabel" aria-disabled="false"
+         class="mat-focus-indicator docs-button mat-button mat-button-base"
+         mat-button="" routerLink="/{{navbarItem.routerLink}}">
     <span class="mat-button-wrapper">
       <span>{{navbarItem.label}}</span>
     </span>
-    <span class="mat-ripple mat-button-ripple"></span>
-    <span class="mat-button-focus-overlay"></span>
-  </a>
+        <span class="mat-ripple mat-button-ripple"></span>
+        <span class="mat-button-focus-overlay"></span>
+      </a>
 
-  <button [matMenuTriggerFor]="beforeMenu" aria-label="Select a theme"
-          class="accessibility-button mat-focus-indicator mat-menu-trigger mat-tooltip-trigger mat-icon-button mat-button-base"
-          mat-icon-button>
-    <mat-icon aria-hidden="false" class="material-symbols-rounded mat-icon notranslate material-icons mat-icon-no-color"
-              data-mat-icon-type="font" role="img">
-      accessibility_new
-    </mat-icon>
-  </button>
-
+      <button [matMenuTriggerFor]="beforeMenu" aria-label="Select a theme"
+              class="accessibility-button mat-focus-indicator mat-menu-trigger mat-tooltip-trigger mat-flat-button"
+              mat-icon-button>
+        <mat-icon aria-hidden="false"
+                  class="material-symbols-rounded mat-icon notranslate material-icons mat-icon-no-color"
+                  data-mat-icon-type="font" role="img">
+          accessibility_new
+        </mat-icon>
+        Barrierefreiheit
+      </button>
+      <mat-menu #beforeMenu="matMenu" xPosition="before">
+        <app-theme-switcher>
+        </app-theme-switcher>
+      </mat-menu>
+    </div>
+  </div>
 </mat-toolbar>
 
