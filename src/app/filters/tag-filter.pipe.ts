@@ -7,8 +7,6 @@ import {IPost} from "../dto/IPost";
 export class TagFilterPipe implements PipeTransform {
 
   transform(posts: IPost[], searchTagIds: number[]): IPost[] {
-    console.log(searchTagIds)
-
     if (posts.length === 0 || searchTagIds?.length === 0) {
       return posts;
     }
