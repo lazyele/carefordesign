@@ -22,9 +22,9 @@ export class BlogComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.getQueryParameter();
     this.tags$ = this.blogService.getTags();
     this.posts$ = this.blogService.getPosts();
-    this.getQueryParameter();
   }
 
   ngOnDestroy(): void {

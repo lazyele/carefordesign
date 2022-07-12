@@ -11,8 +11,6 @@ import {IMedia} from "../../dto/IMedia";
 })
 export class PostListComponent implements OnInit {
   @Input() posts: IPost[] = [];
-  @Input() searchInput = "";
-  @Input() searTagIds: number[] = [];
   images = new Map<number, IMedia>()
   isImageLoading = false;
 
