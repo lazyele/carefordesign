@@ -1,0 +1,21 @@
+<div class="wrapper">
+  <div class="grid xs12-up posts">
+    <div class="cell ">
+      <h1 class="mat-display-3">Beiträge</h1>
+    </div>
+    <div class="cell ">
+      <app-search-bar
+        *ngIf="posts$ | async; let posts"
+        [posts]="posts"
+      ></app-search-bar>
+    </div>
+    <div class="cell ">
+      <app-tag-selection *ngIf="tags$ | async;let tags" [tags]="tags"
+      ></app-tag-selection>
+    </div>
+    <div class="cell">
+      <app-post-list></app-post-list>
+    </div>
+
+  </div>
+</div>
