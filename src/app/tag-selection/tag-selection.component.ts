@@ -24,12 +24,13 @@ export class TagSelectionComponent {
     } else {
       this.selectedTags.set(tag.id, tag);
     }
-    const tags = [...this.selectedTags.values()];
+    const tags = [...this.selectedTags.values()]
+      .map(t => t.id).join(';')
 
     this.router.navigate([],
       {
         relativeTo: this.route,
-        queryParams: {tags: tags.map(t => t.id).join(';')}
+        queryParams: {tags: tags}
       });
   }
 
