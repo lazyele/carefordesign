@@ -56,7 +56,10 @@ export class PostListComponent implements OnInit, OnDestroy {
   }
 
   private loadImages(posts: IPost[]) {
-    posts.filter(p => !this.images.has(p.featured_media))
+    posts
+      // todo on call
+      .filter(p => p.featured_media !== 0)
+      .filter(p => !this.images.has(p.featured_media))
       .forEach(p => this.blogService.getImage(p.featured_media)
         .subscribe(p => {
           if (this.images.has(p.id)) {
