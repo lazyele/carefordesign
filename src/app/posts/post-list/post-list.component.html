@@ -15,14 +15,14 @@
       <app-tag-selection [tags]="tags"
                          (onSelectedTagIdsChanged)="onSelectedTagsIdsChanged($event)"
       ></app-tag-selection>
-      <app-search-bar></app-search-bar>
     </div>
+
 
     <div class="grid grid-gap sm12-down md6-only md4-up">
       <div class="cell" *ngFor="let post of blogPosts |
        tagFilter: selectedTags |
        contentFilter: searchInput ">
-        <mat-card class="post-card">
+        <mat-card>
           <section class="post">
             <mat-card-header class="post-header">
               <mat-card-title class="post-title" [innerHTML]="post.title.rendered">

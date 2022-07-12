@@ -1,5 +1,8 @@
-<button *ngFor="let tag of tags"
-        (click)="toggleTag(tag)"
-        [class.selected]="isSelected(tag)"
-        mat-flat-button> {{tag.name}}
-</button>
+<mat-chip-list aria-label="Select Tag to filter">
+  <mat-chip color="primary"
+            *ngFor="let tag of tags"
+            (click)="toggleTag(tag)"
+            [class.selected]="isSelected(tag)"
+            mat-flat-button
+  >{{tag.name}}</mat-chip>
+</mat-chip-list>
