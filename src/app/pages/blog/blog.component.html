@@ -18,7 +18,10 @@
         ></app-tag-selection>
       </div>
       <div class="cell">
-        <app-post-list [posts]="posts"></app-post-list>
+        <app-post-list [posts]="posts"
+                       [searchInput]="searchInput"
+                       [searTagIds]="searTagIds"
+        ></app-post-list>
       </div>
     </ng-container>
     <ng-template #spinner>

@@ -1,8 +1,7 @@
-import {Component, Input, OnDestroy, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {BlogService} from "../../services/blog.service";
-import {ActivatedRoute} from "@angular/router";
 import {IPost} from "../../dto/IPost";
-import {Subscription, tap} from "rxjs";
+import {tap} from "rxjs";
 import {IMedia} from "../../dto/IMedia";
 
 @Component({
@@ -10,33 +9,23 @@ import {IMedia} from "../../dto/IMedia";
   templateUrl: './post-list.component.html',
   styleUrls: ['./post-list.component.scss']
 })
-export class PostListComponent implements OnInit, OnDestroy {
+export class PostListComponent implements OnInit {
   @Input() posts: IPost[] = [];
+  @Input() searchInput = "";
+  @Input() searTagIds: number[] = [];
   images = new Map<number, IMedia>()
-  searchInput = "";
-  searTagIds: number[] = [];
-  searchInputSubscription!: Subscription;
   isImageLoading = false;
 
   constructor(
-    private blogService: BlogService, private readonly activatedRoute: ActivatedRoute
+    private blogService: BlogService
   ) {
   }
 
   ngOnInit() {
-    this.getQueryParameter();
     this.loadImages(this.posts);
   }
 
 
-  private getQueryParameter() {
-    this.searchInputSubscription = this.activatedRoute.queryParamMap.subscribe(params => {
-      this.searchInput = params.get("search") ?? "";
-      this.searTagIds = (params.get("tags") ?? "").split(';')
-        .filter(str => str)
-        .map(str => parseInt(str));
-    })
-  }
 
   private loadImages(posts: IPost[]) {
     posts
@@ -57,8 +46,5 @@ export class PostListComponent implements OnInit, OnDestroy {
     return this.blogService.getImage(id).pipe(tap(i => console.log(i)))
   }
 
-  ngOnDestroy(): void {
-    this.searchInputSubscription.unsubscribe();
-  }
 
 }
