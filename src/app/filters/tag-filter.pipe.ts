@@ -11,18 +11,18 @@ export class TagFilterPipe implements PipeTransform {
 
     const searchTagIds = searchTags?.map(t => t.id) ?? [];
     if (posts.length === 0 || searchTagIds?.length === 0) {
-      console.log(posts, searchTagIds)
       return posts;
     }
-    const results = posts.filter(p => {
-        // todo filtering
-        // happy coding !
-        const r = p.tags.some(t => searchTagIds.some(st => st === t.id));
-        console.log(p.tags, r, searchTagIds);
-      }
-    );
-    console.log(results.length);
-    return results;
+    return posts.filter(p => this.containsTag(p.tags, searchTagIds))
   }
 
+  containsTag(tags: number [], lookUpTags: number[]) {
+    if (lookUpTags?.length === 0) {
+      return true;
+    }
+    if (tags?.length === 0) {
+      return false;
+    }
+    return tags.some(t => lookUpTags.indexOf(t) > -1);
+  }
 }
