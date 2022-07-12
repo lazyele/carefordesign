@@ -13,15 +13,11 @@ import {ITag} from "../../dto/ITag";
 })
 export class PostListComponent implements OnInit, OnDestroy {
   blogPosts: IPost[] = [];
-  tags: ITag[] = [];
-  selectedTags: ITag[] = [];
 
-  getSelectedTagsIds(): number[] {
-    return this.selectedTags.map(t => t.id);
-  }
 
   images = new Map<number, IMedia>()
   searchInput = "";
+  searTagIds: number[] = [];
   searchInputSubscription!: Subscription;
   isImageLoading = false;
 
@@ -34,6 +30,9 @@ export class PostListComponent implements OnInit, OnDestroy {
 
     this.searchInputSubscription = this.activatedRoute.queryParamMap.subscribe(params => {
       this.searchInput = params.get("search") ?? "";
+      this.searTagIds = (params.get("tags") ?? "").split(';')
+        .filter(str => str)
+        .map(str => parseInt(str));
     })
     this.loadData()
   }
@@ -45,7 +44,6 @@ export class PostListComponent implements OnInit, OnDestroy {
         {
           next: (data: [IPost[], ITag[]]) => {
             this.blogPosts = data[0];
-            this.tags = data[1];
             this.isImageLoading = true;
             this.loadImages(this.blogPosts);
             this.isImageLoading = false;
@@ -78,7 +76,4 @@ export class PostListComponent implements OnInit, OnDestroy {
     this.searchInputSubscription.unsubscribe();
   }
 
-  onSelectedTagsIdsChanged(tags: ITag[]) {
-    this.selectedTags = tags;
-  }
 }

@@ -1,65 +1,43 @@
-{{getSelectedTagsIds()|json  }}
-<div class="wrapper">
-  <div class="grid posts">
-
-    <div class="cell xs12-up">
-      <h1 class="mat-display-3">Beiträge</h1>
-    </div>
-
-    <div class="cell xs12-up">
-      <app-search-bar></app-search-bar>
-
-    </div>
-
-    <div class="cell xs12-up">
-      <app-tag-selection [tags]="tags"
-                         (onSelectedTagIdsChanged)="onSelectedTagsIdsChanged($event)"
-      ></app-tag-selection>
-    </div>
-
-
-    <div class="grid grid-gap sm12-down md6-only md4-up">
-      <div class="cell" *ngFor="let post of blogPosts |
-       tagFilter: selectedTags |
+<div class="grid grid-gap sm12-down md6-only md4-up">
+  <div class="cell" *ngFor="let post of blogPosts |
+       tagFilter: searTagIds |
        contentFilter: searchInput ">
-        <mat-card>
-          <section class="post">
-            <mat-card-header class="post-header">
-              <mat-card-title class="post-title" [innerHTML]="post.title.rendered">
-              </mat-card-title>
-              <mat-card-subtitle>
-                <p class="meta-data">
-                  AutorIn: <a href="#" target="_blank" class="post-author">unknown</a> <br>
-                  veröffentlicht am: <a href="#">{{post.date | date: 'dd.MM.yyyy'}}</a>
-                </p>
+    <mat-card>
+      <section class="post">
+        <mat-card-header class="post-header">
+          <mat-card-title class="post-title" [innerHTML]="post.title.rendered">
+          </mat-card-title>
+          <mat-card-subtitle>
+            <p class="meta-data">
+              AutorIn: <a href="#" target="_blank" class="post-author">unknown</a> <br>
+              veröffentlicht am: <a href="#">{{post.date | date: 'dd.MM.yyyy'}}</a>
+            </p>
 
-              </mat-card-subtitle>
-            </mat-card-header>
+          </mat-card-subtitle>
+        </mat-card-header>
 
-            <img *ngIf="images.has(post.featured_media); else spinner "
-                 mat-card-image [src]="images?.get(post.featured_media)?.media_details?.sizes?.medium?.source_url ?? ''"
-                 [alt]="images?.get(post.featured_media)?.alt_text ?? ''">
+        <img *ngIf="images.has(post.featured_media); else spinner "
+             mat-card-image [src]="images?.get(post.featured_media)?.media_details?.sizes?.medium?.source_url ?? ''"
+             [alt]="images?.get(post.featured_media)?.alt_text ?? ''">
 
 
-            <ng-template #spinner>
-              <ng-container *ngIf="isImageLoading">
-                <mat-spinner></mat-spinner>
-              </ng-container>
-            </ng-template>
+        <ng-template #spinner>
+          <ng-container *ngIf="isImageLoading">
+            <mat-spinner></mat-spinner>
+          </ng-container>
+        </ng-template>
 
-            <mat-card-content class="post-description"
-                              [innerHTML]="post.excerpt.rendered | slice: 0:400">
-            </mat-card-content>
+        <mat-card-content class="post-description"
+                          [innerHTML]="post.excerpt.rendered | slice: 0:400">
+        </mat-card-content>
 
-            <mat-card-actions>
-              <button class="mat-flat-button mat-primary" [routerLink]="['/posts', post.id]">
-                Beitrag lesen
-              </button>
-            </mat-card-actions>
-          </section>
-        </mat-card>
-      </div>
-    </div>
+        <mat-card-actions>
+          <button class="mat-flat-button mat-primary" [routerLink]="['/posts', post.id]">
+            Beitrag lesen
+          </button>
+        </mat-card-actions>
+      </section>
+    </mat-card>
   </div>
 </div>
 
