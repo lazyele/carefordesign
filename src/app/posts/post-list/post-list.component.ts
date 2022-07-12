@@ -1,10 +1,9 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
+import {Component, Input, OnDestroy, OnInit} from '@angular/core';
 import {BlogService} from "../../services/blog.service";
 import {ActivatedRoute} from "@angular/router";
 import {IPost} from "../../dto/IPost";
-import {forkJoin, Subscription, tap} from "rxjs";
+import {Subscription, tap} from "rxjs";
 import {IMedia} from "../../dto/IMedia";
-import {ITag} from "../../dto/ITag";
 
 @Component({
   selector: 'app-post-list',
@@ -12,9 +11,7 @@ import {ITag} from "../../dto/ITag";
   styleUrls: ['./post-list.component.scss']
 })
 export class PostListComponent implements OnInit, OnDestroy {
-  blogPosts: IPost[] = [];
-
-
+  @Input() posts: IPost[] = [];
   images = new Map<number, IMedia>()
   searchInput = "";
   searTagIds: number[] = [];
@@ -27,30 +24,18 @@ export class PostListComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
+    this.getQueryParameter();
+    this.loadImages(this.posts);
+  }
 
+
+  private getQueryParameter() {
     this.searchInputSubscription = this.activatedRoute.queryParamMap.subscribe(params => {
       this.searchInput = params.get("search") ?? "";
       this.searTagIds = (params.get("tags") ?? "").split(';')
         .filter(str => str)
         .map(str => parseInt(str));
     })
-    this.loadData()
-  }
-
-  loadData() {
-
-    forkJoin(this.blogService.getPosts(), this.blogService.getTags())
-      .subscribe(
-        {
-          next: (data: [IPost[], ITag[]]) => {
-            this.blogPosts = data[0];
-            this.isImageLoading = true;
-            this.loadImages(this.blogPosts);
-            this.isImageLoading = false;
-          },
-          error: error => console.log(error)
-        });
-
   }
 
   private loadImages(posts: IPost[]) {
