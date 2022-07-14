@@ -33,6 +33,7 @@ import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
 import {TagFilterPipe} from './filters/tag-filter.pipe';
 import {TagSelectionComponent} from './tag-selection/tag-selection.component';
 import {BlogComponent} from './pages/blog/blog.component';
+import {SpinnerComponent} from './spinner/spinner.component';
 
 @NgModule({
   declarations: [
@@ -50,6 +51,7 @@ import {BlogComponent} from './pages/blog/blog.component';
     TagFilterPipe,
     TagSelectionComponent,
     BlogComponent,
+    SpinnerComponent,
   ],
   imports: [
     BrowserModule,

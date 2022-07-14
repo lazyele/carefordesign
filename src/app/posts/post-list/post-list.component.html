@@ -18,10 +18,10 @@
              mat-card-image [src]="images?.get(post.featured_media)?.media_details?.sizes?.medium?.source_url ?? ''"
              [alt]="images?.get(post.featured_media)?.alt_text ?? ''">
 
-
+<!-- ToDo: Spinner not working in Posts -->
         <ng-template #spinner>
           <ng-container *ngIf="isImageLoading">
-            <mat-spinner></mat-spinner>
+            <app-spinner></app-spinner>
           </ng-container>
         </ng-template>
 
