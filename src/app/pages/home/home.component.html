@@ -1,7 +1,8 @@
+
 <div class="gird wrapper">
   <div class="grid">
     <div class="cell xs12-up center">
-      <h1 class="mat-display-2">Less is more</h1>
+      <h1 class="mat-display-2">LESS IS MORE</h1>
     </div>
     <div class="cell xs12-up center">
       <app-search-bar [posts]="blogPosts">
@@ -11,8 +12,8 @@
 
   <!-- Counter-Funktion einfügen -->
 
-  <div class="grid grid-gap">
-    <div class="cell md4-up center">
+  <div class="grid grid-gap vertical-spacer">
+    <div class="cell sm12-down md4-up center">
       <mat-card class="counter-card">
         <mat-card-title>Beiträge</mat-card-title>
         <mat-card-content>
@@ -21,7 +22,7 @@
 
       </mat-card>
     </div>
-    <div class="cell md4-up center">
+    <div class="cell sm12-down md4-up center">
       <mat-card class="counter-card">
         <mat-card-title>Publizierende</mat-card-title>
         <mat-card-content>
@@ -29,7 +30,7 @@
         </mat-card-content>
       </mat-card>
     </div>
-    <div class="cell md4-up center">
+    <div class="cell sm12-down md4-up center">
       <mat-card class="counter-card">
         <mat-card-title>Themen</mat-card-title>
         <mat-card-content>
@@ -39,10 +40,10 @@
     </div>
   </div>
 
-  <div class="grid grid-gap">
-
-    <div class="cell sm12-down sm6-only sm7-up ">
-      <p>
+  <div class="text-image-direction grid grid-gap">
+    <div class="cell md12-down lg7-up">
+      <h1 class="mat-headline"> Was ist Care for Design?</h1>
+      <p class="mat-body">
         The quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax quiz prog. Junk MTV quiz graced by fox
         whelps. Bawds jog, flick quartz, vex nymphs. Waltz, bad nymph, for quick jigs vex! Fox nymphs grab quick-jived
         waltz. Brick quiz whangs jumpy veldt fox. Bright vixens jump; dozy fowl quack. Quick wafting zephyrs vex bold
@@ -55,15 +56,11 @@
         quickly in fog. Watch "Jeopardy!", Alex Trebek's fun TV quiz game. Woven silk pyjamas exchanged for blue
         quartz.
       </p>
+      <button class="mat-flat-button mat-primary"> Lerne uns kennen</button>
     </div>
-    <div class="cell center xs12-down sm6-only sm5-up no-bottom-gap">
+    <div class="cell center md12-down lg5-up no-bottom-gap middle">
       <app-illustration-project></app-illustration-project>
     </div>
   </div>
-  <div class="grid grid-gap">
 
-    <div class="cell sm12-down sm6-only sm7-up ">
-      <button class="mat-flat-button mat-primary"> Lerne uns kennen</button>
-    </div>
-  </div>
 </div>
