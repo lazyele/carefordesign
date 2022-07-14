@@ -29,6 +29,8 @@ import {MatListModule} from "@angular/material/list";
 import {MatInputModule} from "@angular/material/input";
 import {MatCardModule} from "@angular/material/card";
 import {IllustrationAboutUsComponent} from "./illustrations/illustation-about-us/illustration-about-us.component";
+import {CounterComponent} from './counter/counter.component';
+import {IllustrationProjectComponent} from './illustrations/illustration-project/illustration-project.component';
 
 @NgModule({
   declarations: [
@@ -44,6 +46,8 @@ import {IllustrationAboutUsComponent} from "./illustrations/illustation-about-us
     BlogFilterPipe,
     SearchBarComponent,
     IllustrationAboutUsComponent,
+    CounterComponent,
+    IllustrationProjectComponent,
   ],
   imports: [
     BrowserModule,
