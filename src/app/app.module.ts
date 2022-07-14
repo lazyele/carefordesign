@@ -31,6 +31,8 @@ import {MatCardModule} from "@angular/material/card";
 import {IllustrationAboutUsComponent} from "./illustrations/illustation-about-us/illustration-about-us.component";
 import {CounterComponent} from './counter/counter.component';
 import {IllustrationProjectComponent} from './illustrations/illustration-project/illustration-project.component';
+import {IllustrationLiteraturComponent} from './illustrations/illustration-literatur/illustration-literatur.component';
+import {IllustrationErrorComponent} from './illustrations/illustration-error/illustration-error.component';
 
 @NgModule({
   declarations: [
@@ -48,6 +50,8 @@ import {IllustrationProjectComponent} from './illustrations/illustration-project
     IllustrationAboutUsComponent,
     CounterComponent,
     IllustrationProjectComponent,
+    IllustrationLiteraturComponent,
+    IllustrationErrorComponent,
   ],
   imports: [
     BrowserModule,
