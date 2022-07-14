@@ -28,6 +28,7 @@ import {MatAutocompleteModule} from "@angular/material/autocomplete";
 import {MatListModule} from "@angular/material/list";
 import {MatInputModule} from "@angular/material/input";
 import {MatCardModule} from "@angular/material/card";
+import {IllustrationAboutUsComponent} from "./illustrations/illustation-about-us/illustration-about-us.component";
 
 @NgModule({
   declarations: [
@@ -42,6 +43,7 @@ import {MatCardModule} from "@angular/material/card";
     FooterComponent,
     BlogFilterPipe,
     SearchBarComponent,
+    IllustrationAboutUsComponent,
   ],
   imports: [
     BrowserModule,

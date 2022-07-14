@@ -1,0 +1,7 @@
+@use './src/utilities';
+
+.portrait {
+  background-size: cover;
+  width: 100%;
+  border-radius: utilities.rem(0.3);
+}
