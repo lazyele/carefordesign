@@ -76,7 +76,7 @@ import {SpinnerComponent} from './spinner/spinner.component';
     MatProgressSpinnerModule
 
   ],
-  providers: [HttpClient, ContentFilterPipe],
+  providers: [HttpClient, ContentFilterPipe, TagFilterPipe],
   bootstrap: [AppComponent]
 })
 export class AppModule {

@@ -13,7 +13,7 @@ export class TagFilterPipe implements PipeTransform {
     return posts.filter(p => this.containsTag(p.tags, searchTagIds))
   }
 
-  containsTag(tags: number [], lookUpTags: number[]) {
+  private containsTag(tags: number [], lookUpTags: number[]) {
     if (lookUpTags?.length === 0) {
       return true;
     }

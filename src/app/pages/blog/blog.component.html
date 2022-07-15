@@ -15,11 +15,11 @@
         <app-tag-selection
           *ngIf="tags$ | async;let tags"
           [tags]="tags"
+          (onSelectedTagsChanged)="onSelectedTagsChanged($event)"
         ></app-tag-selection>
       </div>
       <div class="cell">
         <app-post-list [posts]="posts
-                          | tagFilter: searTagIds
                           | contentFilter: searchInput"
         ></app-post-list>
       </div>

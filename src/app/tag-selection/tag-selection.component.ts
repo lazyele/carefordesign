@@ -1,6 +1,5 @@
-import {Component, Input} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {ITag} from "../dto/ITag";
-import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
   selector: 'app-tag-selection',
@@ -9,9 +8,10 @@ import {ActivatedRoute, Router} from "@angular/router";
 })
 export class TagSelectionComponent {
   @Input() tags: ITag[] = [];
+  @Output() onSelectedTagsChanged = new EventEmitter<ITag[]>();
   private selectedTags = new Map<number, ITag>();
 
-  constructor(private readonly router: Router, private readonly route: ActivatedRoute) {
+  constructor() {
   }
 
   isSelected(tag: ITag): boolean {
@@ -19,20 +19,16 @@ export class TagSelectionComponent {
   }
 
   toggleTag(tag: ITag) {
+    this.updateMap(tag);
+    this.onSelectedTagsChanged.emit([...this.selectedTags.values()]);
+  }
+
+
+  private updateMap(tag: ITag) {
     if (this.isSelected(tag)) {
       this.selectedTags.delete(tag.id);
     } else {
       this.selectedTags.set(tag.id, tag);
     }
-    const tags = [...this.selectedTags.values()]
-      .map(t => t.id).join(';')
-
-    this.router.navigate([],
-      {
-        relativeTo: this.route,
-        queryParams: {tags: tags}
-      });
   }
-
-
 }
