@@ -5,7 +5,12 @@
       <h1 class="mat-display-2">LESS IS MORE</h1>
     </div>
     <div class="cell xs12-up center">
-      <app-search-bar [posts]="blogPosts">
+      <div class="grid"
+     *ngIf="posts$ | async; let posts">
+  <div class="cell">
+    <app-search-bar
+      [posts]="posts"
+      (onSearchChanged)="onSearchChanged($event)">
       </app-search-bar>
     </div>
   </div>
@@ -39,6 +44,22 @@
       </mat-card>
     </div>
   </div>
+
+  </div>
+  <div class="cell">
+    <div class="cell center">
+      <button mat-raised-button color="primary"
+              [disabled]=" (posts | contentFilter: searchInput).length===0"
+              (click)="onNavigateToList()">
+        Anzeigen
+      </button>
+    </div>
+
+  </div>
+</div>
+
+
+
 
   <div class="text-image-direction grid grid-gap">
     <div class="cell md12-down lg7-up">

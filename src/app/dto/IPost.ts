@@ -21,7 +21,7 @@ export interface IPost {
   format: string;
   meta: any[];
   categories: number[];
-  tags: any[];
+  tags: number[];
   _links: Links;
 }
 
