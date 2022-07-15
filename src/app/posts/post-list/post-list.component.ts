@@ -1,7 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {BlogService} from "../../services/blog.service";
 import {IPost} from "../../dto/IPost";
-import {tap} from "rxjs";
 import {IMedia} from "../../dto/IMedia";
 
 @Component({
@@ -23,8 +22,6 @@ export class PostListComponent implements OnInit {
     this.loadImages(this.posts);
   }
 
-
-
   private loadImages(posts: IPost[]) {
     posts
       // todo on call
@@ -39,10 +36,4 @@ export class PostListComponent implements OnInit {
         })
       );
   }
-
-  getImage(id: number) {
-    return this.blogService.getImage(id).pipe(tap(i => console.log(i)))
-  }
-
-
 }
