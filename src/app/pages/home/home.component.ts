@@ -13,8 +13,6 @@ export class HomeComponent implements OnInit {
   constructor(
     private blogService: BlogService
   ) {
-    let btn = document.getElementById("searchbutton");
-    btn!.addEventListener("click", (e: Event) => this.getPosts());
   }
 
   ngOnInit() {
