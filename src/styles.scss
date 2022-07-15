@@ -1,6 +1,7 @@
 // Custom Theming for Angular Material
 // For more information: https://material.angular.io/guide/theming
 @use '@angular/material' as mat;
+@use 'variables' as costum;
 // Plus imports for other components in your app.
 
 // Include the common styles for Angular Material. We include this here so that you only
@@ -11,8 +12,8 @@
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
-$carefordesign-primary: mat.define-palette(mat.$indigo-palette);
-$carefordesign-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+$carefordesign-primary: mat.define-palette(costum.$md-carefordesignprimary);
+$carefordesign-accent: mat.define-palette(costum.$md-carefordesignaccent, A200, A100, A400);
 
 // The warn palette is optional (defaults to red).
 $carefordesign-warn: mat.define-palette(mat.$red-palette);
@@ -27,13 +28,66 @@ $carefordesign-theme: mat.define-light-theme((
   )
 ));
 
-// Include theme styles for core and each component used in your app.
-// Alternatively, you can import and @include the theme mixins for each component
-// that you are using.
 @include mat.all-component-themes($carefordesign-theme);
+
+$dark-carefordesign-primary: mat.define-palette(costum.$md-carefordesignprimary);
+$dark-carefordesign-accent: mat.define-palette(costum.$md-carefordesignaccent, A200, A100, A400);
+
+//dark theme
+$dark-carefordesign-theme: mat.define-dark-theme((
+  color: (
+    primary: $dark-carefordesign-primary,
+    accent: $dark-carefordesign-accent,
+    warn: $carefordesign-warn,
+  )
+));
+@include mat.all-component-themes($dark-carefordesign-theme);
+
+// Font Styling
+
+$carefordesign-font-level-body: mat.define-typography-level(
+  $font-family: Work sans,
+  $font-weight: 400,
+  $font-size: 1rem,
+  $line-height: 1,
+  $letter-spacing: normal
+);
+
+$carefordesign-font-level-header: mat.define-typography-level(
+  $font-family: Oswald,
+  $font-weight: 400,
+  $font-size: 1rem,
+  $line-height: 1,
+  $letter-spacing: normal
+);
+
+$carefordesign-font-body: mat.define-typography-config(
+  $display-4: mat.define-typography-level(112px, 112px, 300, $letter-spacing: -0.05em),
+  $display-3: mat.define-typography-level(56px, 56px, 400, $letter-spacing: -0.02em),
+  $display-2: mat.define-typography-level(45px, 48px, 400, $letter-spacing: -0.005em),
+  $display-1: mat.define-typography-level(34px, 40px, 400),
+  $headline: mat.define-typography-level(24px, 32px, 400),
+  $title: mat.define-typography-level(20px, 32px, 500),
+);
+
+@include mat.core($carefordesign-font-body);
+
+$carefordesign-font-header: mat.define-typography-config(
+  $subheading-2: mat.define-typography-level(16px, 28px, 400),
+  $subheading-1: mat.define-typography-level(15px, 24px, 400),
+  $body-2: mat.define-typography-level(14px, 24px, 500),
+  $body-1: mat.define-typography-level(14px, 20px, 400),
+  $caption: mat.define-typography-level(12px, 20px, 400),
+  $button: mat.define-typography-level(14px, 14px, 500),
+    // Line-height must be unit-less fraction of the font-size.
+  $input: mat.define-typography-level(inherit, 1.125, 400)
+);
+
+@include mat.core($carefordesign-font-header);
 
 
 /* You can add global styles to this file, and also import other style files */
+
 
 html, body {
   height: 100%;
@@ -41,5 +95,14 @@ html, body {
 
 body {
   margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-family: Work Sans, "Helvetica Neue", sans-serif;
 }
+
+/** .theme-light {
+  @include mat.all-component-themes($carefordesign-theme);
+}
+
+.theme-dark {
+  @include mat.all-component-themes($dark-carefordesign-theme);
+} **/
+
