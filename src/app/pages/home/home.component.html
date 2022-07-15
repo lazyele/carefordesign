@@ -2,17 +2,7 @@
   <div class="cell">
     <app-search-bar [posts]="blogPosts">
     </app-search-bar>
-  </div>
 
-  <!-- ToDo functionality and method -->
-
-  <div class="cell center" id="searchbutton" *ngIf="(filteredPosts$ | async) as items;">
-    <button mat-raised-button color="primary"
-            [disabled]=" items.length===0">
-      <ng-container *ngIf="items.length === 1; else multiple">Beitrag</ng-container>
-      <ng-template #multiple>Beiträge</ng-template>
-      &nbsp;anzeigen
-    </button>
   </div>
 </div>
 
