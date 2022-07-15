@@ -9,6 +9,7 @@
       <div class="cell ">
         <app-search-bar
           [posts]="posts"
+          (onSearchChanged)="onSearchChanged($event)"
         ></app-search-bar>
       </div>
       <div class="cell ">

@@ -13,15 +13,13 @@ import {ActivatedRoute, ParamMap} from "@angular/router";
 export class BlogComponent implements OnInit {
   tags$!: Observable<ITag[]>;
   posts$!: Observable<IPost[]>;
-  searchInputSubscription!: Subscription;
+  queryParamsSubscription!: Subscription;
   searchInput = "";
   selectedTagIds: number[] = [];
 
   constructor(private readonly blogService: BlogService,
               private readonly activatedRoute: ActivatedRoute,
   ) {
-
-
   }
 
   ngOnInit(): void {
@@ -31,7 +29,7 @@ export class BlogComponent implements OnInit {
   }
 
   ngOnDestroy(): void {
-    this.searchInputSubscription.unsubscribe();
+    this.queryParamsSubscription?.unsubscribe();
   }
 
   onSelectedTagsChanged(tags: ITag[]) {
@@ -39,7 +37,7 @@ export class BlogComponent implements OnInit {
   }
 
   private getQueryParameter() {
-    this.searchInputSubscription = this.activatedRoute.queryParamMap
+    this.queryParamsSubscription = this.activatedRoute.queryParamMap
       .subscribe(params => {
         this.parseSearchQuery(params);
         this.parseTagQuery(params);
@@ -61,5 +59,9 @@ export class BlogComponent implements OnInit {
         .filter(str => str)
         .map(str => parseInt(str));
     }
+  }
+
+  onSearchChanged(search: string) {
+    this.searchInput = search;
   }
 }
