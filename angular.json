@@ -31,8 +31,8 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss",
-              "src/assets/flexgrid.css"
+              "src/assets/flexgrid.css",
+              "src/assets/themes/light-theme.css"
             ],
             "scripts": []
           },
@@ -100,7 +100,6 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
             ],
             "scripts": []
           }
