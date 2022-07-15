@@ -2,18 +2,18 @@ import {Pipe, PipeTransform} from '@angular/core';
 import {IPost} from "../dto/IPost";
 
 @Pipe({
-  name: 'blogFilter'
+  name: 'contentFilter'
 })
-export class BlogFilterPipe implements PipeTransform {
+export class ContentFilterPipe implements PipeTransform {
 
   transform(posts: IPost[], search: string, minInputLength: number = 2): IPost[] {
     search = search?.trim();
-    const validation = BlogFilterPipe.validateInput(posts, search, minInputLength);
+    const validation = ContentFilterPipe.validateInput(posts, search, minInputLength);
     if (!validation.filter)
       return <IPost[]>validation.returnValue;
 
     const searchParts = search.toLowerCase().split(" ");
-    posts = BlogFilterPipe.filterPosts(posts, searchParts);
+    posts = ContentFilterPipe.filterPosts(posts, searchParts);
     return posts;
   }
 
@@ -30,8 +30,8 @@ export class BlogFilterPipe implements PipeTransform {
   private static filterPosts(posts: IPost[], searchParts: string[]) {
     return posts.filter(p =>
       searchParts.some(s =>
-          (BlogFilterPipe.includes(p.title.rendered, s) ||
-            BlogFilterPipe.includes(p.content.rendered, s))
+          (ContentFilterPipe.includes(p.title.rendered, s) ||
+            ContentFilterPipe.includes(p.content.rendered, s))
         //ToDo Filter with Tags$
       )
     )

@@ -1,6 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {IPost} from "../../dto/IPost";
 import {BlogService} from "../../services/blog.service";
+import {Observable} from "rxjs";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-home',
@@ -8,23 +10,25 @@ import {BlogService} from "../../services/blog.service";
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  blogPosts: IPost[] = [];
+  posts$!: Observable<IPost[]>;
+  searchInput = ''
 
   constructor(
-    private blogService: BlogService
+    private readonly blogService: BlogService,
+    private readonly router: Router
   ) {
   }
 
   ngOnInit() {
-    this.getPosts()
+    this.posts$ = this.blogService.getPosts();
   }
 
-  getPosts() {
-    this.blogService.getPosts()
-      .subscribe(
-        {
-          next: data => this.blogPosts = data,
-          error: error => console.log(error)
-        });
+  onSearchChanged(search: string) {
+    this.searchInput = search;
   }
+
+  onNavigateToList() {
+    this.router.navigate(["posts"], {queryParams: {search: this.searchInput}});
+  }
+
 }

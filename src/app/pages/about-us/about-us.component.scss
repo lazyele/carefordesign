@@ -1,0 +1,12 @@
+@use './src/utilities';
+
+.wrapper {
+  margin-top: utilities.rem(15);
+  margin-bottom: utilities.rem(8);
+}
+
+.portrait {
+  background-size: cover;
+  width: 100%;
+  border-radius: utilities.rem(0.3);
+}

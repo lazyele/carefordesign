@@ -1,4 +1,9 @@
 @use './src/utilities';
+.header {
+  position: fixed;
+  top: 0;
+  z-index: 1;
+}
 
 .mat-toolbar-row, .mat-toolbar-single-row {
   height: utilities.rem(5);
