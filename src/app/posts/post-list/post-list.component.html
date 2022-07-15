@@ -3,9 +3,9 @@
     <mat-card>
       <section class="post">
 
-        <img *ngIf="images.has(post.featured_media); else spinner "
-             mat-card-image [src]="images?.get(post.featured_media)?.media_details?.sizes?.medium?.source_url ?? ''"
-             [alt]="images?.get(post.featured_media)?.alt_text ?? ''">
+        <img *ngIf="hasImage(post); else spinner"
+             mat-card-image [src]="getImageSource(post)"
+             [alt]="getImageAlt(post)">
 
         <mat-card-header class="post-header">
           <mat-card-title class="post-title" [innerHTML]="post.title.rendered">
