@@ -1,0 +1,26 @@
+@use './src/utilities';
+
+.wrapper {
+  margin-top: utilities.rem(15);
+  margin-bottom: utilities.rem(8);
+}
+
+
+.counter-card {
+  height: utilities.rem(10);
+  width: utilities.rem(10);
+}
+
+.vertical-spacer {
+  margin-top: utilities.rem(8);
+  margin-bottom: utilities.rem(8);
+}
+
+
+@media (max-width: utilities.rem(47)) {
+  .text-image-direction {
+    flex-direction: column;
+    flex-flow: column-reverse;
+
+  }
+}

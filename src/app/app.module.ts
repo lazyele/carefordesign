@@ -34,6 +34,15 @@ import {TagFilterPipe} from './filters/tag-filter.pipe';
 import {TagSelectionComponent} from './tag-selection/tag-selection.component';
 import {BlogComponent} from './pages/blog/blog.component';
 import {SpinnerComponent} from './spinner/spinner.component';
+import {IllustrationAboutUsComponent} from "./illustrations/illustation-about-us/illustration-about-us.component";
+import {CounterComponent} from './counter/counter.component';
+import {IllustrationProjectComponent} from './illustrations/illustration-project/illustration-project.component';
+import {IllustrationLiteraturComponent} from './illustrations/illustration-literatur/illustration-literatur.component';
+import {IllustrationErrorComponent} from './illustrations/illustration-error/illustration-error.component';
+import {ImpressumComponent} from './pages/impressum/impressum.component';
+import {PrivacyPolicyComponent} from './pages/privacy-policy/privacy-policy.component';
+import {SourcesComponent} from './pages/sources/sources.component';
+import {AccessibilityComponent} from './pages/accessibility/accessibility.component';
 
 @NgModule({
   declarations: [
@@ -48,6 +57,15 @@ import {SpinnerComponent} from './spinner/spinner.component';
     FooterComponent,
     ContentFilterPipe,
     SearchBarComponent,
+    IllustrationAboutUsComponent,
+    CounterComponent,
+    IllustrationProjectComponent,
+    IllustrationLiteraturComponent,
+    IllustrationErrorComponent,
+    ImpressumComponent,
+    PrivacyPolicyComponent,
+    SourcesComponent,
+    AccessibilityComponent,
     TagFilterPipe,
     TagSelectionComponent,
     BlogComponent,

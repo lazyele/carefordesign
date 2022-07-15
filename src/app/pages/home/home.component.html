@@ -1,24 +1,87 @@
-<div class="grid"
-     *ngIf="posts$ | async; let posts">
-  <div class="cell">
-    <app-search-bar
-      [posts]="posts"
-      (onSearchChanged)="onSearchChanged($event)">
-    </app-search-bar>
+<div class="gird wrapper">
+  <div class="grid"
+       *ngIf="posts$ | async; let posts"
+  >
+    <div class="cell xs12-up center">
+      <h1 class="mat-display-2">LESS IS MORE</h1>
+    </div>
+    <div class="cell xs12-up center">
+      <div class="grid"
+      >
+        <div class="cell">
+          <app-search-bar
+            [posts]="posts"
+            (onSearchChanged)="onSearchChanged($event)">
+          </app-search-bar>
+        </div>
+      </div>
+      <div class="cell">
+        <div class="cell center">
+          <button mat-raised-button color="primary"
+                  [disabled]=" (posts | contentFilter: searchInput).length===0"
+                  (click)="onNavigateToList()">
+            Anzeigen
+          </button>
+        </div>
 
-  </div>
-  <div class="cell">
-    <div class="cell center">
-      <button mat-raised-button color="primary"
-              [disabled]=" (posts | contentFilter: searchInput).length===0"
-              (click)="onNavigateToList()">
-        Anzeigen
-      </button>
+      </div>
+
+      <!-- todo Counter-Funktion einfügen -->
+
+      <div class="grid grid-gap vertical-spacer">
+        <div class="cell sm12-down md4-up center">
+          <mat-card class="counter-card">
+            <mat-card-title>Beiträge</mat-card-title>
+            <mat-card-content>
+              <p>12</p>
+            </mat-card-content>
+
+          </mat-card>
+        </div>
+        <div class="cell sm12-down md4-up center">
+          <mat-card class="counter-card">
+            <mat-card-title>Publizierende</mat-card-title>
+            <mat-card-content>
+              <p>2</p>
+            </mat-card-content>
+          </mat-card>
+        </div>
+        <div class="cell sm12-down md4-up center">
+          <mat-card class="counter-card">
+            <mat-card-title>Themen</mat-card-title>
+            <mat-card-content>
+              <p>8</p>
+            </mat-card-content>
+          </mat-card>
+        </div>
+      </div>
+
     </div>
 
   </div>
+
+
+  <div class="text-image-direction grid grid-gap">
+    <div class="cell md12-down lg7-up">
+      <h1 class="mat-headline"> Was ist Care for Design?</h1>
+      <p class="mat-body">
+        The quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax quiz prog. Junk MTV quiz graced by fox
+        whelps. Bawds jog, flick quartz, vex nymphs. Waltz, bad nymph, for quick jigs vex! Fox nymphs grab quick-jived
+        waltz. Brick quiz whangs jumpy veldt fox. Bright vixens jump; dozy fowl quack. Quick wafting zephyrs vex bold
+        Jim. Quick zephyrs blow, vexing daft Jim. Sex-charged fop blew my junk TV quiz. How quickly daft jumping
+        zebras vex. Two driven jocks help fax my big quiz. Quick, Baz, get my woven flax jodhpurs! "Now fax quiz
+        Jack!" my brave ghost pled. Five quacking zephyrs jolt my wax bed. Flummoxed by job, kvetching W. zaps Iraq.
+        Cozy sphinx waves quart jug of bad milk. A very bad quack might jinx zippy fowls. Few quips galvanized the
+        mock jury box. Quick brown dogs jump over the lazy fox. The jay, pig, fox, zebra, and my wolves quack! Blowzy
+        red vixens fight for a quick jump. Joaquin Phoenix was gazed by MTV for luck. A wizard’s job is to vex chumps
+        quickly in fog. Watch "Jeopardy!", Alex Trebek's fun TV quiz game. Woven silk pyjamas exchanged for blue
+        quartz.
+      </p>
+      <button class="mat-flat-button mat-primary" routerLink="/about-us"> Lerne uns kennen</button>
+    </div>
+    <div class="cell center md12-down lg5-up no-bottom-gap middle">
+      <app-illustration-project></app-illustration-project>
+    </div>
+  </div>
+
 </div>
-
-
-
-
