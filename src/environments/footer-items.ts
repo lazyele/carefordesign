@@ -17,7 +17,7 @@ export const FooterItems =
     },
     {
       label: "Datenschutz",
-      routerLink: "privacypolicy",
+      routerLink: "privacy-policy",
       ariaLabel: "Privacypolicy"
     }
   ]
