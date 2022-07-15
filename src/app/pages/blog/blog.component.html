@@ -20,6 +20,7 @@
       </div>
       <div class="cell">
         <app-post-list [posts]="posts
+                          | tagFilter: selectedTagIds
                           | contentFilter: searchInput"
         ></app-post-list>
       </div>

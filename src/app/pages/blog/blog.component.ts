@@ -1,11 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import {ITag} from "../../dto/ITag";
 import {BlogService} from "../../services/blog.service";
-import {filter, map, Observable, Subscription} from "rxjs";
+import {Observable, Subscription} from "rxjs";
 import {IPost} from "../../dto/IPost";
 import {ActivatedRoute, ParamMap} from "@angular/router";
-import {TagFilterPipe} from "../../filters/tag-filter.pipe";
-import {ContentFilterPipe} from "../../filters/content-filter.pipe";
 
 @Component({
   selector: 'app-blog',
@@ -21,8 +19,6 @@ export class BlogComponent implements OnInit {
 
   constructor(private readonly blogService: BlogService,
               private readonly activatedRoute: ActivatedRoute,
-              private readonly tagFilterPipe: TagFilterPipe,
-              private readonly contentFilterPipe: ContentFilterPipe
   ) {
 
 
@@ -31,12 +27,7 @@ export class BlogComponent implements OnInit {
   ngOnInit(): void {
     this.getQueryParameter();
     this.tags$ = this.blogService.getTags();
-    this.posts$ = this.blogService.getPosts()
-      .pipe(
-        filter(posts => posts?.length > 0),
-        map(posts => this.tagFilterPipe.transform(posts ?? [], this.selectedTagIds)),
-        map(posts => this.contentFilterPipe.transform(posts, this.searchInput))
-      );
+    this.posts$ = this.blogService.getPosts();
   }
 
   ngOnDestroy(): void {
