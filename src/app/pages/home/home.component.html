@@ -1,7 +1,20 @@
-<div class="grid">
+<div class="grid"
+     *ngIf="posts$ | async; let posts">
   <div class="cell">
-    <app-search-bar [posts]="blogPosts">
+    <app-search-bar
+      [posts]="posts"
+      (onSearchChanged)="onSearchChanged($event)">
     </app-search-bar>
+
+  </div>
+  <div class="cell">
+    <div class="cell center">
+      <button mat-raised-button color="primary"
+              [disabled]=" (posts | contentFilter: searchInput).length===0"
+              (click)="onNavigateToList()">
+        Anzeigen
+      </button>
+    </div>
 
   </div>
 </div>
