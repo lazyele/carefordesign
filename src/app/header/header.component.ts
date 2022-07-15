@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 import {NavbarItems} from "../../environments/navbar-items";
 
 
@@ -7,16 +7,16 @@ import {NavbarItems} from "../../environments/navbar-items";
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent {
   navbarItems = NavbarItems
 
   constructor() {
 
   }
-
-
-  ngOnInit(): void {
-  }
 }
+
+
+
+
 
 

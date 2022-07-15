@@ -1,0 +1,34 @@
+<div class="wrapper">
+  <div class="grid xs12-up posts">
+    <div class="cell ">
+      <h1 class="mat-display-3">Beiträge</h1>
+    </div>
+    <ng-container
+      *ngIf="posts$ | async; let posts; else spinner"
+    >
+      <div class="cell ">
+        <app-search-bar
+          [posts]="posts"
+          [search]="searchInput"
+          (onSearchChanged)="onSearchChanged($event)"
+        ></app-search-bar>
+      </div>
+      <div class="cell ">
+        <app-tag-selection
+          *ngIf="tags$ | async;let tags"
+          [tags]="tags"
+          (onSelectedTagsChanged)="onSelectedTagsChanged($event)"
+        ></app-tag-selection>
+      </div>
+      <div class="cell">
+        <app-post-list [posts]="posts
+                          | tagFilter: selectedTagIds
+                          | contentFilter: searchInput"
+        ></app-post-list>
+      </div>
+    </ng-container>
+    <ng-template #spinner>
+      <app-spinner></app-spinner>
+    </ng-template>
+  </div>
+</div>
