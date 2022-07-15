@@ -1,6 +1,11 @@
 export const FooterItems =
   [
     {
+      label: "Warum ist die Seite barrierefrei?",
+      routerLink: "accessibility",
+      ariaLabel: "Accessibility"
+    },
+    {
       label: "Quellen",
       routerLink: "sources",
       ariaLabel: "Sources"
