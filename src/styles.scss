@@ -18,10 +18,30 @@ $carefordesign-accent: mat.define-palette(costum.$md-carefordesignaccent, A200, 
 // The warn palette is optional (defaults to red).
 $carefordesign-warn: mat.define-palette(mat.$red-palette);
 
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$carefordesign-theme: mat.define-light-theme((
+  color: (
+    primary: $carefordesign-primary,
+    accent: $carefordesign-accent,
+    warn: $carefordesign-warn,
+  )
+));
+
+@include mat.all-component-themes($carefordesign-theme);
 
 $dark-carefordesign-primary: mat.define-palette(costum.$md-carefordesignprimary);
 $dark-carefordesign-accent: mat.define-palette(costum.$md-carefordesignaccent, A200, A100, A400);
 
+//dark theme
+$dark-carefordesign-theme: mat.define-dark-theme((
+  color: (
+    primary: $dark-carefordesign-primary,
+    accent: $dark-carefordesign-accent,
+    warn: $carefordesign-warn,
+  )
+));
+@include mat.all-component-themes($dark-carefordesign-theme);
 
 /* You can add global styles to this file, and also import other style files */
 
@@ -33,3 +53,12 @@ body {
   margin: 0;
   font-family: Work Sans, "Helvetica Neue", sans-serif;
 }
+
+/** .theme-light {
+  @include mat.all-component-themes($carefordesign-theme);
+}
+
+.theme-dark {
+  @include mat.all-component-themes($dark-carefordesign-theme);
+} **/
+
