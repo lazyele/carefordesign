@@ -11,6 +11,7 @@ import {filter, map, Observable, startWith, tap} from "rxjs";
   styleUrls: ['./search-bar.component.scss']
 })
 export class SearchBarComponent implements OnInit {
+  @Input() search?: string;
   @Input() posts: IPost[] = [];
   @Output() onSearchChanged = new EventEmitter<string>();
   inputControl!: FormControl;
@@ -22,14 +23,22 @@ export class SearchBarComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.inputControl = this.fb.control('');
+    this.initializeControl();
+    this.initializeFilter();
+
+  }
+
+  private initializeFilter() {
     this.filteredPosts$ = this.inputControl.valueChanges.pipe(
-      startWith(''),
+      startWith(this.search ?? ''),
       filter(value => SearchBarComponent.isString(value)),
       tap(input => this.onSearchChanged.emit(input)),
       map(input => this.filterInput(input)),
     );
+  }
 
+  private initializeControl() {
+    this.inputControl = this.fb.control(this.search ?? '');
   }
 
   private filterInput(value: string) {
