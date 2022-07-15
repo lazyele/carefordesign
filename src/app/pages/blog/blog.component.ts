@@ -1,9 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import {ITag} from "../../dto/ITag";
 import {BlogService} from "../../services/blog.service";
-import {map, Observable, Subscription} from "rxjs";
+import {filter, map, Observable, Subscription} from "rxjs";
 import {IPost} from "../../dto/IPost";
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, ParamMap} from "@angular/router";
 import {TagFilterPipe} from "../../filters/tag-filter.pipe";
 import {ContentFilterPipe} from "../../filters/content-filter.pipe";
 
@@ -33,9 +33,9 @@ export class BlogComponent implements OnInit {
     this.tags$ = this.blogService.getTags();
     this.posts$ = this.blogService.getPosts()
       .pipe(
+        filter(posts => posts?.length > 0),
         map(posts => this.tagFilterPipe.transform(posts ?? [], this.selectedTagIds)),
-        //map(posts =>this.contentFilterPipe.transform(posts))
-
+        map(posts => this.contentFilterPipe.transform(posts, this.searchInput))
       );
   }
 
@@ -48,12 +48,27 @@ export class BlogComponent implements OnInit {
   }
 
   private getQueryParameter() {
-    this.searchInputSubscription = this.activatedRoute.queryParamMap.subscribe(params => {
-      this.searchInput = params.get("search") ?? "";
-      this.selectedTagIds = (params.get("tags") ?? "").split(';')
-        .filter(str => str)
-        .map(str => parseInt(str));
-    })
+    this.searchInputSubscription = this.activatedRoute.queryParamMap
+      .subscribe(params => {
+        this.parseSearchQuery(params);
+        this.parseTagQuery(params);
+      })
   }
 
+  private parseSearchQuery(params: ParamMap) {
+    const searchParam = params.get("search");
+    if (searchParam) {
+      this.searchInput = searchParam;
+    }
+  }
+
+  private parseTagQuery(params: ParamMap) {
+    const tagParam = params.get("tags")
+    if (tagParam) {
+      this.selectedTagIds = tagParam
+        .split(';')
+        .filter(str => str)
+        .map(str => parseInt(str));
+    }
+  }
 }
