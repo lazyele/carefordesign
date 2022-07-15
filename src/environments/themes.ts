@@ -1,4 +1,4 @@
 export enum ThemeType {
-  Default = 'carefordesign',
-  DarkTheme = 'dark-carefordesign'
+  Default = 'light-theme',
+  DarkTheme = 'dark-theme'
 }
