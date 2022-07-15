@@ -44,4 +44,8 @@ export class SearchBarComponent implements OnInit {
     this.router.navigate(["posts", id])
   }
 
+  hasMinInputLength() {
+    return this.inputControl.value?.length > 1
+  }
+
 }
