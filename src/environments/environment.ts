@@ -10,20 +10,12 @@ export const environment = {
   themes:
     [
       {
-        label: "Deep Purple & Amber",
-        type: ThemeType.DeepPurpleAmber
-      },
-      {
-        label: "Indigo & Pink",
+        label: "Heller Hintergrund",
         type: ThemeType.Default
       },
       {
-        label: "Pink & Blue Grey",
-        type: ThemeType.PinkBlueGrey
-      },
-      {
-        label: "Purple & Green",
-        type: ThemeType.PurpleGreen
+        label: "Dunkler Hingergrund",
+        type: ThemeType.DarkTheme
       }
     ],
 };
