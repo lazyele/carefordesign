@@ -33,6 +33,10 @@ import {CounterComponent} from './counter/counter.component';
 import {IllustrationProjectComponent} from './illustrations/illustration-project/illustration-project.component';
 import {IllustrationLiteraturComponent} from './illustrations/illustration-literatur/illustration-literatur.component';
 import {IllustrationErrorComponent} from './illustrations/illustration-error/illustration-error.component';
+import {ImpressumComponent} from './pages/impressum/impressum.component';
+import {PrivacyPolicyComponent} from './pages/privacy-policy/privacy-policy.component';
+import {SourcesComponent} from './pages/sources/sources.component';
+import {AccessibilityComponent} from './pages/accessibility/accessibility.component';
 
 @NgModule({
   declarations: [
@@ -52,6 +56,10 @@ import {IllustrationErrorComponent} from './illustrations/illustration-error/ill
     IllustrationProjectComponent,
     IllustrationLiteraturComponent,
     IllustrationErrorComponent,
+    ImpressumComponent,
+    PrivacyPolicyComponent,
+    SourcesComponent,
+    AccessibilityComponent,
   ],
   imports: [
     BrowserModule,
