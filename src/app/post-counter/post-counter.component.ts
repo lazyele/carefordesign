@@ -1,18 +1,16 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input} from '@angular/core';
 
 @Component({
   selector: 'app-post-counter',
   templateUrl: './post-counter.component.html',
   styleUrls: ['./post-counter.component.scss']
 })
-export class PostCounterComponent implements OnInit {
+export class PostCounterComponent {
   @Input() title = '';
   @Input() count?: number;
 
   constructor() {
   }
 
-  ngOnInit(): void {
-  }
 
 }
