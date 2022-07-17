@@ -26,8 +26,6 @@
 
       </div>
 
-      <!-- todo Counter-Funktion einfügen -->
-
       <div class="grid grid-gap vertical-spacer sm12-down md4-up center">
         <div class="cell ">
           <app-post-counter [count]="posts?.length"
@@ -35,12 +33,12 @@
           ></app-post-counter>
         </div>
         <div class="cell ">
-          <app-post-counter [count]="2"
+          <app-post-counter [count]="(posts | authorReducer).length"
                             title="Publizierende"
           ></app-post-counter>
         </div>
         <div class="cell ">
-          <app-post-counter [count]="8"
+          <app-post-counter [count]="(posts | tagReducer).length"
                             title="Themen"
           ></app-post-counter>
         </div>
