@@ -1,0 +1,6 @@
+@use './src/utilities';
+
+.counter-card {
+  height: utilities.rem(10);
+  width: utilities.rem(10);
+}
