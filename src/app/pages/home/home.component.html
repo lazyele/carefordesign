@@ -28,31 +28,21 @@
 
       <!-- todo Counter-Funktion einfügen -->
 
-      <div class="grid grid-gap vertical-spacer">
-        <div class="cell sm12-down md4-up center">
-          <mat-card class="counter-card">
-            <mat-card-title>Beiträge</mat-card-title>
-            <mat-card-content>
-              <p>12</p>
-            </mat-card-content>
-
-          </mat-card>
+      <div class="grid grid-gap vertical-spacer sm12-down md4-up center">
+        <div class="cell ">
+          <app-counter title="Beiträge"
+                       [count]="posts?.length"
+          ></app-counter>
         </div>
-        <div class="cell sm12-down md4-up center">
-          <mat-card class="counter-card">
-            <mat-card-title>Publizierende</mat-card-title>
-            <mat-card-content>
-              <p>2</p>
-            </mat-card-content>
-          </mat-card>
+        <div class="cell ">
+          <app-counter title="Publizierende"
+                       [count]="2"
+          ></app-counter>
         </div>
-        <div class="cell sm12-down md4-up center">
-          <mat-card class="counter-card">
-            <mat-card-title>Themen</mat-card-title>
-            <mat-card-content>
-              <p>8</p>
-            </mat-card-content>
-          </mat-card>
+        <div class="cell ">
+          <app-counter title="Themen"
+                       [count]="8"
+          ></app-counter>
         </div>
       </div>
 
