@@ -1,6 +1,6 @@
 <div class="gird wrapper">
-  <div class="grid"
-       *ngIf="posts$ | async; let posts"
+  <div *ngIf="posts$ | async; let posts"
+       class="grid"
   >
     <div class="cell xs12-up center">
       <h1 class="mat-display-2">LESS IS MORE</h1>
@@ -10,16 +10,16 @@
       >
         <div class="cell">
           <app-search-bar
-            [posts]="posts"
-            (onSearchChanged)="onSearchChanged($event)">
+            (onSearchChanged)="onSearchChanged($event)"
+            [posts]="posts">
           </app-search-bar>
         </div>
       </div>
       <div class="cell">
         <div class="cell center">
-          <button mat-raised-button color="primary"
-                  [disabled]=" (posts | contentFilter: searchInput).length===0"
-                  (click)="onNavigateToList()">
+          <button (click)="onNavigateToList()" [disabled]=" (posts | contentFilter: searchInput).length===0"
+                  color="primary"
+                  mat-raised-button>
             Anzeigen
           </button>
         </div>
@@ -28,31 +28,21 @@
 
       <!-- todo Counter-Funktion einfügen -->
 
-      <div class="grid grid-gap vertical-spacer">
-        <div class="cell sm12-down md4-up center">
-          <mat-card class="counter-card">
-            <mat-card-title>Beiträge</mat-card-title>
-            <mat-card-content>
-              <p>12</p>
-            </mat-card-content>
-
-          </mat-card>
+      <div class="grid grid-gap vertical-spacer sm12-down md4-up center">
+        <div class="cell ">
+          <app-post-counter [count]="posts?.length"
+                            title="Beiträge"
+          ></app-post-counter>
         </div>
-        <div class="cell sm12-down md4-up center">
-          <mat-card class="counter-card">
-            <mat-card-title>Publizierende</mat-card-title>
-            <mat-card-content>
-              <p>2</p>
-            </mat-card-content>
-          </mat-card>
+        <div class="cell ">
+          <app-post-counter [count]="2"
+                            title="Publizierende"
+          ></app-post-counter>
         </div>
-        <div class="cell sm12-down md4-up center">
-          <mat-card class="counter-card">
-            <mat-card-title>Themen</mat-card-title>
-            <mat-card-content>
-              <p>8</p>
-            </mat-card-content>
-          </mat-card>
+        <div class="cell ">
+          <app-post-counter [count]="8"
+                            title="Themen"
+          ></app-post-counter>
         </div>
       </div>
 

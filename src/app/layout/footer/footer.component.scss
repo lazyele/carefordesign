@@ -1,0 +1,44 @@
+@use "../../../utilities";
+
+.horizontal-spacer {
+  flex: 1 1 auto;
+}
+
+.footer {
+  position: sticky;
+  top: 100vh;
+  width: 100%;
+}
+
+.main-footer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  height: auto;
+  min-height: utilities.rem(5);
+  justify-content: flex-end;
+}
+
+.copyright {
+  height: auto;
+  margin: 0 auto;
+  text-align: center;
+}
+
+:hover .copyright {
+  cursor: default;
+}
+
+mat-icon {
+  margin-right: utilities.rem(1)
+}
+
+@media (max-width: utilities.rem(40)) {
+  .main-footer {
+    padding: utilities.rem(1.5) 0;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}

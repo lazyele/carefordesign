@@ -1,0 +1,58 @@
+<mat-toolbar aria-label="Header" class="header" color="primary" role="toolbar">
+  <div class="grid no-bottom-gap">
+    <div class="cell">
+      <a aria-disabled="false" aria-label="Care for Design"
+         class="mat-focus-indicator docs-button mat-button mat-button-base" mat-button="" routerLink="/home">
+    <span class="mat-button-wrapper">
+      <span>Care for Design</span></span>
+        <span class="mat-ripple mat-button-ripple"></span>
+        <span class="mat-button-focus-overlay"></span>
+      </a>
+    </div>
+    <div class="cell cell-shrink">
+      <button [matMenuTriggerFor]="beforeMenu" aria-label="Select a theme"
+              class="accessibility-button mat-flat-button">
+
+        <mat-icon aria-hidden="false"
+                  class="material-symbols-rounded accessibility-icon mat-icon notranslate material-icons mat-icon-no-color"
+                  data-mat-icon-type="font" role="img">
+          accessibility_new
+        </mat-icon>
+        <span>Barrierefreiheit</span>
+
+      </button>
+
+      <a *ngFor="let navbarItem of navbarItems" [attr.aria-label]="navbarItem.ariaLabel" aria-disabled="false"
+         class="mat-focus-indicator docs-button mat-button mat-button-base desktop-menu"
+         mat-button="" routerLink="/{{navbarItem.routerLink}}">
+    <span class="mat-button-wrapper">
+      <span>{{navbarItem.label}}</span>
+    </span>
+        <span class="mat-ripple mat-button-ripple"></span>
+        <span class="mat-button-focus-overlay"></span>
+      </a>
+
+      <!-- Mobile Menu -->
+      <button [matMenuTriggerFor]="mobileMenu" aria-label="Burgermenu" class="burger-menu" mat-icon-button>
+        <mat-icon>menu</mat-icon>
+      </button>
+    </div>
+  </div>
+</mat-toolbar>
+
+<mat-menu #beforeMenu="matMenu" xPosition="before">
+  <app-theme-switcher>
+  </app-theme-switcher>
+</mat-menu>
+
+<mat-menu #mobileMenu="matMenu">
+  <a *ngFor="let navbarItem of navbarItems" [attr.aria-label]="navbarItem.ariaLabel" aria-disabled="false"
+     class="mat-focus-indicator docs-button mat-button mat-button-base"
+     mat-button="" routerLink="/{{navbarItem.routerLink}}">
+    <span class="mat-button-wrapper">
+      <span>{{navbarItem.label}}</span>
+    </span>
+    <span class="mat-ripple mat-button-ripple"></span>
+    <span class="mat-button-focus-overlay"></span>
+  </a>
+</mat-menu>

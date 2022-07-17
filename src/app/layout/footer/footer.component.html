@@ -1,0 +1,32 @@
+<div class="footer">
+  <mat-toolbar aria-label="Footer" class="main-footer" color="secondary" role="toolbar">
+    <a aria-disabled="false" aria-label="Mail"
+       class="mat-focus-indicator docs-button mat-button mat-button-base mail" mat-button>
+      <span class="mat-button-wrapper">
+         <mat-icon>mail</mat-icon>
+      <a href="mailto:{{mail}}">{{mail}}</a>
+      </span>
+      <span class="mat-ripple mat-button-ripple"></span>
+      <span class="mat-button-focus-overlay"></span>
+    </a>
+
+    <span class="horizontal-spacer"></span>
+
+    <a *ngFor="let footerItem of footerItems" [attr.aria-label]="footerItem.ariaLabel" aria-disabled="false"
+       class="mat-focus-indicator docs-button mat-button mat-button-base"
+       mat-button="" routerLink="/{{footerItem.routerLink}}">
+    <span class="mat-button-wrapper">
+      <span>{{footerItem.label}}</span>
+    </span>
+      <span class="mat-ripple mat-button-ripple"></span>
+      <span class="mat-button-focus-overlay"></span>
+    </a>
+  </mat-toolbar>
+
+  <mat-toolbar aria-label="Copyright" class="copyright" color="primary" role="toolbar">
+    <a class="mat-button copyright">
+      <span>© 2022 Care for Design</span>
+    </a>
+  </mat-toolbar>
+
+</div>

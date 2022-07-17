@@ -1,0 +1,5 @@
+@use "../../../utilities";
+
+.selected {
+  border: utilities.rem(.125) solid black;
+}

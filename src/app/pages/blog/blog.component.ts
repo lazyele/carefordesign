@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
-import {ITag} from "../../dto/ITag";
-import {BlogService} from "../../services/blog.service";
+import {ITag} from "../../dto/posts/ITag";
+import {BlogService} from "../../services/wordpress/blog.service";
 import {Observable, Subscription} from "rxjs";
-import {IPost} from "../../dto/IPost";
+import {IPost} from "../../dto/posts/IPost";
 import {ActivatedRoute, ParamMap} from "@angular/router";
 
 @Component({
@@ -36,6 +36,10 @@ export class BlogComponent implements OnInit {
     this.selectedTagIds = tags?.map(t => t.id) ?? [];
   }
 
+  onSearchChanged(search: string) {
+    this.searchInput = search;
+  }
+
   private getQueryParameter() {
     this.queryParamsSubscription = this.activatedRoute.queryParamMap
       .subscribe(params => {
@@ -59,9 +63,5 @@ export class BlogComponent implements OnInit {
         .filter(str => str)
         .map(str => parseInt(str));
     }
-  }
-
-  onSearchChanged(search: string) {
-    this.searchInput = search;
   }
 }
