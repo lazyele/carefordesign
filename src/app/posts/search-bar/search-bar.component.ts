@@ -1,5 +1,5 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {IPost} from "../dto/IPost";
+import {IPost} from "../../dto/posts/IPost";
 import {ContentFilterPipe} from "../filters/content-filter.pipe";
 import {Router} from "@angular/router";
 import {FormBuilder, FormControl} from "@angular/forms";

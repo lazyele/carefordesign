@@ -1,8 +1,8 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import {IPost} from "../dto/IPost";
-import {IMedia} from "../dto/IMedia";
-import {ITag} from "../dto/ITag";
+import {IPost} from "../../dto/posts/IPost";
+import {IMedia} from "../../dto/posts/IMedia";
+import {ITag} from "../../dto/posts/ITag";
 
 @Injectable({
   providedIn: 'root'

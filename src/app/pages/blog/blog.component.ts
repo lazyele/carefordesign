@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
-import {ITag} from "../../dto/ITag";
-import {BlogService} from "../../services/blog.service";
+import {ITag} from "../../dto/posts/ITag";
+import {BlogService} from "../../services/wordpress/blog.service";
 import {Observable, Subscription} from "rxjs";
-import {IPost} from "../../dto/IPost";
+import {IPost} from "../../dto/posts/IPost";
 import {ActivatedRoute, ParamMap} from "@angular/router";
 
 @Component({

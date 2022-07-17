@@ -1,5 +1,5 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
-import {ITag} from "../dto/ITag";
+import {ITag} from "../../dto/posts/ITag";
 
 @Component({
   selector: 'app-tag-selection',

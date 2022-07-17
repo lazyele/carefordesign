@@ -1,7 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {BlogService} from "../../services/blog.service";
-import {IPost} from "../../dto/IPost";
-import {IMedia} from "../../dto/IMedia";
+import {BlogService} from "../../services/wordpress/blog.service";
+import {IPost} from "../../dto/posts/IPost";
+import {IMedia} from "../../dto/posts/IMedia";
 
 @Component({
   selector: 'app-post-list',

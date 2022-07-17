@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
-import {BlogService} from "../../services/blog.service";
-import {IPost} from "../../dto/IPost";
+import {BlogService} from "../../services/wordpress/blog.service";
+import {IPost} from "../../dto/posts/IPost";
 
 @Component({
   selector: 'app-detail',

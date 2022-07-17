@@ -1,5 +1,5 @@
 import {Pipe, PipeTransform} from '@angular/core';
-import {IPost} from "../dto/IPost";
+import {IPost} from "../../dto/posts/IPost";
 
 @Pipe({
   name: 'contentFilter'

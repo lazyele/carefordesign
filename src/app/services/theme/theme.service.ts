@@ -2,8 +2,8 @@ import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {BehaviorSubject, Observable, of} from "rxjs";
 import {StylesheetService} from "./stylesheet.service";
-import {environment} from "../../environments/environment";
-import {ThemeType} from "../../environments/themes";
+import {environment} from "../../../environments/environment";
+import {ThemeType} from "../../../environments/themes";
 
 @Injectable({
   providedIn: 'root'

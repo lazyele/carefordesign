@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {FooterItems} from "../../environments/footer-items";
-import {environment} from "../../environments/environment";
+import {FooterItems} from "../../../environments/footer-items";
+import {environment} from "../../../environments/environment";
 
 @Component({
   selector: 'app-footer',

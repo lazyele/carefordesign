@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {IPost} from "../../dto/IPost";
-import {BlogService} from "../../services/blog.service";
+import {IPost} from "../../dto/posts/IPost";
+import {BlogService} from "../../services/wordpress/blog.service";
 import {Observable} from "rxjs";
 import {Router} from "@angular/router";
 
