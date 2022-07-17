@@ -35,7 +35,7 @@
           ></app-post-counter>
         </div>
         <div class="cell ">
-          <app-post-counter [count]="2"
+          <app-post-counter [count]="(posts | authorReducer).length"
                             title="Publizierende"
           ></app-post-counter>
         </div>

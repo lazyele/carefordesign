@@ -47,6 +47,7 @@ import {ImpressumComponent} from './pages/impressum/impressum.component';
 import {PrivacyPolicyComponent} from './pages/privacy-policy/privacy-policy.component';
 import {SourcesComponent} from './pages/sources/sources.component';
 import {AccessibilityComponent} from './pages/accessibility/accessibility.component';
+import {AuthorReducerPipe} from './posts/reducer/author-reducer.pipe';
 
 @NgModule({
   declarations: [
@@ -75,6 +76,7 @@ import {AccessibilityComponent} from './pages/accessibility/accessibility.compon
     BlogComponent,
     SpinnerComponent,
     PostCounterComponent,
+    AuthorReducerPipe,
   ],
   imports: [
     BrowserModule,
