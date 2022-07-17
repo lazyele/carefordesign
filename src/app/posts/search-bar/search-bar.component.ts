@@ -22,10 +22,22 @@ export class SearchBarComponent implements OnInit {
               private readonly fb: FormBuilder) {
   }
 
+  private static isString(value: number | string) {
+    return typeof value === 'string';
+  }
+
   ngOnInit(): void {
     this.initializeControl();
     this.initializeFilter();
 
+  }
+
+  onItemClick(id: number) {
+    this.router.navigate(["posts", id])
+  }
+
+  hasMinInputLength() {
+    return this.inputControl.value?.length > 1
   }
 
   private initializeFilter() {
@@ -43,18 +55,6 @@ export class SearchBarComponent implements OnInit {
 
   private filterInput(value: string) {
     return this.blogFilterPipe.transform(this.posts, <string>value);
-  }
-
-  private static isString(value: number | string) {
-    return typeof value === 'string';
-  }
-
-  onItemClick(id: number) {
-    this.router.navigate(["posts", id])
-  }
-
-  hasMinInputLength() {
-    return this.inputControl.value?.length > 1
   }
 
 }

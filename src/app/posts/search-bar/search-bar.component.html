@@ -1,9 +1,9 @@
-<div class="grid" *ngIf="(filteredPosts$ | async) as posts;">
+<div *ngIf="(filteredPosts$ | async) as posts;" class="grid">
   <div class="cell xs12-up">
     <form class="search-form">
       <mat-form-field class="search-form-field">
         <mat-label>Suchen</mat-label>
-        <input type="text" matInput [formControl]="inputControl" [matAutocomplete]="auto">
+        <input [formControl]="inputControl" [matAutocomplete]="auto" matInput type="text">
         <mat-hint *ngIf="inputControl.dirty  && posts.length ===0">
           <ng-container *ngIf=" hasMinInputLength(); else minLengthRequired">
             Es wurden leider keine Beiträge zu diesem Thema gefunden!
@@ -16,7 +16,7 @@
           #auto="matAutocomplete">
           <ng-container *ngIf="hasMinInputLength()">
 
-            <mat-option *ngFor="let post of posts" [value]="post.id" (onSelectionChange)="onItemClick(post.id)">
+            <mat-option (onSelectionChange)="onItemClick(post.id)" *ngFor="let post of posts" [value]="post.id">
               <div [innerHTML]="post.title.rendered"></div>
             </mat-option>
 

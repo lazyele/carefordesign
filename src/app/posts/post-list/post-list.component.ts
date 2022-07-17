@@ -10,8 +10,8 @@ import {IMedia} from "../../dto/posts/IMedia";
 })
 export class PostListComponent implements OnInit {
   @Input() posts: IPost[] = [];
-  private images = new Map<number, IMedia>()
   isImageLoading = false;
+  private images = new Map<number, IMedia>()
 
   constructor(
     private blogService: BlogService

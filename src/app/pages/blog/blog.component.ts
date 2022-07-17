@@ -36,6 +36,10 @@ export class BlogComponent implements OnInit {
     this.selectedTagIds = tags?.map(t => t.id) ?? [];
   }
 
+  onSearchChanged(search: string) {
+    this.searchInput = search;
+  }
+
   private getQueryParameter() {
     this.queryParamsSubscription = this.activatedRoute.queryParamMap
       .subscribe(params => {
@@ -59,9 +63,5 @@ export class BlogComponent implements OnInit {
         .filter(str => str)
         .map(str => parseInt(str));
     }
-  }
-
-  onSearchChanged(search: string) {
-    this.searchInput = search;
   }
 }

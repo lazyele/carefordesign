@@ -1,18 +1,18 @@
 <div class="grid grid-gap sm12-down md6-only md4-up">
-  <div class="cell" *ngFor="let post of posts  ">
+  <div *ngFor="let post of posts  " class="cell">
     <mat-card>
       <section class="post">
 
         <img *ngIf="hasImage(post); else spinner"
-             mat-card-image [src]="getImageSource(post)"
-             [alt]="getImageAlt(post)">
+             [alt]="getImageAlt(post)" [src]="getImageSource(post)"
+             mat-card-image>
 
         <mat-card-header class="post-header">
-          <mat-card-title class="post-title" [innerHTML]="post.title.rendered">
+          <mat-card-title [innerHTML]="post.title.rendered" class="post-title">
           </mat-card-title>
           <mat-card-subtitle>
             <p class="meta-data">
-              AutorIn: <a href="#" target="_blank" class="post-author">unknown</a> <br>
+              AutorIn: <a class="post-author" href="#" target="_blank">unknown</a> <br>
               veröffentlicht am: <a href="#">{{post.date | date: 'dd.MM.yyyy'}}</a>
             </p>
 
@@ -27,12 +27,12 @@
           </ng-container>
         </ng-template>
 
-        <mat-card-content class="post-description"
-                          [innerHTML]="post.excerpt.rendered | slice: 0:400">
+        <mat-card-content [innerHTML]="post.excerpt.rendered | slice: 0:400"
+                          class="post-description">
         </mat-card-content>
 
         <mat-card-actions>
-          <button class="mat-flat-button mat-primary" [routerLink]="['/posts', post.id]">
+          <button [routerLink]="['/posts', post.id]" class="mat-flat-button mat-primary">
             Beitrag lesen
           </button>
         </mat-card-actions>

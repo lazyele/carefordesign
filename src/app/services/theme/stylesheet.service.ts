@@ -8,23 +8,6 @@ export class StylesheetService {
   constructor() {
   }
 
-  /**
-   * Set the stylesheet with the specified key.
-   */
-  setStyle(key: string, href: string) {
-    StylesheetService.getLinkElementForKey(key).setAttribute("href", href);
-  }
-
-  /**
-   * Remove the stylesheet with the specified key.
-   */
-  removeStyle(key: string) {
-    const existingLinkElement = StylesheetService.getExistingLinkElementByKey(key);
-    if (existingLinkElement) {
-      document.head.removeChild(existingLinkElement);
-    }
-  }
-
   private static getLinkElementForKey(key: string) {
     return this.getExistingLinkElementByKey(key) || this.createLinkElementWithKey(key);
   }
@@ -45,6 +28,23 @@ export class StylesheetService {
 
   private static getClassNameForKey(key: string) {
     return `app-${key}`;
+  }
+
+  /**
+   * Set the stylesheet with the specified key.
+   */
+  setStyle(key: string, href: string) {
+    StylesheetService.getLinkElementForKey(key).setAttribute("href", href);
+  }
+
+  /**
+   * Remove the stylesheet with the specified key.
+   */
+  removeStyle(key: string) {
+    const existingLinkElement = StylesheetService.getExistingLinkElementByKey(key);
+    if (existingLinkElement) {
+      document.head.removeChild(existingLinkElement);
+    }
   }
 }
 
