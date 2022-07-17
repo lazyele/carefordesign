@@ -11,9 +11,10 @@ import {SourcesComponent} from "./pages/sources/sources.component";
 import {BlogComponent} from "./pages/blog/blog.component";
 
 const routes: Routes = [
+  {path: '', redirectTo: '/home', pathMatch: 'full'},
+  {path: 'home', component: HomeComponent},
   {path: 'posts', component: BlogComponent},
   {path: 'posts/:id', component: PostDetailComponent},
-  {path: 'home', component: HomeComponent},
   {path: 'about-us', component: AboutUsComponent},
   {path: 'accessibility', component: AccessibilityComponent},
   {path: 'impressum', component: ImpressumComponent},
