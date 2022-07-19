@@ -4,6 +4,7 @@
       <a aria-disabled="false" aria-label="Care for Design"
          class="mat-focus-indicator docs-button mat-button mat-button-base" mat-button="" routerLink="/home">
     <span class="mat-button-wrapper">
+      <img src="" style="max-height: 3rem">
       <span>Care for Design</span></span>
         <span class="mat-ripple mat-button-ripple"></span>
         <span class="mat-button-focus-overlay"></span>
@@ -11,7 +12,7 @@
     </div>
     <div class="cell cell-shrink">
       <button [matMenuTriggerFor]="beforeMenu" aria-label="Select a theme"
-              class="accessibility-button mat-flat-button">
+              class="accessibility-button mat-flat-button mat-accent">
 
         <mat-icon aria-hidden="false"
                   class="material-symbols-rounded accessibility-icon mat-icon notranslate material-icons mat-icon-no-color"
@@ -24,7 +25,7 @@
 
       <a *ngFor="let navbarItem of navbarItems" [attr.aria-label]="navbarItem.ariaLabel" aria-disabled="false"
          class="mat-focus-indicator docs-button mat-button mat-button-base desktop-menu"
-         mat-button="" routerLink="/{{navbarItem.routerLink}}">
+         mat-button routerLink="/{{navbarItem.routerLink}}">
     <span class="mat-button-wrapper">
       <span>{{navbarItem.label}}</span>
     </span>

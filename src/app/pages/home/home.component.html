@@ -1,7 +1,6 @@
 <div class="gird wrapper">
   <div *ngIf="posts$ | async; let posts"
-       class="grid"
-  >
+       class="grid">
     <div class="cell xs12-up center">
       <h1 class="mat-display-2">LESS IS MORE</h1>
     </div>
@@ -23,33 +22,32 @@
             Anzeigen
           </button>
         </div>
-
       </div>
 
-      <div class="grid grid-gap vertical-spacer sm12-down md4-up center">
-        <div class="cell ">
-          <app-post-counter [count]="posts?.length"
+
+      <div class="grid vertical-spacer sm12-down md4-up center">
+        <div class="cell">
+          <app-post-counter class="cell center" [count]="posts?.length"
                             title="Beiträge"
           ></app-post-counter>
         </div>
-        <div class="cell ">
-          <app-post-counter [count]="(posts | authorReducer).length"
+
+        <div class="cell">
+          <app-post-counter class="cell center" [count]="(posts | authorReducer).length"
                             title="Publizierende"
           ></app-post-counter>
         </div>
-        <div class="cell ">
-          <app-post-counter [count]="(posts | tagReducer).length"
+        <div class="cell">
+          <app-post-counter class="cell center" [count]="(posts | tagReducer).length"
                             title="Themen"
           ></app-post-counter>
         </div>
       </div>
-
     </div>
-
   </div>
 
 
-  <div class="text-image-direction grid grid-gap">
+  <div class="text-image-direction grid grid-gap vertical-spacer">
     <div class="cell md12-down lg7-up">
       <h1 class="mat-headline"> Was ist Care for Design?</h1>
       <p class="mat-body">

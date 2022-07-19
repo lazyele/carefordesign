@@ -10,6 +10,10 @@
   margin-bottom: utilities.rem(8);
 }
 
+button {
+  margin-top: utilities.rem(1);
+}
+
 
 @media (max-width: utilities.rem(47)) {
   .text-image-direction {

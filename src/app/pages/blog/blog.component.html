@@ -1,19 +1,19 @@
 <div class="wrapper">
   <div class="grid xs12-up posts">
-    <div class="cell ">
-      <h1 class="mat-display-3">Beiträge</h1>
+    <div class="cell">
+      <h1 class="mat-display-3">BEITRÄGE</h1>
     </div>
     <ng-container
       *ngIf="posts$ | async; let posts; else spinner"
     >
-      <div class="cell ">
+      <div class="cell">
         <app-search-bar
           (onSearchChanged)="onSearchChanged($event)"
           [posts]="posts"
           [search]="searchInput"
         ></app-search-bar>
       </div>
-      <div class="cell ">
+      <div class="cell vertical-spacer">
         <app-tag-selection
           (onSelectedTagsChanged)="onSelectedTagsChanged($event)"
           *ngIf="tags$ | async;let tags"

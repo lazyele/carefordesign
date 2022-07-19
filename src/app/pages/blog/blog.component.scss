@@ -1,0 +1,11 @@
+@use './src/utilities';
+
+.wrapper {
+  margin-top: utilities.rem(15);
+  margin-bottom: utilities.rem(8);
+}
+
+.vertical-spacer {
+  margin-top: utilities.rem(8);
+  margin-bottom: utilities.rem(8);
+}
