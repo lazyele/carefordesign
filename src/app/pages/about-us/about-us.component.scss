@@ -9,4 +9,10 @@
   background-size: cover;
   width: 100%;
   border-radius: utilities.rem(0.3);
+  max-width: utilities.rem(18);
+}
+
+.vertical-spacer {
+  margin-top: utilities.rem(8);
+  margin-bottom: utilities.rem(8);
 }
