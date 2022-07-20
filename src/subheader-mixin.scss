@@ -1,0 +1,11 @@
+@use '@angular/material';
+@use "sass:map";
+
+@mixin backgroud-class-headliner() {
+  background-color: red;
+}
+
+.headliner {
+  @include backgroud-class-headliner;
+}
+
