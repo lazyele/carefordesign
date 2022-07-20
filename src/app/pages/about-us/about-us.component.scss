@@ -5,14 +5,21 @@
   margin-bottom: utilities.rem(8);
 }
 
-.portrait {
-  background-size: cover;
-  width: 100%;
-  border-radius: utilities.rem(0.3);
-  max-width: utilities.rem(18);
-}
-
 .vertical-spacer {
   margin-top: utilities.rem(8);
   margin-bottom: utilities.rem(8);
+}
+
+.portrait-card {
+  width: 80%;
+  max-width: utilities.rem(24);
+}
+
+mat-card-content {
+  text-align: left;
+  margin: utilities.rem(1);
+}
+
+mat-card-title {
+  margin-top: utilities.rem(1);
 }
