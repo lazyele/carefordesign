@@ -2,14 +2,37 @@
 @use "sass:map";
 @use 'src/styles';
 
-//$primary: material.define-palette(styles.$carefordesign-primary, 500);
+//Light-Theme
+
 $primary: map.get(styles.$carefordesign-theme, primary);
+$accent: map.get(styles.$carefordesign-theme, accent);
+$link-color: material.get-color-from-palette($accent, default);
 $color: material.get-color-from-palette($primary, default);
 
 @mixin backgroud-class-headliner() {
   background-color: #{$color};
 }
 
+/**
+@mixin link-color($link, $visited, $hover, $active) {
+  & {
+    color: #{$link-color};
+    &:visited {
+      color: #{$link-color};
+    }
+    &:hover {
+      color: #{$link-color};
+    }
+    &:active {
+      color: #{$link-color}
+    }
+  }
+}
+
+a.link {
+  @include link-color;
+}
+**/
 .headliner {
   @include backgroud-class-headliner;
 }
