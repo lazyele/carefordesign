@@ -3,16 +3,11 @@
 @use 'src/styles';
 
 //$primary: material.define-palette(styles.$carefordesign-primary, 500);
-$theme: styles.$carefordesign-theme;
-$primary: map-get($theme, primary);
-$accent: map-get($theme, accent);
-$warn: map-get($theme, warn);
-
-$color: material.get-color-from-palette($primary, 200);
+$primary: map.get(styles.$carefordesign-theme, primary);
+$color: material.get-color-from-palette($primary, default);
 
 @mixin backgroud-class-headliner() {
   background-color: #{$color};
-  //background-color: red;
 }
 
 .headliner {
