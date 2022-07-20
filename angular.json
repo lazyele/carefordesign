@@ -107,5 +107,8 @@
       }
     }
   },
-  "defaultProject": "carefordesign"
+  "defaultProject": "carefordesign",
+  "cli": {
+    "analytics": false
+  }
 }
