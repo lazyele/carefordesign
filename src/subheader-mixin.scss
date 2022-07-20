@@ -1,8 +1,18 @@
 @use '@angular/material';
 @use "sass:map";
+@use 'src/styles';
+
+//$primary: material.define-palette(styles.$carefordesign-primary, 500);
+$theme: styles.$carefordesign-theme;
+$primary: map-get($theme, primary);
+$accent: map-get($theme, accent);
+$warn: map-get($theme, warn);
+
+$color: material.get-color-from-palette($primary, 200);
 
 @mixin backgroud-class-headliner() {
-  background-color: red;
+  background-color: #{$color};
+  //background-color: red;
 }
 
 .headliner {
