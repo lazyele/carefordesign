@@ -37,6 +37,17 @@
       <button [matMenuTriggerFor]="mobileMenu" aria-label="Burgermenu" class="burger-menu" mat-icon-button>
         <mat-icon>menu</mat-icon>
       </button>
+      <mat-menu #mobileMenu="matMenu">
+        <a *ngFor="let navbarItem of navbarItems" [attr.aria-label]="navbarItem.ariaLabel" aria-disabled="false"
+           class="mat-focus-indicator docs-button mat-button mat-button-base mat-menu-item"
+           mat-button="" routerLink="/{{navbarItem.routerLink}}">
+    <span class="mat-button-wrapper">
+      <span>{{navbarItem.label}}</span>
+    </span>
+          <span class="mat-ripple mat-button-ripple"></span>
+          <span class="mat-button-focus-overlay"></span>
+        </a>
+      </mat-menu>
     </div>
   </div>
 </mat-toolbar>
@@ -46,14 +57,4 @@
   </app-theme-switcher>
 </mat-menu>
 
-<mat-menu #mobileMenu="matMenu">
-  <a *ngFor="let navbarItem of navbarItems" [attr.aria-label]="navbarItem.ariaLabel" aria-disabled="false"
-     class="mat-focus-indicator docs-button mat-button mat-button-base"
-     mat-button="" routerLink="/{{navbarItem.routerLink}}">
-    <span class="mat-button-wrapper">
-      <span>{{navbarItem.label}}</span>
-    </span>
-    <span class="mat-ripple mat-button-ripple"></span>
-    <span class="mat-button-focus-overlay"></span>
-  </a>
-</mat-menu>
+
