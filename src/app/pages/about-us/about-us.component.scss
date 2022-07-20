@@ -1,8 +1,17 @@
 @use './src/utilities';
 
+.wrapper.head {
+  padding-top: utilities.rem(10.5);
+  padding-bottom: utilities.rem(0.5);
+}
+
+.illustration-box {
+  margin-top: utilities.rem(-5);
+}
+
 .wrapper {
-  margin-top: utilities.rem(15);
-  margin-bottom: utilities.rem(8);
+  padding-top: utilities.rem(8);
+  padding-bottom: utilities.rem(8);
 }
 
 .vertical-spacer {

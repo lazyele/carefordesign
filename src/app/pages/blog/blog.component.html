@@ -1,34 +1,44 @@
-<div class="wrapper">
-  <div class="grid xs12-up posts">
-    <div class="cell">
-      <h1 class="mat-display-3">BEITRÄGE</h1>
+<div class="headliner">
+  <div class="wrapper">
+    <div class="grid xs12-up posts">
+      <div class="cell center">
+        <h1 class="mat-display-3">BEITRÄGE</h1>
+      </div>
+      <ng-container
+        *ngIf="posts$ | async; let posts; else spinner"
+      >
+        <div class="cell">
+          <app-search-bar
+            (onSearchChanged)="onSearchChanged($event)"
+            [posts]="posts"
+            [search]="searchInput"
+          ></app-search-bar>
+        </div>
+        <div class="cell">
+          <app-tag-selection
+            (onSelectedTagsChanged)="onSelectedTagsChanged($event)"
+            *ngIf="tags$ | async;let tags"
+            [tags]="tags"
+          ></app-tag-selection>
+        </div>
+      </ng-container>
     </div>
-    <ng-container
-      *ngIf="posts$ | async; let posts; else spinner"
-    >
-      <div class="cell">
-        <app-search-bar
-          (onSearchChanged)="onSearchChanged($event)"
-          [posts]="posts"
-          [search]="searchInput"
-        ></app-search-bar>
-      </div>
-      <div class="cell vertical-spacer">
-        <app-tag-selection
-          (onSelectedTagsChanged)="onSelectedTagsChanged($event)"
-          *ngIf="tags$ | async;let tags"
-          [tags]="tags"
-        ></app-tag-selection>
-      </div>
-      <div class="cell">
-        <app-post-list [posts]="posts
+  </div>
+</div>
+<div class="wrapper">
+  <ng-container
+    *ngIf="posts$ | async; let posts; else spinner"
+  >
+    <div class="cell">
+      <app-post-list [posts]="posts
                           | tagFilter: selectedTagIds
                           | contentFilter: searchInput"
-        ></app-post-list>
-      </div>
-    </ng-container>
-    <ng-template #spinner>
-      <app-spinner></app-spinner>
-    </ng-template>
-  </div>
+      ></app-post-list>
+    </div>
+  </ng-container>
+
+  <ng-template #spinner>
+    <app-spinner></app-spinner>
+  </ng-template>
+
 </div>

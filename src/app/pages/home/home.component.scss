@@ -2,8 +2,12 @@
 @use './src/subheader-mixin';
 
 .wrapper {
-  margin-top: utilities.rem(15);
-  margin-bottom: utilities.rem(8);
+  padding-top: utilities.rem(12);
+  padding-bottom: utilities.rem(8);
+}
+
+div.main.wrapper {
+  margin-top: utilities.rem(-16)
 }
 
 .vertical-spacer {
