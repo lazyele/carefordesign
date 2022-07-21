@@ -2,12 +2,12 @@
   <div class="wrapper">
     <div class="grid xs12-up posts">
       <div class="cell center">
-        <h1 class="mat-display-3">BEITRÄGE</h1>
+        <h1 class="mat-display-2">BEITRÄGE</h1>
       </div>
       <ng-container
         *ngIf="posts$ | async; let posts; else spinner"
       >
-        <div class="cell">
+        <div class="cell searchbar">
           <app-search-bar
             (onSearchChanged)="onSearchChanged($event)"
             [posts]="posts"
