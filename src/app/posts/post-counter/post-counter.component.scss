@@ -4,3 +4,11 @@
   height: utilities.rem(10);
   width: utilities.rem(10);
 }
+
+mat-card-title {
+  padding-top: utilities.rem(1.5);
+}
+
+mat-card-content {
+  padding-top: utilities.rem(1.5);
+}
