@@ -5,9 +5,7 @@
   padding-bottom: utilities.rem(3);
 }
 
-.illustration-box {
-  margin-top: utilities.rem(-5);
-}
+
 
 .wrapper {
   padding-top: utilities.rem(8);
@@ -40,4 +38,13 @@ mat-icon {
 
 button {
   margin: utilities.rem(1)
+}
+
+@media (max-width: utilities.rem(57)) {
+  .text-image-direction {
+    flex-direction: column;
+  }
+  .mat-body {
+    text-align: center;
+  }
 }

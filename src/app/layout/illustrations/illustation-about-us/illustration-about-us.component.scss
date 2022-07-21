@@ -1,10 +1,6 @@
 @use '../../../../utilities';
 
 //Illustration Animation start
-svg {
-  width: 75%;
-}
-
 @media (max-width: utilities.rem(48)) {
   svg {
     display: none;
