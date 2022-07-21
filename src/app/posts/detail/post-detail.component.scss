@@ -1,6 +1,19 @@
 @use './src/utilities';
 
+.wrapper.head {
+  padding-top: utilities.rem(12);
+  padding-bottom: utilities.rem(3);
+}
+
 .wrapper {
-  margin-top: utilities.rem(15);
+  margin-top: utilities.rem(0);
   margin-bottom: utilities.rem(8);
+}
+
+.post-title {
+  margin-bottom: utilities.rem(0);
+}
+
+img {
+  border-radius: utilities.rem(0.25)
 }
