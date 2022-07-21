@@ -6,8 +6,10 @@
   padding-bottom: utilities.rem(8);
 }
 
+
 div.main.wrapper {
-  margin-top: utilities.rem(-16)
+  margin-top: utilities.rem(-16);
+  padding-bottom: utilities.rem(2)
 }
 
 .vertical-spacer {
@@ -20,10 +22,17 @@ button {
 }
 
 
-@media (max-width: utilities.rem(47)) {
+@media (max-width: utilities.rem(48)) {
   .text-image-direction {
     flex-direction: column;
     flex-flow: column-reverse;
+  }
 
+  app-post-counter {
+    display: none;
+  }
+  div.main.wrapper {
+    margin-top: utilities.rem(-16);
+    padding-bottom: utilities.rem(0);
   }
 }
