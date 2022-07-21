@@ -8,7 +8,12 @@ import {AboutUsItems} from "../../../environments/about-us-items";
 })
 export class AboutUsComponent {
 
-  aboutUsItems = AboutUsItems
+  aboutUsItems = AboutUsItems;
+
+  emailSupport() {
+    location.href = "mailto:info@carefordesign.ch"
+  }
+
 
   constructor() {
   }
