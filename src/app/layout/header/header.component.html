@@ -4,8 +4,8 @@
       <a aria-disabled="false" aria-label="Care for Design"
          class="mat-focus-indicator docs-button mat-button mat-button-base" mat-button="" routerLink="/home">
     <span class="mat-button-wrapper">
-      <img src="" style="max-height: 3rem">
-      <span>Care for Design</span></span>
+      <img src="{{currentLogoUrl$ | async }}" class="logo">
+      <span class="name">Care for Design</span></span>
         <span class="mat-ripple mat-button-ripple"></span>
         <span class="mat-button-focus-overlay"></span>
       </a>

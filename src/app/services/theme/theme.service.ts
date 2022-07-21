@@ -38,6 +38,7 @@ export class ThemeService {
 export interface IThemeOption {
   label: string;
   type: ThemeType;
+  logoUrl: string;
 }
 
 

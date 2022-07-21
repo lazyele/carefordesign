@@ -11,11 +11,13 @@ export const environment = {
     [
       {
         label: "Heller Hintergrund",
-        type: ThemeType.Default
+        type: ThemeType.Default,
+        logoUrl: 'src/assets/images/logo_lighttheme.png'
       },
       {
         label: "Dunkler Hingergrund",
-        type: ThemeType.DarkTheme
+        type: ThemeType.DarkTheme,
+        logoUrl: 'src/assets/images/logo_darktheme.png'
       }
     ],
 };
