@@ -7800,6 +7800,26 @@ mat-row, mat-header-row, mat-footer-row, th.mat-header-cell, td.mat-cell, td.mat
   color: #aaff3c
 }
 
+.headliner {
+  background-color: #e1b6ff
+}
+
+a:not(.mat-button) {
+  color: #4e6700
+}
+
+a:not(.mat-button):visited {
+  color: #774b9b
+}
+
+a:not(.mat-button):hover {
+  color: #697e26
+}
+
+a:not(.mat-button):active {
+  color: #697e26
+}
+
 html, body {
   height: 100%
 }

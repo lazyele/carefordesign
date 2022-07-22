@@ -2,24 +2,27 @@
 @use "sass:map";
 @use 'src/styles';
 
+//Start Mixin
 //Light-Theme
+
+
 $primary: map.get(styles.$carefordesign-theme, primary);
 $accent: map.get(styles.$carefordesign-theme, accent);
 $color: material.get-color-from-palette($primary, default);
+
 
 @mixin backgroud-class-headliner() {
   background-color: #{$color};
 }
 
-
 //Link-Light-Theme
 $link-color: material.get-color-from-palette($accent, 500);
-$link-color-visited: material.get-color-from-palette($primary, 400);
+$link-color-visited: material.get-color-from-palette($primary, 500);
 $link-color-hover: material.get-color-from-palette($accent, 400);
 $link-color-active: material.get-color-from-palette($accent, 400);
 
 @mixin link-colors($link, $visited, $hover, $active) {
-  a {
+  & {
     color: $link;
 
     &:visited {
@@ -36,10 +39,12 @@ $link-color-active: material.get-color-from-palette($accent, 400);
   }
 }
 
+
 //Dark-Theme
 $primary: map.get(styles.$dark-carefordesign-theme, primary);
 $accent: map.get(styles.$dark-carefordesign-theme, accent);
 $color: material.get-color-from-palette($primary, default);
+
 
 @mixin backgroud-class-headliner() {
   background-color: #{$color};
@@ -69,10 +74,11 @@ $link-color-active: material.get-color-from-palette($accent, 400);
   }
 }
 
-
-a.link {
+a:not(.mat-button) {
   @include link-colors($link-color, $link-color-visited, $link-color-hover, $link-color-active);
 }
+
+
 
 .headliner {
   @include backgroud-class-headliner;
