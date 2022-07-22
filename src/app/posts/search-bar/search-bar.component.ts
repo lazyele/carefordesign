@@ -1,6 +1,6 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {IPost} from "../../dto/posts/IPost";
-import {ContentFilterPipe} from "../filters/content-filter.pipe";
+import {ContentFilterPipe} from "../pipes/filters/content-filter.pipe";
 import {Router} from "@angular/router";
 import {UntypedFormBuilder, UntypedFormControl} from "@angular/forms";
 import {filter, map, Observable, startWith, tap} from "rxjs";
