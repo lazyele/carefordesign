@@ -10,7 +10,7 @@
           </mat-card-title>
           <mat-card-subtitle>
             <p class="meta-data">
-              AutorIn: <a class="post-author" href="#" target="_blank">{{post.author}}</a> <br>
+              AutorIn: <a class="post-author" href="#" target="_blank">{{post.author | authorName}}</a> <br>
               veröffentlicht am: <a href="#">{{post.date | date: 'dd.MM.yyyy'}}</a>
             </p>
 

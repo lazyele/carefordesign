@@ -13,7 +13,7 @@
         <section *ngIf="post" class="post">
           <header class="post-header">
             <p class="meta-data mat-caption">
-              Autorin: <a class="post-author" href="#" target="_blank">unknown</a>
+              Autorin: <a class="post-author" href="#" target="_blank">{{post.author | authorName}}</a>
               veröffentlicht am: <a href="#">{{post.date | date: 'dd.MM.yyyy'}}</a>
             </p>
           </header>
