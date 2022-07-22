@@ -1,5 +1,15 @@
 @use "../../../utilities";
 
+a {
+  font-size: utilities.rem(1);
+}
+
+.mailbox {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
 .horizontal-spacer {
   flex: 1 1 auto;
 }
@@ -8,6 +18,10 @@
   position: sticky;
   top: 100vh;
   width: 100%;
+}
+
+span {
+  vertical-align: center;
 }
 
 .main-footer {
@@ -40,5 +54,8 @@ mat-icon {
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: center;
+  }
+  mat-icon {
+    display: none;
   }
 }
