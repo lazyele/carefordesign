@@ -9,6 +9,7 @@ import {ITag} from "../../dto/posts/ITag";
 })
 export class BlogService {
   private static readonly blogUrl = 'https://www.carefordesign.ch/wp-json/wp/v2'
+  private static authors = new Map<number, string>([[1, 'Alessia',], [2, 'Sesea']]);
 
   constructor(private http: HttpClient) {
   }
@@ -31,6 +32,13 @@ export class BlogService {
   getTags() {
     const url = `${BlogService.blogUrl}/tags`;
     return this.http.get<ITag[]>(url);
+  }
+
+  getAuthor(authorId: number) {
+    if (BlogService.authors.has(authorId)) {
+      return BlogService.authors.get(authorId);
+    }
+    return 'Unbekannt';
   }
 
 
