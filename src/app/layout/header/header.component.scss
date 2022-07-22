@@ -19,6 +19,10 @@
   margin-left: utilities.rem(1);
 }
 
+.accessibility-button {
+  margin-right: utilities.rem(0.5);
+}
+
 .accessibility-button span {
   display: inline-block;
 }
@@ -32,7 +36,6 @@
 }
 
 .logo {
-  margin-right: utilities.rem(1);
   max-height: utilities.rem(3);
 }
 

@@ -1,16 +1,17 @@
 <mat-toolbar aria-label="Header" class="header mat-elevation-z5" color="primary" role="toolbar">
   <div class="grid no-bottom-gap">
-    <div class="cell">
+    <img src="{{currentLogoUrl$ | async }}" class="logo">
+    <div class="cell middle">
+
       <a aria-disabled="false" aria-label="Care for Design"
          class="mat-focus-indicator docs-button mat-button mat-button-base" mat-button="" routerLink="/home">
     <span class="mat-button-wrapper">
-      <img src="{{currentLogoUrl$ | async }}" class="logo">
       <span class="name">Care for Design</span></span>
         <span class="mat-ripple mat-button-ripple"></span>
         <span class="mat-button-focus-overlay"></span>
       </a>
     </div>
-    <div class="cell cell-shrink">
+    <div class="cell middle cell-shrink">
       <button [matMenuTriggerFor]="beforeMenu" aria-label="Select a theme"
               class="accessibility-button mat-flat-button mat-accent">
 
