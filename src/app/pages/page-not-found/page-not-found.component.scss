@@ -1,1 +1,14 @@
+@use './src/utilities';
 
+.wrapper {
+  margin-top: utilities.rem(15);
+  margin-bottom: utilities.rem(8);
+}
+
+.description {
+  margin-top: utilities.rem(-5)
+}
+
+.title {
+  margin-bottom: utilities.rem(-4)
+}
