@@ -15,8 +15,11 @@ export class TagReducerPipe implements PipeTransform {
   }
 
   private static getAllTags(posts: IPost[]) {
-    return posts?.map(post => post?.tags ?? [])
-      .filter(tags => tags.length > 0)
-      .reduce((previous, current) => previous.concat(current, [])) ?? [];
+    const allTags = posts?.map(post => post?.tags ?? [])
+      .filter(tags => tags.length > 0);
+    if (allTags.length > 0) {
+      return allTags.reduce((previous, current) => previous.concat(current, []));
+    }
+    return [];
   }
 }
