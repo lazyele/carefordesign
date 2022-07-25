@@ -12,6 +12,6 @@ export class AuthorNamePipe implements PipeTransform {
   transform(authorId: number): string {
     return (AuthorNamePipe.authors.has(authorId)
       ? AuthorNamePipe.authors.get(authorId)
-      : 'Unbekannt') ?? '';
+      : 'Sesea') ?? '';
   }
 }
