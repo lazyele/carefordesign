@@ -38,12 +38,12 @@
     </div>
 
     <div class="cell">
-      <app-post-counter class="cell center" [count]="(posts | authorReducer).length"
+      <app-post-counter class="cell center" [count]="(posts | authorReducer)?.length"
                         title="Publizierende"
       ></app-post-counter>
         </div>
         <div class="cell">
-          <app-post-counter class="cell center" [count]="(posts | tagReducer).length"
+          <app-post-counter class="cell center" [count]="(posts | tagReducer)?.length"
                             title="Themen"
           ></app-post-counter>
         </div>
