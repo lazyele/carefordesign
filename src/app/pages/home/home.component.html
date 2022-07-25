@@ -10,10 +10,10 @@
         >
           <div class="cell">
             <app-search-bar
-            (onSearchChanged)="onSearchChanged($event)"
-            [posts]="posts">
-          </app-search-bar>
-        </div>
+              (onSearchChanged)="onSearchChanged($event)"
+              [posts]="posts">
+            </app-search-bar>
+          </div>
         </div>
         <div class="cell">
           <div class="cell center">
@@ -37,17 +37,23 @@
       ></app-post-counter>
     </div>
 
-    <div class="cell">
-      <app-post-counter class="cell center" [count]="(posts | authorReducer)?.length"
-                        title="Publizierende"
-      ></app-post-counter>
-        </div>
-        <div class="cell">
-          <app-post-counter class="cell center" [count]="(posts | tagReducer)?.length"
-                            title="Themen"
-          ></app-post-counter>
-        </div>
+    <ng-container *ngIf="posts | authorReducer; let authors">
+      <div class="cell" *ngIf="authors?.length">
+        <app-post-counter class="cell center" [count]="authors?.length"
+                          title="Publizierende"
+        ></app-post-counter>
       </div>
+
+    </ng-container>
+    <ng-container *ngIf="posts| tagReducer; let tags;">
+      <div class="cell" *ngIf="tags?.length">
+        <app-post-counter class="cell center" [count]="tags?.length"
+                          title="Themen"
+        ></app-post-counter>
+      </div>
+
+    </ng-container>
+  </div>
 
   <div class="text-image-direction grid grid-gap vertical-spacer">
     <div class="cell md12-down lg7-up vertical-spacer">
