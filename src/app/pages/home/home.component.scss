@@ -1,6 +1,5 @@
 @use './src/utilities';
-@use './src/subheader-mixin';
-
+@use '../../../mixins';
 .wrapper {
   padding-top: utilities.rem(12);
   padding-bottom: utilities.rem(8);
@@ -31,6 +30,7 @@ button {
   app-post-counter {
     display: none;
   }
+
   div.main.wrapper {
     margin-top: utilities.rem(-16);
     padding-bottom: utilities.rem(0);

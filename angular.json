@@ -32,7 +32,7 @@
             ],
             "styles": [
               "src/assets/flexgrid.css",
-              "src/subheader-mixin.scss",
+              "src/mixins.scss",
               "src/assets/themes/light-theme.css"
             ],
             "scripts": []

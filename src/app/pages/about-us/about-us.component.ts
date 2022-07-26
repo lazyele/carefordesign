@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
 import {AboutUsItems} from "../../../environments/about-us-items";
+import {environment} from "../../../environments/environment";
 
 @Component({
   selector: 'app-about-us',
@@ -9,14 +10,6 @@ import {AboutUsItems} from "../../../environments/about-us-items";
 export class AboutUsComponent {
 
   aboutUsItems = AboutUsItems;
-
-  emailSupport() {
-    location.href = "mailto:info@carefordesign.ch"
-  }
-
-
-  constructor() {
-  }
-
+  mail = environment.mail;
 
 }

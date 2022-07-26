@@ -5,8 +5,7 @@ import {Pipe, PipeTransform} from '@angular/core';
 })
 export class AuthorNamePipe implements PipeTransform {
   private static authors = new Map<number, string>([
-    [1, 'Alessia',],
-    [2, 'Sesea']
+    [1, 'Alessia',]
   ]);
 
   transform(authorId: number): string {
