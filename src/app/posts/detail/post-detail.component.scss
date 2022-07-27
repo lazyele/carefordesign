@@ -6,9 +6,23 @@
   margin-bottom: utilities.rem(8);
 }
 
+button {
+  position: sticky;
+  bottom: utilities.rem(2);
+  right: 0px;
+  float: right;
+
+
+}
+
 .post-title {
   margin-bottom: utilities.rem(0);
   text-transform: uppercase;
+}
+
+.vertical-spacer {
+  margin-top: utilities.rem(4);
+  margin-bottom: utilities.rem(4);
 }
 
 
