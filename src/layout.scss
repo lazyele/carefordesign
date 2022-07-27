@@ -9,3 +9,10 @@
   padding-top: utilities.rem(12);
   padding-bottom: utilities.rem(2);
 }
+
+@media (max-width: utilities.rem(40)) {
+  .wrapper-top-bottom {
+    margin-top: utilities.rem(12);
+    margin-bottom: utilities.rem(4);
+  }
+}
