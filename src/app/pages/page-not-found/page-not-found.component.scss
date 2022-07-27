@@ -1,9 +1,5 @@
 @use './src/utilities';
-
-.wrapper {
-  margin-top: utilities.rem(15);
-  margin-bottom: utilities.rem(8);
-}
+@use 'src/layout';
 
 .description {
   margin-top: utilities.rem(-4)

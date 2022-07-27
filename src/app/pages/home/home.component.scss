@@ -1,7 +1,8 @@
 @use './src/utilities';
 @use '../../../mixins';
+
 .wrapper {
-  padding-top: utilities.rem(12);
+  padding-top: utilities.rem(14);
   padding-bottom: utilities.rem(8);
 }
 
@@ -19,7 +20,6 @@ div.main.wrapper {
 button {
   margin-top: utilities.rem(1);
 }
-
 
 @media (max-width: utilities.rem(48)) {
   .text-image-direction {

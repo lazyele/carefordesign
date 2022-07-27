@@ -1,6 +1,1 @@
-@use './src/utilities';
-
-.wrapper {
-  margin-top: utilities.rem(14);
-  margin-bottom: utilities.rem(8);
-}
+@use 'src/layout';

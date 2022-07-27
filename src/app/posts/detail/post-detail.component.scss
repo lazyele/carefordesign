@@ -1,9 +1,5 @@
 @use './src/utilities';
-
-.wrapper.head {
-  padding-top: utilities.rem(12);
-  padding-bottom: utilities.rem(4);
-}
+@use 'src/layout';
 
 .wrapper {
   margin-top: utilities.rem(0);
