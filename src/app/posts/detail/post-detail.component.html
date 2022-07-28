@@ -4,7 +4,7 @@
       <div class="cell xs12-up center">
         <section *ngIf="post" class="post">
           <header class="post-header">
-            <h1 [innerHTML]="post.title.rendered" class="post-title mat-display-2">
+            <h1 [innerHTML]="post.title.rendered | uppercase" class="post-title mat-display-2">
             </h1>
           </header>
         </section>
