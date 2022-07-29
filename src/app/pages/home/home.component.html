@@ -1,33 +1,26 @@
-<div class="headliner">
-  <div class="wrapper">
-    <div *ngIf="posts$ | async; let posts"
-         class="grid">
-      <div class="cell xs12-up center">
-        <h1 class="mat-display-2">LESS IS MORE</h1>
-      </div>
-      <div class="cell xs12-up center">
-        <div class="grid"
-        >
-          <div class="cell">
-            <app-search-bar
-              (onSearchChanged)="onSearchChanged($event)"
-              [posts]="posts">
-            </app-search-bar>
-          </div>
-        </div>
+<app-headliner text="LESS IS MORE">
+  <div *ngIf="posts$ | async; let posts" class="grid xs12-up center">
+    <div class="cell">
+      <div class="grid">
         <div class="cell">
-          <div class="cell center">
-            <button (click)="onNavigateToList()" [disabled]=" (posts | contentFilter: searchInput).length===0"
-                    color="primary"
-                    mat-raised-button>
-              Anzeigen
-            </button>
-          </div>
+          <app-search-bar
+            (onSearchChanged)="onSearchChanged($event)"
+            [posts]="posts">
+          </app-search-bar>
+        </div>
+      </div>
+      <div class="cell">
+        <div class="cell center">
+          <button (click)="onNavigateToList()" [disabled]=" (posts | contentFilter: searchInput).length===0"
+                  color="primary"
+                  mat-raised-button>
+            Anzeigen
+          </button>
         </div>
       </div>
     </div>
   </div>
-</div>
+</app-headliner>
 
 <div class="main wrapper">
   <div *ngIf="posts$ | async; let posts" class="grid sm12-down md4-up center">
