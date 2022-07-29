@@ -50,6 +50,7 @@ import {AccessibilityComponent} from './pages/accessibility/accessibility.compon
 import {AuthorReducerPipe} from './posts/pipes/reducer/author-reducer.pipe';
 import {TagReducerPipe} from './posts/pipes/reducer/tag-reducer.pipe';
 import {AuthorNamePipe} from './posts/pipes/author-name.pipe';
+import {HeadlinerComponent} from './layout/headliner/headliner.component';
 
 @NgModule({
   declarations: [
@@ -81,6 +82,7 @@ import {AuthorNamePipe} from './posts/pipes/author-name.pipe';
     AuthorReducerPipe,
     TagReducerPipe,
     AuthorNamePipe,
+    HeadlinerComponent,
   ],
   imports: [
     BrowserModule,

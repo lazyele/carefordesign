@@ -1,11 +1,6 @@
 @use './src/utilities';
 @use 'src/layout';
 
-.wrapper {
-  padding-top: utilities.rem(8);
-  padding-bottom: utilities.rem(8);
-}
-
 .vertical-spacer {
   margin-top: utilities.rem(8);
   margin-bottom: utilities.rem(8);
