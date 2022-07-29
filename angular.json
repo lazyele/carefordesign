@@ -27,11 +27,13 @@
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
-              "src/favicon.ico",
+              "src/carefordesign.ico",
               "src/assets"
             ],
             "styles": [
               "src/assets/flexgrid.css",
+              "src/mixins.scss",
+              "src/layout.scss",
               "src/assets/themes/light-theme.css"
             ],
             "scripts": []
@@ -96,7 +98,7 @@
             "karmaConfig": "karma.conf.js",
             "inlineStyleLanguage": "scss",
             "assets": [
-              "src/favicon.ico",
+              "src/carefordesign.ico",
               "src/assets"
             ],
             "styles": [
@@ -107,5 +109,8 @@
       }
     }
   },
-  "defaultProject": "carefordesign"
+  "defaultProject": "carefordesign",
+  "cli": {
+    "analytics": false
+  }
 }

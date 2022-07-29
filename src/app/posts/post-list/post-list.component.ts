@@ -28,7 +28,7 @@ export class PostListComponent implements OnInit {
 
   getImageSource(post: IPost) {
     return this.images?.get(post.featured_media)
-      ?.media_details?.sizes?.medium?.source_url ?? ''
+      ?.media_details?.sizes?.large?.source_url ?? ''
   }
 
   getImageAlt(post: IPost) {

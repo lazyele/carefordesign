@@ -10,11 +10,6 @@
   height: utilities.rem(5);
 }
 
-.accessibility-button {
-  //Todo: Change Colors to Theme Colors
-  background: #ffd740;
-}
-
 .accessibility-icon {
   vertical-align: middle;
   padding: 0 utilities.rem(0.3) utilities.rem(0.25) 0;
@@ -22,6 +17,10 @@
 
 .mat-icon-button {
   margin-left: utilities.rem(1);
+}
+
+.accessibility-button {
+  margin-right: utilities.rem(0.5);
 }
 
 .accessibility-button span {
@@ -36,6 +35,10 @@
   display: none;
 }
 
+.logo {
+  max-height: utilities.rem(3);
+}
+
 @media (max-width: utilities.rem(40)) {
   .burger-menu {
     display: inline-block;
@@ -48,6 +51,9 @@
   }
   .accessibility-icon {
     padding: 0;
+  }
+  .name {
+    display: none;
   }
 }
 

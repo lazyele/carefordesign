@@ -1,8 +1,9 @@
 @use './src/utilities';
+@use '../../../mixins';
 
-.wrapper {
-  margin-top: utilities.rem(15);
-  margin-bottom: utilities.rem(8);
+.home-wrapper {
+  margin-top: utilities.rem(-16);
+  padding-bottom: utilities.rem(2)
 }
 
 .vertical-spacer {
@@ -10,11 +11,21 @@
   margin-bottom: utilities.rem(8);
 }
 
+button {
+  margin-top: utilities.rem(1);
+}
 
-@media (max-width: utilities.rem(47)) {
+@media (max-width: utilities.rem(48)) {
   .text-image-direction {
     flex-direction: column;
     flex-flow: column-reverse;
+  }
 
+  app-post-counter {
+    display: none;
+  }
+
+  .home-wrapper {
+    padding-bottom: utilities.rem(0);
   }
 }

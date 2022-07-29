@@ -1,13 +1,7 @@
-<div class="gird wrapper">
-  <div *ngIf="posts$ | async; let posts"
-       class="grid"
-  >
-    <div class="cell xs12-up center">
-      <h1 class="mat-display-2">LESS IS MORE</h1>
-    </div>
-    <div class="cell xs12-up center">
-      <div class="grid"
-      >
+<app-headliner text="LESS IS MORE">
+  <div *ngIf="posts$ | async; let posts" class="grid xs12-up center">
+    <div class="cell">
+      <div class="grid">
         <div class="cell">
           <app-search-bar
             (onSearchChanged)="onSearchChanged($event)"
@@ -23,47 +17,46 @@
             Anzeigen
           </button>
         </div>
-
       </div>
+    </div>
+  </div>
+</app-headliner>
 
-      <div class="grid grid-gap vertical-spacer sm12-down md4-up center">
-        <div class="cell ">
-          <app-post-counter [count]="posts?.length"
-                            title="Beiträge"
-          ></app-post-counter>
-        </div>
-        <div class="cell ">
-          <app-post-counter [count]="(posts | authorReducer).length"
-                            title="Publizierende"
-          ></app-post-counter>
-        </div>
-        <div class="cell ">
-          <app-post-counter [count]="(posts | tagReducer).length"
-                            title="Themen"
-          ></app-post-counter>
-        </div>
-      </div>
-
+<div class="content-wrapper home-wrapper">
+  <div *ngIf="posts$ | async; let posts" class="grid sm12-down md4-up center">
+    <div class="cell">
+      <app-post-counter class="cell center" [count]="posts?.length"
+                        title="Beiträge"
+      ></app-post-counter>
     </div>
 
+    <ng-container *ngIf="posts | authorReducer; let authors">
+      <div class="cell" *ngIf="authors?.length">
+        <app-post-counter class="cell center" [count]="authors?.length"
+                          title="Publizierende"
+        ></app-post-counter>
+      </div>
+
+    </ng-container>
+    <ng-container *ngIf="posts| tagReducer; let tags;">
+      <div class="cell" *ngIf="tags?.length">
+        <app-post-counter class="cell center" [count]="tags?.length"
+                          title="Themen"
+        ></app-post-counter>
+      </div>
+
+    </ng-container>
   </div>
 
-
-  <div class="text-image-direction grid grid-gap">
-    <div class="cell md12-down lg7-up">
+  <div class="text-image-direction grid grid-gap vertical-spacer">
+    <div class="cell md12-down lg7-up vertical-spacer">
       <h1 class="mat-headline"> Was ist Care for Design?</h1>
       <p class="mat-body">
-        The quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax quiz prog. Junk MTV quiz graced by fox
-        whelps. Bawds jog, flick quartz, vex nymphs. Waltz, bad nymph, for quick jigs vex! Fox nymphs grab quick-jived
-        waltz. Brick quiz whangs jumpy veldt fox. Bright vixens jump; dozy fowl quack. Quick wafting zephyrs vex bold
-        Jim. Quick zephyrs blow, vexing daft Jim. Sex-charged fop blew my junk TV quiz. How quickly daft jumping
-        zebras vex. Two driven jocks help fax my big quiz. Quick, Baz, get my woven flax jodhpurs! "Now fax quiz
-        Jack!" my brave ghost pled. Five quacking zephyrs jolt my wax bed. Flummoxed by job, kvetching W. zaps Iraq.
-        Cozy sphinx waves quart jug of bad milk. A very bad quack might jinx zippy fowls. Few quips galvanized the
-        mock jury box. Quick brown dogs jump over the lazy fox. The jay, pig, fox, zebra, and my wolves quack! Blowzy
-        red vixens fight for a quick jump. Joaquin Phoenix was gazed by MTV for luck. A wizard’s job is to vex chumps
-        quickly in fog. Watch "Jeopardy!", Alex Trebek's fun TV quiz game. Woven silk pyjamas exchanged for blue
-        quartz.
+        Als kreative Köpfe, die ihre Leidenschaft im Designen von Webseiten fanden, haben wir uns im Rahmen der
+        Bachelorarbeit mit Themen aus der Webdesign-Branche beschäftigt. Cookie-Banner, Dark Patterns, barrierefreies
+        Webdesign oder auch die Farbsinnstörung sind Themen, mit welchen wir uns im letzten halben Jahr beschäftigt
+        haben. <br> <br> "Care for Design" ist das Resultat unseres Lehrprojekts. Die Seite ist für Personen mit einer
+        Farbsinnstörung barrierefrei. Unsere Beiträge geben zudem einen Einblick in unsere behandelten Themen.
       </p>
       <button class="mat-flat-button mat-primary" routerLink="/about-us"> Lerne uns kennen</button>
     </div>
@@ -71,5 +64,4 @@
       <app-illustration-project></app-illustration-project>
     </div>
   </div>
-
 </div>

@@ -1,0 +1,15 @@
+<div class="headliner"
+     [class.large]="!compact"
+     [class.compact]="compact"
+>
+  <div class="headliner-wrapper">
+    <div class="grid ">
+      <div class="cell xs12-up center">
+        <h1 class="mat-display-2">{{text}}</h1>
+      </div>
+      <div class="cell xs12-up center">
+        <ng-content></ng-content>
+      </div>
+    </div>
+  </div>
+</div>

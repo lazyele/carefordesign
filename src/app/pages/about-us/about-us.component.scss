@@ -1,12 +1,39 @@
 @use './src/utilities';
+@use 'src/layout';
 
-.wrapper {
-  margin-top: utilities.rem(15);
+.vertical-spacer {
+  margin-top: utilities.rem(8);
   margin-bottom: utilities.rem(8);
 }
 
-.portrait {
-  background-size: cover;
-  width: 100%;
-  border-radius: utilities.rem(0.3);
+.portrait-card {
+  width: 80%;
+  max-width: utilities.rem(24);
+}
+
+mat-card-content {
+  text-align: left;
+  margin: utilities.rem(1);
+}
+
+mat-card-title {
+  margin-top: utilities.rem(1);
+}
+
+mat-icon {
+  margin-top: utilities.rem(-0.25);
+  margin-right: utilities.rem(0.5)
+}
+
+.mail-button {
+  margin: utilities.rem(1)
+}
+
+@media (max-width: utilities.rem(57)) {
+  .text-image-direction {
+    flex-direction: column;
+  }
+  .mat-body {
+    text-align: center;
+  }
 }

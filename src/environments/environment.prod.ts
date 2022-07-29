@@ -7,11 +7,13 @@ export const environment = {
     [
       {
         label: "Dunkler Hintergrund",
-        type: ThemeType.DarkTheme
+        type: ThemeType.DarkTheme,
+        logoUrl: '../assets/images/logo_lighttheme.png'
       },
       {
         label: "Heller Hintergrund",
-        type: ThemeType.Default
+        type: ThemeType.Default,
+        logoUrl: '../assets/images/logo_darktheme.png'
       },
 
     ]

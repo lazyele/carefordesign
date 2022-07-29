@@ -1,1 +1,10 @@
+@use './src/utilities';
+@use 'src/layout';
 
+.description {
+  margin-top: utilities.rem(-4)
+}
+
+.title {
+  margin-bottom: utilities.rem(-4)
+}

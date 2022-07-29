@@ -8,7 +8,7 @@ import {ITag} from "../../dto/posts/ITag";
   providedIn: 'root'
 })
 export class BlogService {
-  private static readonly blogUrl = 'https://www.carefordesign.ch/wp-json/wp/v2'
+  private static readonly blogUrl = 'https://api.carefordesign.ch/wp-json/wp/v2'
 
   constructor(private http: HttpClient) {
   }
@@ -32,7 +32,6 @@ export class BlogService {
     const url = `${BlogService.blogUrl}/tags`;
     return this.http.get<ITag[]>(url);
   }
-
 
 }
 

@@ -20,7 +20,7 @@ import {AboutUsComponent} from './pages/about-us/about-us.component';
 import {PageNotFoundComponent} from './pages/page-not-found/page-not-found.component';
 import {RouterModule} from "@angular/router";
 import {FooterComponent} from './layout/footer/footer.component';
-import {ContentFilterPipe} from './posts/filters/content-filter.pipe';
+import {ContentFilterPipe} from './posts/pipes/filters/content-filter.pipe';
 import {SearchBarComponent} from './posts/search-bar/search-bar.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {MatFormFieldModule} from "@angular/material/form-field";
@@ -30,7 +30,7 @@ import {MatInputModule} from "@angular/material/input";
 import {MatCardModule} from "@angular/material/card";
 import {MatChipsModule} from "@angular/material/chips";
 import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
-import {TagFilterPipe} from './posts/filters/tag-filter.pipe';
+import {TagFilterPipe} from './posts/pipes/filters/tag-filter.pipe';
 import {TagSelectionComponent} from './posts/tag-selection/tag-selection.component';
 import {BlogComponent} from './pages/blog/blog.component';
 import {SpinnerComponent} from './layout/spinner/spinner.component';
@@ -47,8 +47,10 @@ import {ImpressumComponent} from './pages/impressum/impressum.component';
 import {PrivacyPolicyComponent} from './pages/privacy-policy/privacy-policy.component';
 import {SourcesComponent} from './pages/sources/sources.component';
 import {AccessibilityComponent} from './pages/accessibility/accessibility.component';
-import {AuthorReducerPipe} from './posts/reducer/author-reducer.pipe';
-import {TagReducerPipe} from './posts/reducer/tag-reducer.pipe';
+import {AuthorReducerPipe} from './posts/pipes/reducer/author-reducer.pipe';
+import {TagReducerPipe} from './posts/pipes/reducer/tag-reducer.pipe';
+import {AuthorNamePipe} from './posts/pipes/author-name.pipe';
+import {HeadlinerComponent} from './layout/headliner/headliner.component';
 
 @NgModule({
   declarations: [
@@ -79,6 +81,8 @@ import {TagReducerPipe} from './posts/reducer/tag-reducer.pipe';
     PostCounterComponent,
     AuthorReducerPipe,
     TagReducerPipe,
+    AuthorNamePipe,
+    HeadlinerComponent,
   ],
   imports: [
     BrowserModule,

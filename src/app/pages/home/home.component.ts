@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, ViewEncapsulation} from '@angular/core';
 import {IPost} from "../../dto/posts/IPost";
 import {BlogService} from "../../services/wordpress/blog.service";
 import {Observable} from "rxjs";
@@ -7,7 +7,9 @@ import {Router} from "@angular/router";
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  styleUrls: ['./home.component.scss'],
+  encapsulation: ViewEncapsulation.None
+
 })
 export class HomeComponent implements OnInit {
   posts$!: Observable<IPost[]>;

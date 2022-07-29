@@ -1,0 +1,15 @@
+@use './src/utilities';
+
+.headliner-wrapper {
+  margin: 0 auto;
+  width: 80%;
+  padding-top: utilities.rem(12);
+}
+
+.large {
+  padding-bottom: utilities.rem(8);
+}
+
+.compact {
+  padding-bottom: utilities.rem(0);
+}

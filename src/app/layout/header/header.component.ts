@@ -1,5 +1,7 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {NavbarItems} from "../../../environments/navbar-items";
+import {ThemeService} from "../../services/theme/theme.service";
+import {map, Observable} from "rxjs";
 
 
 @Component({
@@ -7,14 +9,22 @@ import {NavbarItems} from "../../../environments/navbar-items";
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent {
-  navbarItems = NavbarItems
+export class HeaderComponent implements OnInit {
+  navbarItems = NavbarItems;
 
-  constructor() {
+  currentLogoUrl$!: Observable<string>;
+
+
+  constructor(private readonly themeService: ThemeService) {
+
+  }
+
+  ngOnInit(): void {
+    this.currentLogoUrl$ = this.themeService.currentTheme$
+      .pipe(map(currentTheme => currentTheme.logoUrl))
 
   }
 }
-
 
 
 

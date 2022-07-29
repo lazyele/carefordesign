@@ -1,10 +1,5 @@
 @use './src/utilities';
 
-.wrapper {
-  margin-top: utilities.rem(10);
-  margin-bottom: utilities.rem(10)
-}
-
 .post-title {
   margin: utilities.rem(0.5) 0 utilities.rem(2) 0 !important;
 }

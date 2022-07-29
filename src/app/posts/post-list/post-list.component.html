@@ -1,18 +1,16 @@
 <div class="grid grid-gap sm12-down md6-only md4-up">
   <div *ngFor="let post of posts  " class="cell">
     <mat-card>
-      <section class="post">
-
-        <img *ngIf="hasImage(post); else spinner"
-             [alt]="getImageAlt(post)" [src]="getImageSource(post)"
-             mat-card-image>
+           <img *ngIf="hasImage(post); else spinner"
+                [alt]="getImageAlt(post)" [src]="getImageSource(post)"
+                mat-card-image>
 
         <mat-card-header class="post-header">
           <mat-card-title [innerHTML]="post.title.rendered" class="post-title">
           </mat-card-title>
           <mat-card-subtitle>
             <p class="meta-data">
-              AutorIn: <a class="post-author" href="#" target="_blank">unknown</a> <br>
+              AutorIn: <a class="post-author" href="#" target="_blank">{{post.author | authorName}}</a> <br>
               veröffentlicht am: <a href="#">{{post.date | date: 'dd.MM.yyyy'}}</a>
             </p>
 
@@ -36,7 +34,6 @@
             Beitrag lesen
           </button>
         </mat-card-actions>
-      </section>
     </mat-card>
   </div>
 </div>
