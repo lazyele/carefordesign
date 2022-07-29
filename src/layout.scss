@@ -1,5 +1,23 @@
 @use './src/utilities';
 
+.wrapper-base {
+  margin: 0 auto;
+  width: 80%;
+
+}
+
+.headliner-wrapper {
+  @extend .wrapper-base;
+  padding-top: utilities.rem(12);
+  padding-bottom: utilities.rem(8);
+}
+
+.content-wrapper {
+  @extend .wrapper-base;
+  padding-top: utilities.rem(12);
+  padding-bottom: utilities.rem(8);
+}
+
 .wrapper-top-bottom {
   margin-top: utilities.rem(14);
   margin-bottom: utilities.rem(8);
