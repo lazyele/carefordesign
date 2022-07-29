@@ -22,7 +22,7 @@
   </div>
 </app-headliner>
 
-<div class="main wrapper">
+<div class="content-wrapper home-wrapper">
   <div *ngIf="posts$ | async; let posts" class="grid sm12-down md4-up center">
     <div class="cell">
       <app-post-counter class="cell center" [count]="posts?.length"

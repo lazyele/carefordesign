@@ -1,13 +1,7 @@
 @use './src/utilities';
 @use '../../../mixins';
 
-.wrapper {
-  padding-top: utilities.rem(14);
-  padding-bottom: utilities.rem(8);
-}
-
-
-div.main.wrapper {
+.home-wrapper {
   margin-top: utilities.rem(-16);
   padding-bottom: utilities.rem(2)
 }
@@ -31,8 +25,7 @@ button {
     display: none;
   }
 
-  div.main.wrapper {
-    margin-top: utilities.rem(-16);
+  .home-wrapper {
     padding-bottom: utilities.rem(0);
   }
 }
