@@ -1,6 +1,6 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {NavigationEnd, Router} from "@angular/router";
-import {Subscription} from "rxjs";
+import {filter, Subscription} from "rxjs";
 
 @Component({
   selector: 'app-root',
@@ -19,11 +19,9 @@ export class AppComponent implements OnInit, OnDestroy {
 
 
   ngOnInit() {
-    this.navigationSubscription = this.router.events.subscribe((event) => {
-      if ((event instanceof NavigationEnd)) {
-        window.scrollTo(0, 0)
-      }
-    })
+    this.navigationSubscription = this.router.events
+      .pipe(filter(event => event instanceof NavigationEnd))
+      .subscribe(_ => window.scrollTo(0, 0))
   }
 
   ngOnDestroy(): void {
