@@ -1,18 +1,8 @@
 @use './src/utilities';
 
-.wrapper-base {
+.headliner-wrapper {
   margin: 0 auto;
   width: 80%;
-}
-
-.headliner-wrapper {
-  @extend .wrapper-base;
-  padding-top: utilities.rem(12);
-  padding-bottom: utilities.rem(8);
-}
-
-.content-wrapper {
-  @extend .wrapper-base;
   padding-top: utilities.rem(12);
   padding-bottom: utilities.rem(8);
 }
