@@ -1,30 +1,17 @@
-<div class="headliner">
-  <div class="wrapper head">
-    <div class="grid">
-      <div class="cell xs12-up center">
-        <section *ngIf="post" class="post">
-          <header class="post-header">
-            <h1 [innerHTML]="post.title.rendered | uppercase" class="post-title mat-display-2">
-            </h1>
-          </header>
-        </section>
-      </div>
-      <div class="cell xs12-up center">
-        <section *ngIf="post" class="post">
-          <header class="post-header">
-            <p class="meta-data mat-caption">
-              Autorin: <a class="post-author" href="#" target="_blank">{{post.author | authorName}}</a>
-              veröffentlicht am: <a href="#">{{post.date | date: 'dd.MM.yyyy'}}</a>
-            </p>
-          </header>
-        </section>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="cell">
-  <div class="wrapper">
-    <div class="grid">
+<app-headliner [text]="post.title.rendered | uppercase">
+  <section *ngIf="post" class="post">
+    <header class="post-header">
+      <p class="meta-data mat-caption">
+        Autorin: <a class="post-author" href="#" target="_blank">{{post.author | authorName}}</a>
+        veröffentlicht am: <a href="#">{{post.date | date: 'dd.MM.yyyy'}}</a>
+      </p>
+    </header>
+  </section>
+
+</app-headliner>
+
+<div class="wrapper content-spacer">
+  <div class="grid">
     <div class="cell xs12-up">
       <section *ngIf="post" class="post">
         <div class="post-description">
@@ -33,9 +20,8 @@
         </div>
       </section>
     </div>
-      <div class="vertical-spacer"></div>
-      <button class="mat-flat-button mat-primary" routerLink="/posts"> zurück zu allen Beiträgen</button>
-    </div>
+    <div class="vertical-spacer"></div>
+    <button class="mat-flat-button mat-primary" routerLink="/posts"> zurück zu allen Beiträgen</button>
   </div>
 </div>
 

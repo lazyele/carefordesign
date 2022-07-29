@@ -1,9 +1,8 @@
 @use './src/utilities';
 @use 'src/layout';
 
-.wrapper {
-  margin-top: utilities.rem(0);
-  margin-bottom: utilities.rem(8);
+.content-spacer {
+  margin-top: utilities.rem(8);
 }
 
 button {
