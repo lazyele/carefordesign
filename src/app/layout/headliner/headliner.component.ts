@@ -7,4 +7,5 @@ import {Component, Input} from '@angular/core';
 })
 export class HeadlinerComponent {
   @Input() text = '';
+  @Input() compact = false;
 }
