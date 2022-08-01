@@ -32,9 +32,9 @@
             ],
             "styles": [
               "src/assets/flexgrid.css",
-              "src/layout.scss",
               "src/assets/themes/light-theme.css",
-              "src/dark-theme.scss"
+              "src/styles/layout.scss",
+              "src/styles/dark-theme.scss"
             ],
             "scripts": []
           },

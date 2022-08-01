@@ -1,5 +1,5 @@
-@use './src/utilities';
-@use 'src/layout';
+@use '../../../styles/utilities';
+@use '../../../styles/layout';
 
 .vertical-spacer {
   margin-top: utilities.rem(8);

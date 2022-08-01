@@ -1,6 +1,7 @@
-@use '@angular/material';
+@use '../../node_modules/@angular/material/index';
 @use "sass:map";
-@use 'src/styles';
+@use 'styles';
+@use '@angular/material';
 
 //Start Mixin
 
