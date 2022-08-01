@@ -32,7 +32,6 @@
             ],
             "styles": [
               "src/assets/flexgrid.css",
-              "src/mixins.scss",
               "src/layout.scss",
               "src/assets/themes/light-theme.css"
             ],
