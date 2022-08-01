@@ -34,7 +34,7 @@
               "src/assets/flexgrid.css",
               "src/layout.scss",
               "src/assets/themes/light-theme.css",
-              "src/light-theme.scss"
+              "src/dark-theme.scss"
             ],
             "scripts": []
           },

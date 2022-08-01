@@ -4,7 +4,7 @@
 
 //Start Mixin
 
-@mixin theme-definer($theme) {
+@mixin theme-extension($theme, $headliner-depth) {
 
   $primary: map.get($theme, primary);
   $accent: map.get($theme, accent);
@@ -18,7 +18,7 @@
     @include link-colors($link-color, $link-color-visited, $link-color-hover, $link-color-active);
   }
 
-  $headlinerColor: material.get-color-from-palette($primary, 300);
+  $headlinerColor: material.get-color-from-palette($primary, $headliner-depth);
   .headliner {
     @include background-headliner($headlinerColor);
   }

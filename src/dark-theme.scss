@@ -22,4 +22,4 @@ $dark-theme: mat.define-dark-theme((
     warn: $dark-carefordesign-warn,
   )));
 @include mat.all-component-themes($dark-theme);
-@include mixins.theme-definer($dark-theme);
+@include mixins.theme-extension($dark-theme, 800);
