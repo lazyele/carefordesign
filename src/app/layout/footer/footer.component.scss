@@ -1,9 +1,5 @@
 @use "../../../styles/utilities";
 
-a {
-  font-size: utilities.rem(1);
-}
-
 .mailbox {
   display: flex;
   justify-content: flex-start;
