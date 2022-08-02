@@ -1,6 +1,7 @@
 @use 'utilities';
 
 .content-wrapper {
+  margin: 0 auto;
   width: 80%;
   padding-top: utilities.rem(12);
   padding-bottom: utilities.rem(8);
