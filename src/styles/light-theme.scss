@@ -23,4 +23,4 @@ $light-theme: mat.define-light-theme((
 ));
 
 @include mat.all-component-themes($light-theme);
-@include mixins.theme-extension($light-theme, 300);
+@include mixins.theme-extension($light-theme, 210);
