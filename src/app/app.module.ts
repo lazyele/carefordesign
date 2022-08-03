@@ -104,7 +104,7 @@ import {HeadlinerComponent} from './layout/headliner/headliner.component';
     MatInputModule,
     MatCardModule,
     MatChipsModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
 
   ],
   providers: [HttpClient, ContentFilterPipe, TagFilterPipe],
