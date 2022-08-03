@@ -6,19 +6,27 @@ import {environment} from "../../../environments/environment";
 import {ThemeType} from "../../../environments/themes";
 import {LocalStorageService} from "./localstorage.service";
 
+const themeStorageKey = 'THEME';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ThemeService {
 
-  currentTheme$: BehaviorSubject<IThemeOption> = new BehaviorSubject<IThemeOption>(this.getTheme(ThemeType.Default))
+  currentTheme$ = new BehaviorSubject<IThemeOption>(this.getTheme(ThemeType.Default))
 
   constructor(
     private readonly httpClient: HttpClient,
     private readonly styleSheet: StylesheetService,
-    private localStorage: LocalStorageService
+    private readonly storageService: LocalStorageService
   ) {
+  }
+
+  initialize() {
+    const themeType = this.storageService.getData<ThemeType>(themeStorageKey)
+    if (themeType && environment.themes.some(t => t.type === themeType)) {
+      this.setTheme(themeType)
+    }
   }
 
   getThemes(): Observable<IThemeOption[]> {
@@ -31,10 +39,9 @@ export class ThemeService {
       `/assets/themes/${theme}.css`
     );
     this.currentTheme$.next(this.getTheme(theme));
-    this.localStorage.saveData("theme", theme);
+    this.storageService.saveData(themeStorageKey, theme);
     console.log(localStorage);
   }
-
 
   private getTheme(theme: ThemeType): IThemeOption {
     return environment.themes.filter(t => t.type == theme)[0];
