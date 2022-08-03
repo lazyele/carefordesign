@@ -1,17 +1,9 @@
-@use './src/utilities';
-@use 'src/layout';
+@use '../../../styles/utilities';
+@use '../../../styles/layout';
 
 .content-spacer {
   margin-top: utilities.rem(8);
 }
-
-button {
-  position: sticky;
-  bottom: utilities.rem(4);
-  right: 0;
-  float: right;
-}
-
 
 .post-title {
   margin-bottom: utilities.rem(0);

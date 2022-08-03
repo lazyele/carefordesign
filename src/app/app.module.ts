@@ -1,4 +1,4 @@
-import {NgModule} from '@angular/core';
+import {APP_INITIALIZER, NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 
 import {AppRoutingModule} from './app-routing.module';
@@ -51,6 +51,9 @@ import {AuthorReducerPipe} from './posts/pipes/reducer/author-reducer.pipe';
 import {TagReducerPipe} from './posts/pipes/reducer/tag-reducer.pipe';
 import {AuthorNamePipe} from './posts/pipes/author-name.pipe';
 import {HeadlinerComponent} from './layout/headliner/headliner.component';
+import {StylesheetService} from "./services/theme/stylesheet.service";
+import {ThemeService} from "./services/theme/theme.service";
+import {LocalStorageService} from "./services/theme/localstorage.service";
 
 @NgModule({
   declarations: [
@@ -104,10 +107,17 @@ import {HeadlinerComponent} from './layout/headliner/headliner.component';
     MatInputModule,
     MatCardModule,
     MatChipsModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
 
   ],
-  providers: [HttpClient, ContentFilterPipe, TagFilterPipe],
+  providers: [HttpClient, ContentFilterPipe, TagFilterPipe, StylesheetService,
+    {
+      provide: APP_INITIALIZER,
+      useFactory: (service: ThemeService) => service.initialize(),
+      deps: [ThemeService, LocalStorageService, StylesheetService],
+      multi: false,
+    },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {

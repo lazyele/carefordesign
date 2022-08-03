@@ -1,0 +1,38 @@
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use '../../node_modules/@angular/material/index' as mat;
+@use 'variables' as costum;
+@use 'utilities';
+// Plus imports for other components in your app.
+$costum-typography: mat.define-typography-config(
+  $font-family: 'Work Sans',
+  $display-4: mat.define-typography-level(utilities.rem(7), utilities.rem(7), 300, 'Oswald'),
+  $display-3: mat.define-typography-level(utilities.rem(3.5), utilities.rem(3.5), 400, 'Oswald'),
+  $display-2: mat.define-typography-level(utilities.rem(3), utilities.rem(3), 400, 'Oswald'),
+  $display-1: mat.define-typography-level(utilities.rem(2.125), utilities.rem(2.5), 400, 'Oswald'),
+  $headline: mat.define-typography-level(utilities.rem(1.75), utilities.rem(1.25), 500, 'Oswald'),
+  $title: mat.define-typography-level(utilities.rem(1.25), utilities.rem(2.5), 500, 'Oswald'),
+  $subheading-2: mat.define-typography-level(utilities.rem(1.125), utilities.rem(2.75), 500, 'Oswald'),
+  $subheading-1: mat.define-typography-level(utilities.rem(1), utilities.rem(1.5), 400, 'Oswald'),
+  $body-1: mat.define-typography-level(utilities.rem(1), utilities.rem(1.5), normal),
+  $body-2: mat.define-typography-level(utilities.rem(1), utilities.rem(1.25), 400),
+  $caption: mat.define-typography-level(utilities.rem(1.125), utilities.rem(1.5), 400),
+  $button: mat.define-typography-level(utilities.rem(1), utilities.rem(1.25), 500),
+  $input: mat.define-typography-level(utilities.rem(1.5), 1.5, 400)
+);
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core($costum-typography);
+
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Work Sans, "Helvetica Neue", sans-serif;
+}
+

@@ -4,18 +4,31 @@ import {BehaviorSubject, Observable, of} from "rxjs";
 import {StylesheetService} from "./stylesheet.service";
 import {environment} from "../../../environments/environment";
 import {ThemeType} from "../../../environments/themes";
+import {LocalStorageService} from "./localstorage.service";
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class ThemeService {
+  private static themeKey = 'theme';
 
-  currentTheme$: BehaviorSubject<IThemeOption> = new BehaviorSubject<IThemeOption>(this.getTheme(ThemeType.Default))
+  currentTheme$ = new BehaviorSubject<IThemeOption>(this.getTheme(ThemeType.Default))
 
   constructor(
     private readonly httpClient: HttpClient,
-    private readonly styleSheet: StylesheetService
+    private readonly styleSheet: StylesheetService,
+    private readonly storageService: LocalStorageService
   ) {
+  }
+
+  initialize() {
+    const themeType = this.storageService.getItem<ThemeType>(ThemeService.themeKey)
+    if (themeType && environment.themes.some(t => t.type === themeType)) {
+      this.setTheme(themeType);
+      return;
+    }
+    this.storageService.removeItem(ThemeService.themeKey)
   }
 
   getThemes(): Observable<IThemeOption[]> {
@@ -24,14 +37,21 @@ export class ThemeService {
 
   setTheme(theme: ThemeType) {
     this.styleSheet.setStyle(
-      "theme",
-      `/assets/themes/${theme}.css`
+      ThemeService.themeKey,
+      ThemeService.createThemePath(theme)
     );
     this.currentTheme$.next(this.getTheme(theme));
+    this.storageService.setItem(ThemeService.themeKey, theme);
+    console.log(localStorage);
   }
 
   private getTheme(theme: ThemeType): IThemeOption {
     return environment.themes.filter(t => t.type == theme)[0];
+  }
+
+  private static createThemePath(theme: ThemeType) {
+    const themesPath = '/assets/themes/';
+    return `${themesPath}${theme}.css`
   }
 }
 

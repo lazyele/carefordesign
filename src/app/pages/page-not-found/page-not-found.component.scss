@@ -1,5 +1,5 @@
-@use './src/utilities';
-@use 'src/layout';
+@use '../../../styles/utilities';
+@use '../../../styles/layout';
 
 .description {
   margin-top: utilities.rem(-4)

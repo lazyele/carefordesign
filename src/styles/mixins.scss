@@ -1,0 +1,49 @@
+@use '../../node_modules/@angular/material/index';
+@use "sass:map";
+@use 'styles';
+@use '@angular/material';
+
+//Start Mixin
+
+@mixin theme-extension($theme, $headliner-depth) {
+
+  $primary: map.get($theme, primary);
+  $accent: map.get($theme, accent);
+
+  $link-color: material.get-color-from-palette($accent, 500);
+  $link-color-visited: material.get-color-from-palette($primary, 500);
+  $link-color-hover: material.get-color-from-palette($accent, 400);
+  $link-color-active: material.get-color-from-palette($accent, 400);
+
+  a:not(.mat-button) {
+    @include link-colors($link-color, $link-color-visited, $link-color-hover, $link-color-active);
+  }
+
+  $headlinerColor: material.get-color-from-palette($primary, $headliner-depth);
+  .headliner {
+    @include background-headliner($headlinerColor);
+  }
+
+}
+
+@mixin link-colors($link, $visited, $hover, $active) {
+  & {
+    color: $link;
+
+    &:visited {
+      color: $visited;
+    }
+
+    &:hover {
+      color: $hover;
+    }
+
+    &:active {
+      color: $active;
+    }
+  }
+}
+
+@mixin background-headliner($color) {
+  background-color: #{$color};
+}

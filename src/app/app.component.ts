@@ -10,7 +10,6 @@ import {filter, Subscription} from "rxjs";
 
 
 export class AppComponent implements OnInit, OnDestroy {
-  title = 'carefordesign';
   private navigationSubscription!: Subscription;
 
 

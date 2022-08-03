@@ -1,5 +1,4 @@
-@use './src/utilities';
-@use '../../../mixins';
+@use '../../../styles/utilities';
 
 .home-wrapper {
   margin-top: utilities.rem(-16);

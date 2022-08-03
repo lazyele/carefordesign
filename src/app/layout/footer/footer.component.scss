@@ -1,8 +1,4 @@
-@use "../../../utilities";
-
-a {
-  font-size: utilities.rem(1);
-}
+@use "../../../styles/utilities";
 
 .mailbox {
   display: flex;
