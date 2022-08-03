@@ -23,10 +23,12 @@ export class ThemeService {
   }
 
   initialize() {
-    const themeType = this.storageService.getData<ThemeType>(themeStorageKey)
+    const themeType = this.storageService.getItem<ThemeType>(themeStorageKey)
     if (themeType && environment.themes.some(t => t.type === themeType)) {
-      this.setTheme(themeType)
+      this.setTheme(themeType);
+      return;
     }
+    this.storageService.removeItem(themeStorageKey)
   }
 
   getThemes(): Observable<IThemeOption[]> {
@@ -39,7 +41,7 @@ export class ThemeService {
       `/assets/themes/${theme}.css`
     );
     this.currentTheme$.next(this.getTheme(theme));
-    this.storageService.saveData(themeStorageKey, theme);
+    this.storageService.setItem(themeStorageKey, theme);
     console.log(localStorage);
   }
 
