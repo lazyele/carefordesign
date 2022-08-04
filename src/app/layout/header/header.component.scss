@@ -35,6 +35,10 @@
   display: none;
 }
 
+.name {
+  margin-left: utilities.rem(1);
+}
+
 .logo {
   max-height: utilities.rem(3);
 }
