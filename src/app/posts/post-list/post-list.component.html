@@ -1,7 +1,7 @@
 <div class="grid grid-gap sm12-down md6-only md4-up">
   <div *ngFor="let post of posts  " class="cell">
     <mat-card>
-           <img *ngIf="hasImage(post); else spinner"
+           <img *ngIf="hasImage(post)"
                 [alt]="getImageAlt(post)" [src]="getImageSource(post)"
                 mat-card-image>
 
@@ -16,14 +16,6 @@
 
           </mat-card-subtitle>
         </mat-card-header>
-
-
-        <!-- ToDo: Spinner not working in Posts -->
-        <ng-template #spinner>
-          <ng-container *ngIf="isImageLoading">
-            <app-spinner></app-spinner>
-          </ng-container>
-        </ng-template>
 
         <mat-card-content [innerHTML]="post.excerpt.rendered | slice: 0:400"
                           class="post-description">

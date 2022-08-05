@@ -1,5 +1,5 @@
 <app-headliner text="BEITRÄGE">
-  <ng-container *ngIf="posts$ | async; let posts; else spinner">
+  <ng-container *ngIf="posts$ | async; let posts">
     <div class="cell searchbar">
       <app-search-bar
         (onSearchChanged)="onSearchChanged($event)"
@@ -19,7 +19,7 @@
 
 <div class="content-wrapper">
   <ng-container
-    *ngIf="posts$ | async; let posts; else spinner"
+    *ngIf="posts$ | async; let posts"
   >
     <div class="cell">
       <app-post-list [posts]="posts
@@ -28,9 +28,4 @@
       ></app-post-list>
     </div>
   </ng-container>
-
-  <ng-template #spinner>
-    <app-spinner></app-spinner>
-  </ng-template>
-
 </div>
