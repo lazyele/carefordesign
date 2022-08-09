@@ -21,7 +21,6 @@ export class ContentFilterPipe implements PipeTransform {
       searchParts.some(s =>
           (ContentFilterPipe.includes(p.title.rendered, s) ||
               ContentFilterPipe.includes(p.content.rendered, s))
-          //ToDo Filter with Tags$
       )
     )
   }
