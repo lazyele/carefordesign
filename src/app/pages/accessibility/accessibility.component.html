@@ -20,7 +20,7 @@
   <br>
 
   <div class="grid center grid-gap sm12-down md6-up">
-    <div *ngFor="let accessibilityCardItem of accessibilityCardItems" class="center cell">
+    <div *ngFor="let accessibilityCardItem of accessibilityCardItems" class="cell center">
       <mat-card class="font-card">
         <mat-card-header>
           <mat-card-title>
@@ -33,8 +33,8 @@
           <a href="{{accessibilityCardItem.hrefDesigner2}}" target="_blank">{{accessibilityCardItem.designer2}}</a>
           <a href="{{accessibilityCardItem.hrefDesigner3}}" target="_blank">{{accessibilityCardItem.designer3}}</a>
         </mat-card-content>
-        <img src="./assets/images/{{accessibilityCardItem.imgSRC}}" alt="{{accessibilityCardItem.altText}}"
-             style="max-width: 400px">
+        <img mat-card-image src="./assets/images/{{accessibilityCardItem.imgSRC}}"
+             alt="{{accessibilityCardItem.altText}}">
       </mat-card>
     </div>
   </div>
@@ -46,6 +46,20 @@
     helle Schrift aus, was das Lesen oftmals angenehmer macht. Da diese Funktion in unserem Fall nicht nur der Ästhetik,
     sondern auch der Barrierefreiheit dient, kann unter dem Button “Barrierefreiheit” zwischen den Themes hin und her
     gewechselt werden.</p>
+  <br>
+
+  <div class="grid center grid-gap xs12-up">
+    <div class="cell center">
+      <mat-card class="gif-card">
+        <mat-card-header>
+          <mat-card-title>
+            Theme Switcher
+          </mat-card-title>
+        </mat-card-header>
+        <img mat-card-image src="./assets/images/themeSwitcher.GIF" alt="Gif Theme Switcher">
+      </mat-card>
+    </div>
+  </div>
 
   <h2 class="mat-subheading-2">Visuelle und textliche Unterstützung</h2>
   <p>Damit die Informationsvermittlung nicht nur über die Farbe funktioniert, sollen Icons und klare Beschriftungen der
@@ -55,6 +69,18 @@
   <p>Sich vorzustellen, wie andere Personen oder gerade Personen mit einer Farbsinnstörung gewisse Dinge wahrnehmen, ist
     nicht einfach. Daher möchte ich dir anhand eines Beispiels zeigen, wie diese Seite aufgrund der verschiedenen
     Farbsinnstörungen wahrgenommen werden könnte.</p>
+  <br>
 
-
+  <div class="grid center grid-gap sm12-down md6-up">
+    <div *ngFor=" let accessibilityVideoItem of accessibilityVideoItems" class="cell center">
+      <mat-card class="video-card">
+        <mat-card-header>
+          <mat-card-title>
+            {{accessibilityVideoItem.title}}
+          </mat-card-title>
+        </mat-card-header>
+        <video controls src="assets/{{accessibilityVideoItem.href}}" type="video/mp4" style="max-width: 560px"></video>
+      </mat-card>
+    </div>
+  </div>
 </div>

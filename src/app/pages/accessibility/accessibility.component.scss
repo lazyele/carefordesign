@@ -1,8 +1,8 @@
 @use '../../../styles/layout';
 @use '../../../styles/utilities';
 
-.font-card {
-  max-width: utilities.rem(25);
+.gif-card {
+  max-width: utilities.rem(50);
 }
 
 mat-card-content {
