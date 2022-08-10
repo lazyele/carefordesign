@@ -42,7 +42,6 @@ export class ThemeService {
     );
     this.currentTheme$.next(this.getTheme(theme));
     this.storageService.setItem(ThemeService.themeKey, theme);
-    console.log(localStorage);
   }
 
   private getTheme(theme: ThemeType): IThemeOption {
