@@ -19,32 +19,20 @@
     den Browsereinstellungen der User/innen anpasst.</p>
   <br>
 
-  <div class="grid center grid-gap sm12-down md6-up">
+  <div *ngFor="let accessibilityCardItem of accessibilityCardItems" class="grid center grid-gap sm12-down md6-up">
     <div class="cell">
       <mat-card class="font-card">
         <mat-card-header>
           <mat-card-title>
-            <a href="https://fonts.google.com/betterspecimen/Oswald?query=oswald">Oswald</a></mat-card-title>
+            <a href="{{accessibilityCardItem.href}}">{{accessibilityCardItem.title}}</a></mat-card-title>
         </mat-card-header>
         <mat-card-content>
-          Designer: <a href="https://fonts.google.com/?query=Vernon+Adams">Vernon Adams</a>, <a
-          href="https://fonts.google.com/?query=Kalapi+Gajjar">Kalapi Gajjar</a>, <a
-          href="https://fonts.google.com/?query=Cyreal">Cyreal</a>
+          Designer: <a href="{{accessibilityCardItem.hrefDesigner1}}">{{accessibilityCardItem.designer1}}</a>
+          <a href="{{accessibilityCardItem.hrefDesigner2}}">{{accessibilityCardItem.designer2}}</a>
+          <a href="{{accessibilityCardItem.hrefDesigner3}}">{{accessibilityCardItem.designer3}}</a>
         </mat-card-content>
-        <img src="./assets/images/Oswald_Font.jpg" alt="OswaldFont" style="max-width: 400px">
-      </mat-card>
-    </div>
-    <div class="cell">
-      <mat-card class="font-card">
-        <mat-card-header>
-          <mat-card-title>
-            <a href="https://fonts.google.com/betterspecimen/Work+Sans?query=work+sans">Work Sans</a></mat-card-title>
-        </mat-card-header>
-        <mat-card-content>
-          Designer: <a href="https://fonts.google.com/?query=Wei+Huang">Wei Huang</a>
-        </mat-card-content>
-
-        <img src="./assets/images/WorkSans_font.jpg" alt="Work Sans Font" style="max-width: 400px">
+        <img src="./assets/images/{{accessibilityCardItem.imgSRC}}" alt="{{accessibilityCardItem.altText}}"
+             style="max-width: 400px">
       </mat-card>
     </div>
   </div>
