@@ -19,17 +19,19 @@
     den Browsereinstellungen der User/innen anpasst.</p>
   <br>
 
-  <div *ngFor="let accessibilityCardItem of accessibilityCardItems" class="grid center grid-gap sm12-down md6-up">
-    <div class="cell">
+  <div class="grid center grid-gap sm12-down md6-up">
+    <div *ngFor="let accessibilityCardItem of accessibilityCardItems" class="center cell">
       <mat-card class="font-card">
         <mat-card-header>
           <mat-card-title>
-            <a href="{{accessibilityCardItem.href}}">{{accessibilityCardItem.title}}</a></mat-card-title>
+            <a href="{{accessibilityCardItem.href}}" target="_blank">{{accessibilityCardItem.title}}</a>
+          </mat-card-title>
         </mat-card-header>
         <mat-card-content>
-          Designer: <a href="{{accessibilityCardItem.hrefDesigner1}}">{{accessibilityCardItem.designer1}}</a>
-          <a href="{{accessibilityCardItem.hrefDesigner2}}">{{accessibilityCardItem.designer2}}</a>
-          <a href="{{accessibilityCardItem.hrefDesigner3}}">{{accessibilityCardItem.designer3}}</a>
+          Designer: <a href="{{accessibilityCardItem.hrefDesigner1}}"
+                       target="_blank">{{accessibilityCardItem.designer1}}</a>
+          <a href="{{accessibilityCardItem.hrefDesigner2}}" target="_blank">{{accessibilityCardItem.designer2}}</a>
+          <a href="{{accessibilityCardItem.hrefDesigner3}}" target="_blank">{{accessibilityCardItem.designer3}}</a>
         </mat-card-content>
         <img src="./assets/images/{{accessibilityCardItem.imgSRC}}" alt="{{accessibilityCardItem.altText}}"
              style="max-width: 400px">

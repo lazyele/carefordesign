@@ -3,8 +3,8 @@ export const AccessibilityCardItems =
     {
       title: "Oswald",
       href: "https://fonts.google.com/betterspecimen/Oswald?query=oswald",
-      designer1: "Vernon Adams,",
-      designer2: "Kalapi Gajjar,",
+      designer1: "Vernon Adams, ",
+      designer2: "Kalapi Gajjar, ",
       designer3: "Cyreal",
       hrefDesigner1: "https://fonts.google.com/?query=Vernon+Adams",
       hrefDesigner2: "https://fonts.google.com/?query=Kalapi+Gajjar",
