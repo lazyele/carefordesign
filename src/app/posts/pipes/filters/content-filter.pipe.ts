@@ -19,8 +19,8 @@ export class ContentFilterPipe implements PipeTransform {
   private static filterPosts(posts: IPost[], searchParts: string[]) {
     return posts.filter(p =>
       searchParts.some(s =>
-          (ContentFilterPipe.includes(p.title.rendered, s) ||
-              ContentFilterPipe.includes(p.content.rendered, s))
+        (ContentFilterPipe.includes(p.title.rendered, s) ||
+          ContentFilterPipe.includes(p.content.rendered, s))
       )
     )
   }

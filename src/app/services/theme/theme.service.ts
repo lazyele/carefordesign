@@ -22,6 +22,11 @@ export class ThemeService {
   ) {
   }
 
+  private static createThemePath(theme: ThemeType) {
+    const themesPath = '/assets/themes/';
+    return `${themesPath}${theme}.css`
+  }
+
   initialize() {
     const themeType = this.storageService.getItem<ThemeType>(ThemeService.themeKey)
     if (themeType && environment.themes.some(t => t.type === themeType)) {
@@ -46,11 +51,6 @@ export class ThemeService {
 
   private getTheme(theme: ThemeType): IThemeOption {
     return environment.themes.filter(t => t.type == theme)[0];
-  }
-
-  private static createThemePath(theme: ThemeType) {
-    const themesPath = '/assets/themes/';
-    return `${themesPath}${theme}.css`
   }
 }
 

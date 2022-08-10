@@ -1,5 +1,5 @@
-<app-headliner text="DAS SIND WIR"
-               [compact]="true"
+<app-headliner [compact]="true"
+               text="DAS SIND WIR"
 ></app-headliner>
 
 <div class="content-wrapper">
@@ -21,7 +21,7 @@
   <div class="grid grid-gap md12-down lg6-up vertical-spacer">
     <div *ngFor="let aboutUsItem of aboutUsItems" class="cell center">
       <mat-card class="portrait-card">
-        <img mat-card-image src="assets/images/{{aboutUsItem.imgURL}}" alt="{{aboutUsItem.altText}}">
+        <img alt="{{aboutUsItem.altText}}" mat-card-image src="assets/images/{{aboutUsItem.imgURL}}">
         <mat-card-header>
           <mat-card-title>{{aboutUsItem.title}}</mat-card-title>
         </mat-card-header>
@@ -32,7 +32,7 @@
             {{aboutUsItem.contentFreetime}}
           </p>
         </mat-card-content>
-        <a href="mailto:{{mail}}" mat-button mat-flat-button class="mat-primary mail-button">
+        <a class="mat-primary mail-button" href="mailto:{{mail}}" mat-button mat-flat-button>
           <mat-icon>mail</mat-icon>
           Kontakt
         </a>
