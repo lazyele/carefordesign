@@ -11,7 +11,7 @@ export const NavbarItems =
       ariaLabel: "Posts"
     },
     {
-      label: "Über Uns",
+      label: "Über uns",
       routerLink: "about-us",
       ariaLabel: "About Us"
     }
