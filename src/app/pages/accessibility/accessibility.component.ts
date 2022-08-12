@@ -1,16 +1,13 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
+import {AccessibilityItems} from "../../../environments/accessibility-items";
+
 
 @Component({
   selector: 'app-accessibility',
   templateUrl: './accessibility.component.html',
   styleUrls: ['./accessibility.component.scss']
 })
-export class AccessibilityComponent implements OnInit {
-
-  constructor() {
-  }
-
-  ngOnInit(): void {
-  }
-
+export class AccessibilityComponent {
+  accessibilityCardItems = AccessibilityItems.AccessibilityCardItems;
+  accessibilityVideoItems = AccessibilityItems.AccessibilityVideoItems;
 }

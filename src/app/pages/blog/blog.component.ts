@@ -15,6 +15,7 @@ export class BlogComponent implements OnInit {
   posts$!: Observable<IPost[]>;
   queryParamsSubscription!: Subscription;
   searchInput = "";
+  title = "BEITRÄGE";
   selectedTagIds: number[] = [];
 
   constructor(private readonly blogService: BlogService,

@@ -1,39 +1,31 @@
 <div class="grid grid-gap sm12-down md6-only md4-up">
   <div *ngFor="let post of posts  " class="cell">
     <mat-card>
-           <img *ngIf="hasImage(post); else spinner"
-                [alt]="getImageAlt(post)" [src]="getImageSource(post)"
-                mat-card-image>
+      <img *ngIf="hasImage(post)"
+           [alt]="getImageAlt(post)" [src]="getImageSource(post)"
+           mat-card-image>
 
-        <mat-card-header class="post-header">
-          <mat-card-title [innerHTML]="post.title.rendered" class="post-title mat-">
-          </mat-card-title>
-          <mat-card-subtitle>
-            <p class="meta-data">
-              AutorIn: <a class="post-author" href="#" target="_blank">{{post.author | authorName}}</a> <br>
-              veröffentlicht am: <a href="#">{{post.date | date: 'dd.MM.yyyy'}}</a>
-            </p>
+      <mat-card-header class="post-header">
+        <mat-card-title [innerHTML]="post.title.rendered" class="post-title mat-">
+        </mat-card-title>
+        <mat-card-subtitle>
+          <p class="meta-data">
+            AutorIn: <a class="post-author" href="#" target="_blank">{{post.author | authorName}}</a> <br>
+            veröffentlicht am: <a href="#">{{post.date | date: 'dd.MM.yyyy'}}</a>
+          </p>
 
-          </mat-card-subtitle>
-        </mat-card-header>
+        </mat-card-subtitle>
+      </mat-card-header>
 
+      <mat-card-content [innerHTML]="post.excerpt.rendered | slice: 0:400"
+                        class="post-description">
+      </mat-card-content>
 
-        <!-- ToDo: Spinner not working in Posts -->
-        <ng-template #spinner>
-          <ng-container *ngIf="isImageLoading">
-            <app-spinner></app-spinner>
-          </ng-container>
-        </ng-template>
-
-        <mat-card-content [innerHTML]="post.excerpt.rendered | slice: 0:400"
-                          class="post-description">
-        </mat-card-content>
-
-        <mat-card-actions>
-          <button [routerLink]="['/posts', post.id]" class="mat-flat-button mat-primary">
-            Beitrag lesen
-          </button>
-        </mat-card-actions>
+      <mat-card-actions>
+        <button [routerLink]="['/posts', post.id]" class="mat-flat-button mat-primary">
+          Beitrag lesen
+        </button>
+      </mat-card-actions>
     </mat-card>
   </div>
 </div>

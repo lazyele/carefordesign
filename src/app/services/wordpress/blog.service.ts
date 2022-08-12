@@ -19,7 +19,7 @@ export class BlogService {
   }
 
   getPost(id: number) {
-    const url = `${BlogService.blogUrl}/posts/${id}`;
+    const url = `${BlogService.blogUrl}/posts/${id}?per_page=100`;
     return this.http.get<IPost>(url);
   }
 
@@ -29,7 +29,7 @@ export class BlogService {
   }
 
   getTags() {
-    const url = `${BlogService.blogUrl}/tags`;
+    const url = `${BlogService.blogUrl}/tags?per_page=100`;
     return this.http.get<ITag[]>(url);
   }
 

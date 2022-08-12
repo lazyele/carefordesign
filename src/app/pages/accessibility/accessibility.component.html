@@ -1,1 +1,118 @@
-<p>accessibility works!</p>
+<div class="wrapper wrapper-top-bottom">
+  <h1 class="mat-display-1">Warum ist diese Seite barrierefrei?</h1>
+  <p>Sesea hat in ihrer Bachelorthesis das Thema der barrierefreien Webseitengestaltung für Personen mit einer
+    Farbsinnstörung behandelt. Deshalb war es naheliegend, unsere Seite ebenfalls für dies Nutzergruppe barrierefrei zu
+    gestalten. Doch, was macht diese Seite barrierefrei?</p>
+
+  <h2 class="mat-subheading-2">Farbwahl</h2>
+  <p>Damit Personen mit einer Farbsinnstörung die Informationen wahrnehmen können, ist es wichtig, dass die verwendeten
+    Farben ein gutes Kontrastverhältnis aufweisen (weitere Informationen dazu findest du im Blogbeitrag: <a
+      href="https://www.carefordesign.ch/posts/83" target="_blank">How To:
+      Barrierefreiheit</a>). Um diese Anforderungen zu erreichen, wurde unser Farbschema in <a
+      href="https://color.adobe.com/create/color-contrast-analyzer" target="_blank">Adobe Color</a>
+    zusammengestellt und geprüft. Die Farbpaletten wurden anschliessend in einem <a
+      href="http://mcg.mbitson.com/#!?primarylight=%23774b9b&accentlight=%234e6700&warnlight=%23ba1b1b&primarydark=%23e1b6ff&accentdark=%23add53a&warndark=%23ffb4a9&themename=carefordesign"
+      target="_blank">Paletten-Generator generiert.</a></p>
+  <br>
+
+  <div class="grid center grid-gap sm12-down md6-up">
+    <div class="cell center">
+      <mat-card class="theme-card">
+        <mat-card-header>
+          <mat-card-title>
+            Farbpalette Light-Theme
+          </mat-card-title>
+        </mat-card-header>
+        <img alt="Generierte Farbpalette für das Light-Theme" mat-card-image
+             src="./assets/images/palette-lighttheme.png">
+      </mat-card>
+    </div>
+    <div class="cell center">
+      <mat-card class="theme-card">
+        <mat-card-header>
+          <mat-card-title>
+            Farbpalette Dark-Theme
+          </mat-card-title>
+        </mat-card-header>
+        <img alt="Generierte Farbpalette für das Dark-Theme" mat-card-image
+             src="./assets/images/palette-darktheme.png">
+      </mat-card>
+    </div>
+  </div>
+
+  <h2 class="mat-subheading-2">Typography</h2>
+  <p>Wir entschieden uns, die serifenlosen Schriften <strong>Oswald</strong> und <strong>Work Sans</strong> fürs Projekt
+    zu verwenden, da serifenlosen
+    Schriften oft leichter lesbar sind. Serifenschriften, gerade wenn sie kleiner sind, verklumpen und werden schwer
+    leserlich. In Sachen Kontrast und Font-Size richteten wir uns nach den Richtlinien der W3C. Das heisst, dass alle
+    Schriften eine Mindestgrösse von 16 px aufweisen und der Kontrast zwischen Hintergrund und Schrift mindestens 3:1
+    bzw. 4,5:1 entspricht. Die Schriftgrössen wurden zudem in der “rem”-Einheit definiert, sodass sich die Schriftgrösse
+    den Browsereinstellungen der User/innen anpasst.</p>
+  <br>
+
+  <div class="grid center grid-gap sm12-down md6-up">
+    <div *ngFor="let accessibilityCardItem of accessibilityCardItems" class="cell center">
+      <mat-card class="font-card">
+        <mat-card-header>
+          <mat-card-title>
+            <a href="{{accessibilityCardItem.href}}" target="_blank">{{accessibilityCardItem.title}}</a>
+          </mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          Designer: <a href="{{accessibilityCardItem.hrefDesigner1}}"
+                       target="_blank">{{accessibilityCardItem.designer1}}</a>
+          <a href="{{accessibilityCardItem.hrefDesigner2}}" target="_blank">{{accessibilityCardItem.designer2}}</a>
+          <a href="{{accessibilityCardItem.hrefDesigner3}}" target="_blank">{{accessibilityCardItem.designer3}}</a>
+        </mat-card-content>
+        <img alt="{{accessibilityCardItem.altText}}" mat-card-image
+             src="./assets/images/{{accessibilityCardItem.imgSRC}}">
+      </mat-card>
+    </div>
+  </div>
+
+  <h2 class="mat-subheading-2">Multi-Theme</h2>
+  <p>Basierend auf der oben genannten Farbwahl wurde ein Dark-Theme und ein Light-Theme entwickelt. Denn gerade Personen
+    mit einer Achromatopsie leiden häufig unter einer starken Lichtempfindlichkeit (weitere Informationen dazu findest
+    du im Blogbeitrag: <a href="https://www.carefordesign.ch/posts/85" target="_blank">Farbsinnstörungen im Web</a>).
+    Das Dark-Theme zeichnet sich durch den dunklen Hintergrund und die
+    helle Schrift aus, was das Lesen oftmals angenehmer macht. Da diese Funktion in unserem Fall nicht nur der Ästhetik,
+    sondern auch der Barrierefreiheit dient, kann unter dem Button “Barrierefreiheit” zwischen den Themes hin und her
+    gewechselt werden.</p>
+  <br>
+
+  <div class="grid center grid-gap xs12-up">
+    <div class="cell center">
+      <mat-card class="gif-card">
+        <mat-card-header>
+          <mat-card-title>
+            Theme Switcher
+          </mat-card-title>
+        </mat-card-header>
+        <img alt="Gif Theme Switcher" mat-card-image src="./assets/images/themeSwitcher.GIF">
+      </mat-card>
+    </div>
+  </div>
+
+  <h2 class="mat-subheading-2">Visuelle und textliche Unterstützung</h2>
+  <p>Damit die Informationsvermittlung nicht nur über die Farbe funktioniert, sollen Icons und klare Beschriftungen der
+    Buttons bei der Navigation helfen. Links sind zudem unterstrichen.</p>
+
+  <h2 class="mat-subheading-2">So sehen Personen mit einer Farbsinnstörung unserer Seite</h2>
+  <p>Sich vorzustellen, wie andere Personen oder gerade Personen mit einer Farbsinnstörung gewisse Dinge wahrnehmen, ist
+    nicht einfach. Daher möchte ich dir anhand eines Beispiels zeigen, wie diese Seite aufgrund der verschiedenen
+    Farbsinnstörungen wahrgenommen werden könnte.</p>
+  <br>
+
+  <div class="grid center grid-gap sm12-down md6-up">
+    <div *ngFor=" let accessibilityVideoItem of accessibilityVideoItems" class="cell center">
+      <mat-card class="video-card">
+        <mat-card-header>
+          <mat-card-title>
+            {{accessibilityVideoItem.title}}
+          </mat-card-title>
+        </mat-card-header>
+        <video controls src="assets/{{accessibilityVideoItem.href}}" style="max-width: 560px" type="video/mp4"></video>
+      </mat-card>
+    </div>
+  </div>
+</div>

@@ -29,11 +29,9 @@ import {MatListModule} from "@angular/material/list";
 import {MatInputModule} from "@angular/material/input";
 import {MatCardModule} from "@angular/material/card";
 import {MatChipsModule} from "@angular/material/chips";
-import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
 import {TagFilterPipe} from './posts/pipes/filters/tag-filter.pipe';
 import {TagSelectionComponent} from './posts/tag-selection/tag-selection.component';
 import {BlogComponent} from './pages/blog/blog.component';
-import {SpinnerComponent} from './layout/spinner/spinner.component';
 import {
   IllustrationAboutUsComponent
 } from "./layout/illustrations/illustation-about-us/illustration-about-us.component";
@@ -80,7 +78,6 @@ import {LocalStorageService} from "./services/theme/localstorage.service";
     TagFilterPipe,
     TagSelectionComponent,
     BlogComponent,
-    SpinnerComponent,
     PostCounterComponent,
     AuthorReducerPipe,
     TagReducerPipe,
@@ -107,7 +104,6 @@ import {LocalStorageService} from "./services/theme/localstorage.service";
     MatInputModule,
     MatCardModule,
     MatChipsModule,
-    MatProgressSpinnerModule,
 
   ],
   providers: [HttpClient, ContentFilterPipe, TagFilterPipe, StylesheetService,
