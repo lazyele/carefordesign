@@ -1,31 +1,31 @@
-<app-headliner text="BEITRÄGE">
-  <ng-container *ngIf="posts$ | async; let posts">
-    <div class="cell searchbar">
-      <app-search-bar
-        (onSearchChanged)="onSearchChanged($event)"
-        [posts]="posts"
-        [search]="searchInput"
-      ></app-search-bar>
-    </div>
-    <div class="cell">
-      <app-tag-selection
-        (onSelectedTagsChanged)="onSelectedTagsChanged($event)"
-        *ngIf="tags$ | async;let tags"
-        [tags]="tags"
-      ></app-tag-selection>
-    </div>
-  </ng-container>
+<div *ngIf="posts$ | async; let posts">
+  <app-headliner text="BEITRÄGE">
+    <ng-container>
+      <div class="cell searchbar">
+        <app-search-bar
+          (onSearchChanged)="onSearchChanged($event)"
+          [posts]="posts"
+          [search]="searchInput"
+        ></app-search-bar>
+      </div>
+      <div class="cell">
+        <app-tag-selection
+          (onSelectedTagsChanged)="onSelectedTagsChanged($event)"
+          *ngIf="tags$ | async;let tags"
+          [tags]="tags"
+        ></app-tag-selection>
+      </div>
+    </ng-container>
 </app-headliner>
 
-<div class="content-wrapper">
-  <ng-container
-    *ngIf="posts$ | async; let posts"
-  >
-    <div class="cell">
-      <app-post-list [posts]="posts
+  <div class="content-wrapper">
+    <ng-container>
+      <div class="cell">
+        <app-post-list [posts]="posts
                           | tagFilter: selectedTagIds
                           | contentFilter: searchInput"
-      ></app-post-list>
-    </div>
-  </ng-container>
+        ></app-post-list>
+      </div>
+    </ng-container>
+  </div>
 </div>
