@@ -1,4 +1,4 @@
-<div *ngIf="posts$ | async; let posts">
+<ng-container *ngIf="posts$ | async; let posts">
   <app-headliner text="BEITRÄGE">
     <ng-container>
       <div class="cell searchbar">
@@ -28,4 +28,4 @@
       </div>
     </ng-container>
   </div>
-</div>
+</ng-container>
