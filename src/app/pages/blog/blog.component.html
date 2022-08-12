@@ -1,5 +1,5 @@
-<ng-container *ngIf="posts$ | async; let posts; else title">
-  <app-headliner text="BEITRÄGE">
+<ng-container *ngIf="posts$ | async; let posts; else titleTemplate">
+  <app-headliner [text]="title">
     <div class="cell searchbar">
       <app-search-bar
         (onSearchChanged)="onSearchChanged($event)"
@@ -27,6 +27,6 @@
   </div>
 </ng-container>
 
-<ng-template #title>
-  <app-headliner text="BEITRÄGE"></app-headliner>
+<ng-template #titleTemplate>
+  <app-headliner [text]="title"></app-headliner>
 </ng-template>
