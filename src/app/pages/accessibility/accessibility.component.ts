@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
-import {AccessibilityCardItems} from "../../../environments/accessibility-card-items";
-import {AccessibilityVideoItems} from "../../../environments/accessibility-video";
+import {AccessibilityItems} from "../../../environments/accessibility-items";
+
 
 @Component({
   selector: 'app-accessibility',
@@ -8,8 +8,6 @@ import {AccessibilityVideoItems} from "../../../environments/accessibility-video
   styleUrls: ['./accessibility.component.scss']
 })
 export class AccessibilityComponent {
-  accessibilityCardItems = AccessibilityCardItems;
-  accessibilityVideoItems = AccessibilityVideoItems;
-
-
+  accessibilityCardItems = AccessibilityItems.AccessibilityCardItems;
+  accessibilityVideoItems = AccessibilityItems.AccessibilityVideoItems;
 }
